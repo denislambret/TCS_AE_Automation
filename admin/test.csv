@@ -1,0 +1,4 @@
+rank;"name";"description";"defaultStatus";retry;delay
+01;"AdobeARMservice";"Adobe Acrobat Update Service";"Running";3;1
+02;"AdobeUpdateService";"AdobeUpdateService";"Stopped";3;1
+03;"LxpSvc";"Language Experience Service";"Stopped";3;1

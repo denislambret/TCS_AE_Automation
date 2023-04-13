@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<conf>
+    <configItem name="OTDS" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/dataotds/otds.conf"> 
+        <certificate name="exstream.pfx" type="pfx" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/datacert/cert.pfx" password="1234qwerASD">
+	    <archive path="" autocreate="true" overwrite="false"/>
+        <regexpressions name="" reg="" target=""/>
+    </configItem> 
+    <configItem name="EXSTREAM_GATEWAY" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/datagw/gw.conf"> 
+        <certificate name="exstream.pfx" type="pfx" path="d:/work/exstream2.tcs.ch.pfx" password="1234qwerASD">
+	    <archive path="" autocreate="true" overwrite="false"/>
+        <regexpressions name="" reg="" target=""/>
+    </configItem> 
+    <configItem name="EXSTREAM_SERVER_PFX" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/datasrv/srv.conf"> 
+        <certificate name="exstream.pfx" type="pfx" path="d:/work/exstream2.tcs.ch.pfx" password="1234qwerASD">
+	    <archive path="" autocreate="true" overwrite="false"/>
+        <regexpressions name="" reg="" target=""/>
+    </configItem> 
+    <configItem name="EXSTREAM_SERVER_CER" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/datasrv/srv_cer.conf"> 
+        <certificate name="exstream.pfx" type="pfx" path="d:/work/exstream2.tcs.ch.cer" password="1234qwerASD">
+	    <archive path="" autocreate="true" overwrite="false"/>
+        <regexpressions name="" reg="" target=""/>
+    </configItem> 
+    <configItem name="EXSTREAM_CONTROL_CENTER" path="D:/dev/40_PowerShell/tcs/Projects/EXSTRAM_RenewCertificates/datacc/cc.conf"> 
+        <certificate name="exstream.pfx" type="pfx" path="d:/work/exstream2.tcs.ch.pfx" password="1234qwerASD">
+	    <archive path="" autocreate="true" overwrite="false"/>
+        <regexpressions name="" reg="" target=""/>
+    </configItem> 
+</conf>

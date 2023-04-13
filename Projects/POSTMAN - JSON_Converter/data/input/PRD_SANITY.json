@@ -1,0 +1,536 @@
+{
+	"id": "41537eeb-5b24-4983-94c6-b5039a98d35c",
+	"name": "Sanity check API NIS",
+	"timestamp": "2023-02-22T13:05:43.821Z",
+	"collection_id": "18876454-dbd4dc94-0174-4fa1-bd68-576fee61f628",
+	"folder_id": "18876454-a1f7d6fb-bc0f-4702-8d82-03cd6e9219ab",
+	"environment_id": "18876454-2bed8857-aa91-4fea-9da7-75004ec4a949",
+	"totalPass": 109,
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "f27d4165-b323-49f4-b060-49b00b6774b9",
+			"name": "01 - partner - OAuth token SFDC",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Success HTTP response code : 200": true,
+				"Response time is less than 1000ms": true,
+				"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+			},
+			"testPassFailCounts": {
+				"Success HTTP response code : 200": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19,
+				16,
+				16,
+				16,
+				15
+			],
+			"allTests": [
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_sdfc'.": true
+				}
+			]
+		},
+		{
+			"id": "1c8e8ecf-4c86-4ace-bbd1-d20a05d71439",
+			"name": "02 - Partner - OAuth token BOOMY",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Success HTTP response code : 200": true,
+				"Response time is less than 1000ms": true,
+				"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+			},
+			"testPassFailCounts": {
+				"Success HTTP response code : 200": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Set oauth token as environment variable 'bearer_token_partner_boomy'.": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17,
+				16,
+				16,
+				17,
+				16
+			],
+			"allTests": [
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+				},
+				{
+					"Success HTTP response code : 200": true,
+					"Response time is less than 1000ms": true,
+					"Set oauth token as environment variable 'bearer_token_partner_boomy'.": true
+				}
+			]
+		},
+		{
+			"id": "a8c2628f-bc28-4f6c-a84c-1ab471913f35",
+			"name": "10 - internal - insurance - policy (no bearer)",
+			"time": 1592,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true,
+				"Check X Headers ": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Check X Headers ": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				1220,
+				1397,
+				1419,
+				1348,
+				1592
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				}
+			]
+		},
+		{
+			"id": "54537b16-6acd-40d9-98c5-fa93c8cc7f69",
+			"name": "11 - partner - insurance - policy (sfdc bearer)",
+			"time": 1367,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true,
+				"Check X Headers ": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Check X Headers ": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				1418,
+				1476,
+				1424,
+				1397,
+				1367
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				}
+			]
+		},
+		{
+			"id": "c7e06d61-75b6-43f0-a731-d20288422607",
+			"name": "20 - partner - check-soc-status (boomy bearer)",
+			"time": 2159,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": false,
+				"Check X Headers ": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 0,
+					"fail": 5
+				},
+				"Check X Headers ": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				6217,
+				3628,
+				2116,
+				2020,
+				2159
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				}
+			]
+		},
+		{
+			"id": "59127105-46d6-49e5-896b-dd6467472832",
+			"name": "30 - internal - observation (no bearer)",
+			"time": 199,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true,
+				"Check X Headers ": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Check X Headers ": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				355,
+				237,
+				281,
+				308,
+				199
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				}
+			]
+		},
+		{
+			"id": "b2a6d401-18d1-4dad-99df-8e34c76cf958",
+			"name": "31 - partner - observation (sfdc bearer)",
+			"time": 242,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true,
+				"Check X Headers ": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 4,
+					"fail": 1
+				},
+				"Check X Headers ": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				543,
+				257,
+				270,
+				4285,
+				242
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false,
+					"Check X Headers ": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true,
+					"Check X Headers ": true
+				}
+			]
+		},
+		{
+			"id": "57925f1f-d4c1-42bf-aca7-92986bfd6801",
+			"name": "101 - IDIT WSI - Get batch dashboard list",
+			"time": 147,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				175,
+				160,
+				149,
+				158,
+				147
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		}
+	],
+	"count": 5,
+	"totalTime": 38128,
+	"collection": {
+		"requests": [
+			{
+				"id": "f27d4165-b323-49f4-b060-49b00b6774b9",
+				"method": "POST"
+			},
+			{
+				"id": "1c8e8ecf-4c86-4ace-bbd1-d20a05d71439",
+				"method": "POST"
+			},
+			{
+				"id": "a8c2628f-bc28-4f6c-a84c-1ab471913f35",
+				"method": "GET"
+			},
+			{
+				"id": "54537b16-6acd-40d9-98c5-fa93c8cc7f69",
+				"method": "GET"
+			},
+			{
+				"id": "c7e06d61-75b6-43f0-a731-d20288422607",
+				"method": "GET"
+			},
+			{
+				"id": "59127105-46d6-49e5-896b-dd6467472832",
+				"method": "GET"
+			},
+			{
+				"id": "b2a6d401-18d1-4dad-99df-8e34c76cf958",
+				"method": "GET"
+			},
+			{
+				"id": "57925f1f-d4c1-42bf-aca7-92986bfd6801",
+				"method": "GET"
+			}
+		]
+	}
+}

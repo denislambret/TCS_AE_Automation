@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<conf>
+	<cleaner>
+		<directory path="c:/tmp" delayThreshold=15 fileRegex="*" extension="log" recursive="true" removeEmptyDirectory="true"/>
+		<directory path="c:/temp" delayThreshold=15 fileRegex="*" extension="tmp" recursive="true" removeEmptyDirectory="true"/>
+	</cleaner>
+	<services>
+		<service name="" displayName="" defaultStatus="" rank=""/>
+		<service name="" displayName="" defaultStatus="" rank=""/>
+		<service name="" displayName="" defaultStatus="" rank=""/>
+	</services>
+	<archives>
+		<archive path="" delayThreshold="" fileRegex="" extension="" outputPath="">
+		<archive path="" delayThreshold="" fileRegex="" extension="" outputPath="">
+		<archive path="" delayThreshold="" fileRegex="" extension="" outputPath="">
+	<archives>
+</conf>
