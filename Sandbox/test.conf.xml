@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<conf>
-    <mail>
-        <to>denis.lambret@tcs.ch</to>
-        <to>eric.leroux@tcs.ch</to>
-        <to>jeanmarc.jung@tcs.ch</to>
-    </mail>
-</conf>
