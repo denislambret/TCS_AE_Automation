@@ -1,0 +1,643 @@
+[2022.02.01 08:48:59.874][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:48:59.922][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:48:59.973][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:49:00.033][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:49:00.375][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:49:00.671][TPL_transfert.ps1-18076][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:49:08.255][TPL_transfert.ps1-18076][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:49:09.559][TPL_transfert.ps1-18076][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:49:13.031][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:50:35.506][TPL_transfert.ps1-20832][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:50:35.539][TPL_transfert.ps1-20832][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:50:35.549][TPL_transfert.ps1-20832][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:50:35.555][TPL_transfert.ps1-20832][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:50:35.760][TPL_transfert.ps1-20832][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:50:36.340][TPL_transfert.ps1-20832][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:50:36.368][TPL_transfert.ps1-20832][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:50:36.373][TPL_transfert.ps1-20832][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:50:36.383][TPL_transfert.ps1-20832][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:51:36.025][TPL_transfert.ps1-12868][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:51:36.049][TPL_transfert.ps1-12868][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:51:36.058][TPL_transfert.ps1-12868][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:51:36.062][TPL_transfert.ps1-12868][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:51:36.420][TPL_transfert.ps1-12868][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:51:36.951][TPL_transfert.ps1-12868][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:51:36.958][TPL_transfert.ps1-12868][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:51:36.963][TPL_transfert.ps1-12868][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:51:36.968][TPL_transfert.ps1-12868][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:52:58.416][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:52:58.438][TPL_transfert.ps1-17444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:52:58.449][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:52:58.454][TPL_transfert.ps1-17444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:52:58.644][TPL_transfert.ps1-17444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:52:59.344][TPL_transfert.ps1-17444][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:52:59.353][TPL_transfert.ps1-17444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:52:59.359][TPL_transfert.ps1-17444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:52:59.367][TPL_transfert.ps1-17444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:53:41.740][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:53:41.746][TPL_transfert.ps1-17444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:53:41.749][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:53:41.752][TPL_transfert.ps1-17444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:53:41.956][TPL_transfert.ps1-17444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:53:42.212][TPL_transfert.ps1-17444][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:53:42.217][TPL_transfert.ps1-17444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:53:42.222][TPL_transfert.ps1-17444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:53:42.230][TPL_transfert.ps1-17444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:54:04.585][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:54:04.605][TPL_transfert.ps1-17444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:54:04.623][TPL_transfert.ps1-17444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:54:04.637][TPL_transfert.ps1-17444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:54:04.829][TPL_transfert.ps1-17444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:54:05.134][TPL_transfert.ps1-17444][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:54:05.143][TPL_transfert.ps1-17444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:54:05.147][TPL_transfert.ps1-17444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:54:05.152][TPL_transfert.ps1-17444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:54:05.696][TPL_transfert.ps1-17444][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 08:54:05.726][TPL_transfert.ps1-17444][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 08:55:31.019][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:55:31.054][TPL_transfert.ps1-17648][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:55:31.060][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:55:31.068][TPL_transfert.ps1-17648][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:55:31.286][TPL_transfert.ps1-17648][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:55:31.885][TPL_transfert.ps1-17648][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:55:31.904][TPL_transfert.ps1-17648][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:55:31.917][TPL_transfert.ps1-17648][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:55:31.924][TPL_transfert.ps1-17648][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:55:32.713][TPL_transfert.ps1-17648][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 08:55:32.738][TPL_transfert.ps1-17648][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 08:56:24.654][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:56:24.706][TPL_transfert.ps1-17648][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:56:24.754][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:56:24.821][TPL_transfert.ps1-17648][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:56:25.140][TPL_transfert.ps1-17648][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:56:25.433][TPL_transfert.ps1-17648][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:56:55.561][TPL_transfert.ps1-17648][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:57:00.211][TPL_transfert.ps1-17648][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:57:21.971][TPL_transfert.ps1-17648][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 08:59:34.454][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:59:34.552][TPL_transfert.ps1-17648][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 08:59:34.607][TPL_transfert.ps1-17648][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 08:59:34.670][TPL_transfert.ps1-17648][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 08:59:35.173][TPL_transfert.ps1-17648][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 08:59:35.760][TPL_transfert.ps1-17648][DEBUG] Session : SSH.SftpSession
+[2022.02.01 08:59:41.615][TPL_transfert.ps1-17648][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 08:59:42.788][TPL_transfert.ps1-17648][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 08:59:45.979][TPL_transfert.ps1-17648][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:00:29.182][TPL_transfert.ps1-15952][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:00:29.210][TPL_transfert.ps1-15952][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:00:29.219][TPL_transfert.ps1-15952][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:00:29.225][TPL_transfert.ps1-15952][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:00:29.340][TPL_transfert.ps1-15952][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:00:30.003][TPL_transfert.ps1-15952][DEBUG] Session : SSH.SftpSession
+[2022.02.01 09:00:30.011][TPL_transfert.ps1-15952][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:00:30.017][TPL_transfert.ps1-15952][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:00:30.024][TPL_transfert.ps1-15952][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:01:21.605][TPL_transfert.ps1-4108][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:01:21.636][TPL_transfert.ps1-4108][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:01:21.648][TPL_transfert.ps1-4108][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:01:21.654][TPL_transfert.ps1-4108][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:01:21.749][TPL_transfert.ps1-4108][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:01:22.423][TPL_transfert.ps1-4108][DEBUG] Session : SSH.SftpSession
+[2022.02.01 09:01:22.434][TPL_transfert.ps1-4108][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:01:22.442][TPL_transfert.ps1-4108][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:01:22.451][TPL_transfert.ps1-4108][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:08:41.589][TPL_transfert.ps1-10388][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:08:41.651][TPL_transfert.ps1-10388][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:08:41.666][TPL_transfert.ps1-10388][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:08:41.679][TPL_transfert.ps1-10388][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:08:42.111][TPL_transfert.ps1-10388][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:08:42.736][TPL_transfert.ps1-10388][DEBUG] Session : SSH.SftpSession
+[2022.02.01 09:08:42.755][TPL_transfert.ps1-10388][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:08:42.764][TPL_transfert.ps1-10388][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:08:42.780][TPL_transfert.ps1-10388][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:28:17.429][TPL_transfert.ps1-4528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:28:17.504][TPL_transfert.ps1-4528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:28:17.518][TPL_transfert.ps1-4528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:28:17.526][TPL_transfert.ps1-4528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:28:17.790][TPL_transfert.ps1-4528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:28:18.475][TPL_transfert.ps1-4528][DEBUG] Session : SSH.SftpSession
+[2022.02.01 09:28:18.489][TPL_transfert.ps1-4528][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:28:18.502][TPL_transfert.ps1-4528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:28:18.509][TPL_transfert.ps1-4528][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:30:16.665][TPL_transfert.ps1-11108][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:30:16.693][TPL_transfert.ps1-11108][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:30:16.699][TPL_transfert.ps1-11108][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:30:16.706][TPL_transfert.ps1-11108][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:30:16.884][TPL_transfert.ps1-11108][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:30:17.435][TPL_transfert.ps1-11108][DEBUG] Session : SSH.SftpSession
+[2022.02.01 09:30:17.442][TPL_transfert.ps1-11108][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:30:17.446][TPL_transfert.ps1-11108][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:30:17.457][TPL_transfert.ps1-11108][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:31:44.047][TPL_transfert.ps1-4128][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:31:44.076][TPL_transfert.ps1-4128][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:31:44.083][TPL_transfert.ps1-4128][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:31:44.087][TPL_transfert.ps1-4128][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:31:44.195][TPL_transfert.ps1-4128][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:31:44.846][TPL_transfert.ps1-4128][ERROR] Le terme ??Get-Members?? n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme ex?cutable. V?rifiez l'orthographe du nom, ou si un chemin d'acc?s existe, v?rifiez que le chemin d'acc?s est correct et r?essayez.
+[2022.02.01 09:31:44.862][TPL_transfert.ps1-4128][ERROR] System.Management.Automation.CommandNotFoundException
+[2022.02.01 09:32:32.740][TPL_transfert.ps1-4128][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:32:32.744][TPL_transfert.ps1-4128][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:32:32.749][TPL_transfert.ps1-4128][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:32:32.752][TPL_transfert.ps1-4128][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:32:32.973][TPL_transfert.ps1-4128][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:32:33.312][TPL_transfert.ps1-4128][DEBUG] SFTP Session : 
+[2022.02.01 09:32:33.318][TPL_transfert.ps1-4128][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:32:33.328][TPL_transfert.ps1-4128][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:32:33.341][TPL_transfert.ps1-4128][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:33:43.281][TPL_transfert.ps1-16704][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:33:43.304][TPL_transfert.ps1-16704][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:33:43.315][TPL_transfert.ps1-16704][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:33:43.321][TPL_transfert.ps1-16704][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:33:43.483][TPL_transfert.ps1-16704][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:33:44.277][TPL_transfert.ps1-16704][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:33:44.443][TPL_transfert.ps1-16704][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:33:44.457][TPL_transfert.ps1-16704][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:33:44.469][TPL_transfert.ps1-16704][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:33:45.353][TPL_transfert.ps1-16704][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 09:33:45.373][TPL_transfert.ps1-16704][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 09:34:41.230][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:34:41.328][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:34:41.352][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:34:41.377][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:34:41.598][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:34:42.520][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:35:12.825][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:35:12.835][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:35:12.843][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:35:12.858][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:35:13.070][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:35:13.295][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:36:03.897][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:36:03.903][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:36:03.906][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:36:03.910][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:36:04.154][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:36:04.383][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:36:22.101][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:36:22.119][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:36:22.130][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:36:22.137][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:36:22.348][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:36:22.637][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:37:34.343][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:37:34.360][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:37:34.377][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:37:34.391][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:37:34.639][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:37:34.907][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:37:34.933][TPL_transfert.ps1-23528][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:37:34.940][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:37:34.952][TPL_transfert.ps1-23528][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:38:02.201][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:02.238][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:38:02.246][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:02.261][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:38:02.483][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:38:02.798][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:02.813][TPL_transfert.ps1-23528][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:38:02.819][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:02.824][TPL_transfert.ps1-23528][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:38:18.884][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:18.900][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:38:18.905][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:18.915][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:38:19.094][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:38:19.320][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:19.327][TPL_transfert.ps1-23528][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:38:19.335][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:19.340][TPL_transfert.ps1-23528][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:38:41.369][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:41.387][TPL_transfert.ps1-23528][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:38:41.393][TPL_transfert.ps1-23528][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:38:41.398][TPL_transfert.ps1-23528][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:38:41.591][TPL_transfert.ps1-23528][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:38:41.844][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:41.876][TPL_transfert.ps1-23528][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:38:41.900][TPL_transfert.ps1-23528][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:38:41.917][TPL_transfert.ps1-23528][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:39:39.517][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:39:39.546][TPL_transfert.ps1-23444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:39:39.557][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:39:39.572][TPL_transfert.ps1-23444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:39:39.792][TPL_transfert.ps1-23444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:39:40.293][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:39:40.308][TPL_transfert.ps1-23444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:39:40.315][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:39:40.327][TPL_transfert.ps1-23444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:39:49.389][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:39:49.393][TPL_transfert.ps1-23444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:39:49.397][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:39:49.401][TPL_transfert.ps1-23444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:39:49.406][TPL_transfert.ps1-23444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:39:49.629][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:39:49.645][TPL_transfert.ps1-23444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:39:49.659][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:39:49.675][TPL_transfert.ps1-23444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:40:01.135][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:40:01.155][TPL_transfert.ps1-23444][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:40:01.169][TPL_transfert.ps1-23444][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:40:01.184][TPL_transfert.ps1-23444][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:40:01.363][TPL_transfert.ps1-23444][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:40:01.602][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:40:01.610][TPL_transfert.ps1-23444][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:40:01.618][TPL_transfert.ps1-23444][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:40:01.627][TPL_transfert.ps1-23444][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 09:40:50.075][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:40:50.163][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 09:40:50.172][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 09:40:50.179][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.02.01 09:40:50.382][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 09:40:50.785][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:40:50.799][TPL_transfert.ps1-20424][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.02.01 09:40:50.804][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 09:40:50.812][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:24:51.647][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:24:51.656][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:24:51.662][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:24:51.669][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:24:51.748][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:24:52.041][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:24:52.046][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:24:52.056][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:24:52.063][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:24:52.625][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:24:52.642][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:25:41.887][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:25:41.929][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:25:41.950][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:25:41.972][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:25:42.067][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:25:42.313][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:25:42.319][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:25:42.328][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:25:42.333][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:25:43.073][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:25:43.082][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:26:39.785][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:26:39.798][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:26:39.818][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:26:39.834][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:26:39.949][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:26:40.200][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:26:40.204][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:26:40.214][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:26:40.217][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:26:40.794][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:26:40.800][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:27:18.316][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:27:18.319][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:27:18.324][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:27:18.327][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:27:18.415][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:27:18.698][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:27:18.708][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:27:18.713][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:27:18.718][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:27:19.870][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:27:19.915][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:27:48.884][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:27:48.888][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:27:48.892][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:27:48.896][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:27:48.981][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:27:49.241][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:27:49.248][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:27:49.255][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:27:49.261][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:27:49.978][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:27:49.984][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:28:01.544][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:28:01.548][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:28:01.552][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:28:01.555][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:28:01.656][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:28:01.867][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:28:01.875][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:28:01.882][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:28:01.893][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:28:02.668][TPL_transfert.ps1-20424][ERROR] ?chec lors de l?appel de la m?thode, car [System.IO.FileInfo] ne contient pas de m?thode nomm?e ??op_Addition??.
+[2022.02.01 10:28:02.674][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.RuntimeException
+[2022.02.01 10:28:32.017][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:28:32.077][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:28:32.123][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:28:32.196][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:28:32.479][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:28:32.997][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:28:33.038][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:28:33.082][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:28:44.957][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:29:26.745][TPL_transfert.ps1-20424][ERROR] System.Management.Automation.CommandNotFoundException: Le terme ??__Invoke-ReadLineForEditorServices?? n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme ex?cutable. V?rifiez l'orthographe du nom, ou si un chemin d'acc?s existe, v?rifiez que le chemin d'acc?s est correct et r?essayez.
+   ? System.Management.Automation.Runspaces.PipelineBase.Invoke(IEnumerable input)
+   ? System.Management.Automation.PowerShell.Worker.ConstructPipelineAndDoWork(Runspace rs, Boolean performSyncInvoke)
+   ? System.Management.Automation.PowerShell.CoreInvokeHelper[TInput,TOutput](PSDataCollection`1 input, PSDataCollection`1 output, PSInvocationSettings settings)
+   ? System.Management.Automation.PowerShell.CoreInvoke[TInput,TOutput](PSDataCollection`1 input, PSDataCollection`1 output, PSInvocationSettings settings)
+   ? System.Management.Automation.PowerShell.InvokeWithDebugger(IEnumerable`1 input, IList`1 output, PSInvocationSettings settings, Boolean invokeMustRun)
+   ? System.Management.Automation.ScriptDebugger.ProcessCommand(PSCommand command, PSDataCollection`1 output)
+   ? Microsoft.PowerShell.EditorServices.Services.PowerShellContext.PowerShell5Operations.ExecuteCommandInDebugger[TResult](PowerShellContextService powerShellContext, Runspace currentRunspace, PSCommand psCommand, Boolean sendOutputToHost, Nullable`1& debuggerResumeAction)
+   ? Microsoft.PowerShell.EditorServices.Services.PowerShellContextService.ExecuteCommandInDebugger[TResult](PSCommand psCommand, Boolean sendOutputToHost)
+   ? Microsoft.PowerShell.EditorServices.Services.PowerShellContextService.<ExecuteCommandAsync>d__93`1.MoveNext()
+[2022.02.01 10:30:06.362][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:30:06.404][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:30:06.447][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:30:06.492][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:30:06.634][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:30:06.905][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:30:06.954][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:30:07.014][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:30:10.729][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:31:07.117][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:31:07.167][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:31:07.210][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:31:07.263][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:31:07.387][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:31:07.645][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:31:07.689][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:31:07.805][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:31:16.192][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:31:27.230][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:31:41.352][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/
+[2022.02.01 10:33:33.161][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:33:33.202][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:33:33.248][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:33:33.304][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:33:33.439][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:33:33.730][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:33:33.812][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:33:33.861][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:33:33.917][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:33:46.421][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:33:47.778][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/
+[2022.02.01 10:35:04.997][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:05.065][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:35:05.126][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:05.173][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:35:05.288][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:35:05.594][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:05.645][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:35:05.693][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:05.738][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:35:20.222][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:20.270][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:35:20.310][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:20.466][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:35:20.595][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:35:20.893][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:20.943][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:35:21.015][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:21.058][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:35:21.810][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:35:21.888][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/
+[2022.02.01 10:35:53.261][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:53.307][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:35:53.355][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:35:53.418][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:35:53.553][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:35:53.818][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:53.865][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:35:53.921][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:35:53.975][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:35:54.772][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:35:55.589][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/
+[2022.02.01 10:42:21.510][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:42:21.559][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:42:21.603][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:42:21.658][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:42:21.808][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:42:22.087][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:42:22.138][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:42:22.179][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:42:22.224][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:42:22.893][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:42:23.711][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:43:17.907][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:43:17.953][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:43:17.998][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:43:18.055][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:43:18.212][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:43:18.549][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:43:18.606][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:43:18.650][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:43:18.695][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:43:19.394][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:43:20.191][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:44:15.529][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:44:15.569][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:44:15.610][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:44:15.660][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:44:15.787][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:44:16.192][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:44:16.237][TPL_transfert.ps1-20424][DEBUG] List CSV     : SFDC_31.01.2022.CSV
+[2022.02.01 10:44:16.286][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:44:16.330][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:44:16.872][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:44:17.631][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:46:01.942][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:46:01.985][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 10:46:02.032][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 10:46:02.096][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 10:46:02.225][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 10:46:02.534][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 10:46:02.593][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 10:46:02.642][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 10:46:02.703][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 10:46:03.071][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 10:46:03.961][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:05:42.760][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:05:42.801][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:05:42.848][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:05:42.897][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:05:43.049][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:05:43.336][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:05:43.391][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:05:43.434][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:05:43.481][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:05:44.198][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:05:45.062][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:12:46.807][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:12:46.854][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:12:46.896][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:12:46.943][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:12:47.064][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:12:47.353][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:12:47.399][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:12:47.460][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:12:47.510][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:12:47.836][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:12:48.685][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:12:49.361][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\\SAVE
+[2022.02.01 11:12:50.014][TPL_transfert.ps1-20424][ERROR] La syntaxe du nom de fichier, de r?pertoire ou de volume est incorrecte.
+
+[2022.02.01 11:12:50.061][TPL_transfert.ps1-20424][ERROR] System.IO.IOException
+[2022.02.01 11:13:17.311][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:13:17.366][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:13:17.405][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:13:17.460][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:13:17.594][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:13:17.878][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:13:17.921][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:13:17.967][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:13:18.013][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:13:18.642][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:13:19.411][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:13:20.073][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\\SAVE
+[2022.02.01 11:13:20.811][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\ dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\\SAVE
+[2022.02.01 11:14:15.625][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:14:15.676][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:14:15.724][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:14:15.773][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:14:15.901][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:14:16.216][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:14:16.274][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:14:16.323][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:14:16.368][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:14:17.024][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:14:17.901][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:14:18.587][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\\SAVE
+[2022.02.01 11:14:19.353][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\\SAVE
+[2022.02.01 11:14:48.849][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:14:48.902][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:14:48.947][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:14:48.995][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:14:49.129][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:14:49.401][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:14:49.448][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:14:49.496][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:14:49.550][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:14:49.877][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:14:50.648][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:14:51.316][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:14:52.053][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:16:10.400][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:16:10.455][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:16:10.498][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:16:10.544][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:16:10.665][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:16:10.956][TPL_transfert.ps1-20424][DEBUG] SFTP Session : SSH.SftpSession
+[2022.02.01 11:16:10.997][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:16:11.046][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:16:11.093][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:16:11.577][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:16:12.387][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:16:13.033][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:16:13.749][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:17:22.997][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:17:23.047][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:17:23.089][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:17:23.135][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:17:23.265][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:17:23.536][TPL_transfert.ps1-20424][DEBUG] List CSV      : SFDC_31.01.2022.CSV
+[2022.02.01 11:17:23.585][TPL_transfert.ps1-20424][DEBUG] SFTP Session #: 0
+[2022.02.01 11:17:23.635][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:17:23.978][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:17:24.747][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:17:25.393][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:17:26.173][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:17:57.772][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:17:57.822][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:17:57.868][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:17:57.923][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:17:58.040][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:17:58.399][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:17:58.602][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:17:59.360][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:18:00.024][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:18:00.757][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:18:23.105][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:18:26.371][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:18:26.452][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:18:26.495][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:18:26.614][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:18:27.167][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:18:27.254][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:18:28.025][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\
+[2022.02.01 11:18:28.702][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:18:29.411][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:18:38.165][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:18:41.644][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:18:43.478][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:18:44.987][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:18:48.893][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:19:04.381][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:19:50.642][-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:19:50.647][-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:19:50.650][-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:19:50.655][-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:19:50.735][-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:19:50.995][-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:19:51.370][-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV.tmp
+[2022.02.01 11:19:52.079][-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV
+[2022.02.01 11:19:52.657][-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:19:53.339][-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:30:08.948][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:30:09.898][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:30:11.031][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:30:11.738][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:30:13.268][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:30:24.234][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:30:46.136][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV.tmp
+[2022.02.01 11:31:36.586][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV
+[2022.02.01 11:31:47.338][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE\SAVE
+[2022.02.01 11:34:12.156][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:34:54.361][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv
+[2022.02.01 11:36:33.158][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:36:33.200][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:36:33.244][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:36:33.327][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:36:33.459][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:36:33.827][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:36:33.920][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV.tmp
+[2022.02.01 11:36:34.726][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV
+[2022.02.01 11:36:35.408][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE
+[2022.02.01 11:36:36.150][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:36:37.576][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv
+[2022.02.01 11:38:31.237][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:38:31.282][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:38:31.326][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:38:31.376][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:38:31.462][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:38:31.903][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:38:31.947][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:38:32.250][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV.tmp
+[2022.02.01 11:38:32.999][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV
+[2022.02.01 11:38:33.654][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV.tmp
+[2022.02.01 11:38:34.401][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV
+[2022.02.01 11:38:35.029][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE
+[2022.02.01 11:38:36.428][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:38:36.531][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv
+[2022.02.01 11:52:41.722][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:52:41.765][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:52:41.807][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:52:41.858][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:52:42.014][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:52:42.465][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:52:42.517][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:52:42.720][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV.tmp
+[2022.02.01 11:52:43.520][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV
+[2022.02.01 11:52:44.140][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_31.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV.tmp
+[2022.02.01 11:52:44.925][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_31.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_31.01.2022.CSV
+[2022.02.01 11:52:45.486][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE
+[2022.02.01 11:52:46.944][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:52:47.055][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv
+[2022.02.01 11:52:47.188][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv
+[2022.02.01 11:53:42.610][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:53:42.658][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:53:42.705][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:53:42.755][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:53:42.883][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:53:43.386][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE
+[2022.02.01 11:53:43.436][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:55:36.936][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:55:36.978][TPL_transfert.ps1-20424][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.02.01 11:55:37.023][TPL_transfert.ps1-20424][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.02.01 11:55:37.082][TPL_transfert.ps1-20424][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion
+[2022.02.01 11:55:37.130][TPL_transfert.ps1-20424][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.02.01 11:55:37.638][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:55:37.685][TPL_transfert.ps1-20424][INFO] SFTP UPLOAD - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_03.01.2022.CSV dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.02.01 11:55:37.892][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV.tmp
+[2022.02.01 11:55:38.676][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC.CSV
+[2022.02.01 11:55:39.359][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SFDC_03.01.2022.CSV dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_03.01.2022.CSV.tmp
+[2022.02.01 11:55:40.139][TPL_transfert.ps1-20424][INFO] MOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive/SFDC_03.01.2022.CSV.tmp dest:\\fs_AppsData_ge3\Apps_Data$\EXSTREAM\QA166\NIP\Diffusion\archive\SFDC_03.01.2022.CSV
+[2022.02.01 11:55:40.700][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\SAVE
+[2022.02.01 11:55:42.192][TPL_transfert.ps1-20424][INFO] COPY ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\*.csv dest:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SAVE
+[2022.02.01 11:55:42.306][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SFDC.CSV
+[2022.02.01 11:55:42.407][TPL_transfert.ps1-20424][INFO] REMOVE ITEM - source:\\fs_AppsData_ge3\Apps_Data$\ONBASE\QA\Diffusion\Scanning\SFDC_03.01.2022.CSV

@@ -1,0 +1,99 @@
+**********************
+PowerShell transcript start
+Start time: 20230208170529
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.1.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.1.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1675674881-451a0e31-c20a-4007-81e7-e6b42fe5e8cb1675674876895\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-9420-853182.json' -FeatureFlags @() 
+Process ID: 21280
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20230208 17:05:29][Get-TransactionLogs.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230208 17:05:29][Get-TransactionLogs.ps1][TCSGROUP\LD06974][INFO] Get-TransactionLogs.ps1 v0.1
+[20230208 17:05:29][Get-TransactionLogs.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\PRD.conf
+
+MetadataError: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:202:9
+Line |
+ 202 |          [XML]$conf = Get-Content $config_path
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot convert value "System.Object[]" to type "System.Xml.XmlDocument". Error: "'*' is an unexpected token. The expected token is ';'. Line 7, position 24."
+
+MetadataError: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:202:9
+Line |
+ 202 |          [XML]$conf = Get-Content $config_path
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot convert value "System.Object[]" to type "System.Xml.XmlDocument". Error: "'*' is an unexpected token. The expected token is ';'. Line 7, position 24."
+
+
+MethodInvocationException: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:132:9
+Line |
+ 132 |          $Reader= $SqlCmd.ExecuteReader()
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "ExecuteReader" with "0" argument(s): "ExecuteReader: Connection property has not been initialized."
+
+MethodInvocationException: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:132:9
+Line |
+ 132 |          $Reader= $SqlCmd.ExecuteReader()
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "ExecuteReader" with "0" argument(s): "ExecuteReader: Connection property has not been initialized."
+
+
+MethodInvocationException: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:134:9
+Line |
+ 134 |          $DataTable.Load($Reader)
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "Load" with "1" argument(s): "Value cannot be null. (Parameter 'dataReader')"
+
+MethodInvocationException: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:134:9
+Line |
+ 134 |          $DataTable.Load($Reader)
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~
+     | Exception calling "Load" with "1" argument(s): "Value cannot be null. (Parameter 'dataReader')"
+
+
+InvalidOperation: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:137:9
+Line |
+ 137 |          $SqlConnection.Close()
+     |          ~~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.
+
+InvalidOperation: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:137:9
+Line |
+ 137 |          $SqlConnection.Close()
+     |          ~~~~~~~~~~~~~~~~~~~~~~
+     | You cannot call a method on a null-valued expression.
+
+PS>TerminatingError(Log): "Cannot bind argument to parameter 'message' because it is an empty string."
+
+Log: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:216:31
+Line |
+ 216 |      log -Level 'INFO' -Message($response)
+     |                                ~~~~~~~~~~~
+     | Cannot bind argument to parameter 'message' because it is an empty string.
+
+Log: Y:\03_DEV\06_GITHUB\tcs-1\Projects\ONBASE_ExtractTransLog\Get-TransactionLogs.ps1:216:31
+Line |
+ 216 |      log -Level 'INFO' -Message($response)
+     |                                ~~~~~~~~~~~
+     | Cannot bind argument to parameter 'message' because it is an empty string.
+
+[20230208 17:05:49][Get-TransactionLogs.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+**********************
+PowerShell transcript end
+End time: 20230208170549
+**********************

@@ -1,0 +1,18 @@
+<?xml version = "1.0"?>
+<conf>
+    <directories_list>
+        <!--<directory path=""  description="" thresholdAlert="" thresholdWarning=""/>-->
+        <directory path="c:\temp"  description="Windows Temporary directory" thresholdAlert="2GB" thresholdWarning="1800MB"/>
+        <directory path="C:\Users\LD06974"  description="LD06974 user directory" thresholdAlert="5GB" thresholdWarning="4500MB"/>
+        <directory path="C:\Users\LD06974ADM"  description="LD06974 user directory" thresholdAlert="5GB" thresholdWarning="4500MB"/>
+    </directories_list>
+    
+    <files_exist>
+        <file name="P:\EXSTREAM\QA\Diffusion\Onbase\*.csv" description="CCM indexes" shouldExist="False" shouldNotExist="True" elderThan="15D" youngestThan="6M"/>
+        <file name="P:\EXSTREAM\PRD\Diffusion\Onbase\*.csv" description="CCM indexes" shouldExist="False" shouldNotExist="True" elderThan="15D" youngestThan="1Y"/>
+    </files_exist>
+    
+    <services_list>
+        <service name="S*" expectedStatus="Running"/>
+    </services_list>
+</conf>

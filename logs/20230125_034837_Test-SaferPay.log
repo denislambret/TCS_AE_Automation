@@ -1,0 +1,114 @@
+**********************
+PowerShell transcript start
+Start time: 20230125154837
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.1.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.1.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1674651179-96a0fb54-87a7-4fc9-bf10-4be539e7a3e21674651173002\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-4024-227381.json' -FeatureFlags @() 
+Process ID: 6932
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+
+null: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:123:21
+Line |
+ 123 |      $SFTP_Session = null;
+     |                      ~~~~
+     | The term 'null' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+null: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:123:21
+Line |
+ 123 |      $SFTP_Session = null;
+     |                      ~~~~
+     | The term 'null' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path
+     | is correct and try again.
+
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Test-SaferPay.ps1 v0.1
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Connect to SFTP
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Connect to SFTP server sftp.tcs.ch
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Session ID 3
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Connection ID : SSH.SftpSession
+[20230125 15:48:39][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Close connection to SFTP
+PS>TerminatingError(Get-SFTPLocation): "Cannot bind argument to parameter 'SessionId' because it is null."
+
+Get-SFTPLocation: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:203:49
+Line |
+ 203 |  …        $location = Get-SFTPLocation -SessionId $SFTPSession.SessionId
+     |                                                   ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+Get-SFTPLocation: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:203:49
+Line |
+ 203 |  …        $location = Get-SFTPLocation -SessionId $SFTPSession.SessionId
+     |                                                   ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+[20230125 15:48:40][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] SFTP current location :
+[20230125 15:48:40][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Get SFTP location /advancedPay/Success
+PS>TerminatingError(Get-SFTPChildItem): "Cannot bind argument to parameter 'SessionId' because it is null."
+
+Get-SFTPChildItem: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:208:50
+Line |
+ 208 |  … ilePath = Get-SFTPChildItem -sessionID $SFTPSession.SessionID -path $ …
+     |                                           ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+Get-SFTPChildItem: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:208:50
+Line |
+ 208 |  … ilePath = Get-SFTPChildItem -sessionID $SFTPSession.SessionID -path $ …
+     |                                           ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+[20230125 15:48:41][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Get file(s) from
+[20230125 15:48:41][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Close SFTP session #
+PS>TerminatingError(Remove-SFTPSession): "Cannot bind argument to parameter 'SessionId' because it is null."
+
+Remove-SFTPSession: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:220:39
+Line |
+ 220 |          Remove-SFTPSession -SessionId $SFTPSession.SessionID | Out-Nu …
+     |                                        ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+Remove-SFTPSession: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:220:39
+Line |
+ 220 |          Remove-SFTPSession -SessionId $SFTPSession.SessionID | Out-Nu …
+     |                                        ~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot bind argument to parameter 'SessionId' because it is null.
+
+
+OK: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:223:16
+Line |
+ 223 |          return OK;
+     |                 ~~
+     | The term 'OK' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+
+OK: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckSaferPay\Test-SaferPay.ps1:223:16
+Line |
+ 223 |          return OK;
+     |                 ~~
+     | The term 'OK' is not recognized as a name of a cmdlet, function, script file, or executable program. Check the spelling of the name, or if a path was included, verify that the path
+     | is correct and try again.
+
+[20230125 15:48:42][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Retrieve
+[20230125 15:48:43][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Report / count
+[20230125 15:48:43][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Close
+[20230125 15:48:43][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+**********************
+PowerShell transcript end
+End time: 20230125154843
+**********************

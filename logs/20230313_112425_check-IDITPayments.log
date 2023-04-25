@@ -1,0 +1,39 @@
+**********************
+PowerShell transcript start
+Start time: 20230313112425
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.2.1\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.2.1' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.2.1\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.2.1
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1678702166-8dee0a87-3204-4009-8a99-73227cb538581678702162988\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-9396-548848.json' -FeatureFlags @() 
+Process ID: 23036
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20230313 11:24:25][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ----------------------------------------------------------------------------------------------------------------
+[20230313 11:24:26][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] check-IDITPayments.ps1 v0.1
+[20230313 11:24:26][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ----------------------------------------------------------------------------------------------------------------
+[20230313 11:24:26][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Clean temporary directory....
+[20230313 11:24:28][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Build source CAMT files list...
+[20230313 11:26:36][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] No XML camt file found !!!
+[20230313 11:26:36][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] Aborting Payments control.
+[20230313 11:26:36][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Send email to mail list
+WARNING: The command 'Send-MailMessage' is obsolete. This cmdlet does not guarantee secure connections to SMTP servers. While there is no immediate replacement available in PowerShell, we recommend you do not use Send-MailMessage at this time. See https://aka.ms/SendMailMessage for more information.
+[20230313 11:26:45][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ................................................................................................................
+[20230313 11:26:45][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Clean temporary directory....
+**********************
+PowerShell transcript end
+End time: 20230313112648
+**********************

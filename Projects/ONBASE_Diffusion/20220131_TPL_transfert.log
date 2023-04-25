@@ -1,0 +1,168 @@
+[2022.01.31 15:05:15.269][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:05:15.304][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 15:05:15.311][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:06:23.079][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:06:23.084][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 15:06:23.087][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:52:28.585][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:52:28.590][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 15:52:28.597][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:52:28.602][TPL_transfert.ps1-18076][INFO] Build CSV list from .
+[2022.01.31 15:52:28.607][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 15:57:54.555][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:57:54.571][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 15:57:54.614][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:57:54.618][TPL_transfert.ps1-18076][INFO] Build CSV list from .
+[2022.01.31 15:57:54.623][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 15:58:22.659][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:58:22.671][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 15:58:22.677][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 15:58:22.689][TPL_transfert.ps1-18076][INFO] Build CSV list from .
+[2022.01.31 15:58:22.697][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:04:33.300][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:04:33.305][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:04:33.311][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:04:33.317][TPL_transfert.ps1-18076][INFO] Build CSV list from .
+[2022.01.31 16:04:33.323][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:05:11.774][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:05:11.778][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:05:11.783][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:05:11.787][TPL_transfert.ps1-18076][INFO] Build CSV list from .
+[2022.01.31 16:05:11.798][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:11:54.452][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:11:54.457][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:11:54.461][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:11:54.469][TPL_transfert.ps1-18076][INFO] Build CSV list from 
+[2022.01.31 16:11:54.479][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:21:52.422][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:21:52.428][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:21:52.432][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:21:52.435][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:21:52.554][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:21:52.930][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:21:52.962][TPL_transfert.ps1-18076][ERROR] Le terme ??Set-SFTPFile?? n'est pas reconnu comme nom d'applet de commande, fonction, fichier de script ou programme ex?cutable. V?rifiez l'orthographe du nom, ou si un chemin d'acc?s existe, v?rifiez que le chemin d'acc?s est correct et r?essayez.
+[2022.01.31 16:21:52.982][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.CommandNotFoundException
+[2022.01.31 16:23:45.115][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:23:45.120][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:23:45.124][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:23:45.128][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:23:45.247][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:23:45.677][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:23:45.693][TPL_transfert.ps1-18076][ERROR] Impossible de trouver un param?tre correspondant au nom ??Localfile??.
+[2022.01.31 16:23:45.705][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.ParameterBindingException
+[2022.01.31 16:24:22.540][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:24:22.546][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:24:22.551][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:24:22.554][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:24:22.672][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:24:22.935][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:24:22.952][TPL_transfert.ps1-18076][ERROR] Impossible de trouver un param?tre correspondant au nom ??Overwrite??.
+[2022.01.31 16:24:22.957][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.ParameterBindingException
+[2022.01.31 16:25:07.591][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:25:07.596][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:25:07.602][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:25:07.607][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:25:07.728][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:25:08.004][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:25:08.325][TPL_transfert.ps1-18076][ERROR] Impossible de trouver le chemin d'acc?s ??Y:\03_DEV\02_OnBase\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv??, car il n'existe pas.
+[2022.01.31 16:25:08.357][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.ItemNotFoundException
+[2022.01.31 16:27:08.897][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:27:08.900][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:27:08.907][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:27:08.910][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:27:09.031][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:27:09.297][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:27:09.305][TPL_transfert.ps1-18076][ERROR] Impossible de trouver le chemin d'acc?s ??Y:\03_DEV\02_OnBase\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv??, car il n'existe pas.
+[2022.01.31 16:27:09.309][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.ItemNotFoundException
+[2022.01.31 16:27:54.887][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:27:54.896][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:27:54.904][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:27:54.921][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:28:06.224][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:28:06.232][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:28:06.238][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:28:06.242][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:28:37.808][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:28:37.812][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:28:37.817][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:28:37.822][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:30:14.158][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:30:14.164][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 16:30:14.184][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 16:30:14.189][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 16:30:14.254][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 16:30:14.482][TPL_transfert.ps1-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 16:30:14.491][TPL_transfert.ps1-18076][ERROR] Impossible de valider l'argument sur le param?tre ??SessionId??. L?argument est Null ou vide. Indiquez un argument qui n?est pas Null ou vide et r?essayez.
+[2022.01.31 16:30:14.507][TPL_transfert.ps1-18076][ERROR] System.Management.Automation.ParameterBindingValidationException
+[2022.01.31 21:51:24.491][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:51:24.554][TPL_transfert.ps1-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 21:51:24.597][TPL_transfert.ps1-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:51:24.679][TPL_transfert.ps1-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 21:51:24.845][TPL_transfert.ps1-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 21:52:53.273][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:52:53.278][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 21:52:53.281][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:52:53.285][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 21:52:53.364][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 21:52:53.598][-18076][DEBUG] ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 21:52:53.605][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 21:52:53.624][-18076][ERROR] Impossible de valider l'argument sur le param?tre ??SessionId??. L?argument est Null ou vide. Indiquez un argument qui n?est pas Null ou vide et r?essayez.
+[2022.01.31 21:52:53.647][-18076][ERROR] System.Management.Automation.ParameterBindingValidationException
+[2022.01.31 21:56:25.734][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:56:25.737][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 21:56:25.743][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:56:25.751][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 21:56:25.833][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 21:56:26.053][-18076][DEBUG] ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 21:56:26.081][-18076][DEBUG] 
+[2022.01.31 21:56:26.087][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 21:56:26.102][-18076][ERROR] Impossible de valider l'argument sur le param?tre ??SessionId??. L?argument est Null ou vide. Indiquez un argument qui n?est pas Null ou vide et r?essayez.
+[2022.01.31 21:56:26.116][-18076][ERROR] System.Management.Automation.ParameterBindingValidationException
+[2022.01.31 21:57:43.924][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:57:43.927][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 21:57:43.933][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:57:43.937][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 21:57:44.027][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 21:57:44.274][-18076][DEBUG] Session : 
+[2022.01.31 21:57:44.280][-18076][DEBUG] ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 21:57:44.288][-18076][DEBUG] 
+[2022.01.31 21:57:44.293][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 21:57:44.307][-18076][ERROR] Impossible de valider l'argument sur le param?tre ??SessionId??. L?argument est Null ou vide. Indiquez un argument qui n?est pas Null ou vide et r?essayez.
+[2022.01.31 21:57:44.314][-18076][ERROR] System.Management.Automation.ParameterBindingValidationException
+[2022.01.31 21:58:01.801][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:58:01.803][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 21:58:01.806][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 21:58:01.809][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 21:58:01.903][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 21:58:02.315][-18076][DEBUG] Session : 
+[2022.01.31 21:58:02.321][-18076][DEBUG] ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 21:58:02.335][-18076][DEBUG] 
+[2022.01.31 21:58:02.342][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 21:58:02.356][-18076][ERROR] Impossible de valider l'argument sur le param?tre ??SessionId??. L?argument est Null ou vide. Indiquez un argument qui n?est pas Null ou vide et r?essayez.
+[2022.01.31 21:58:02.365][-18076][ERROR] System.Management.Automation.ParameterBindingValidationException
+[2022.01.31 22:02:21.266][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:02:21.274][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 22:02:21.279][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:02:21.283][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 22:02:21.397][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 22:02:21.639][-18076][DEBUG] Session : SSH.SftpSession
+[2022.01.31 22:03:45.397][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:03:45.401][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 22:03:45.405][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:03:45.409][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 22:03:45.494][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 22:03:45.704][-18076][DEBUG] Session : SSH.SftpSession
+[2022.01.31 22:03:45.707][-18076][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 22:03:45.713][-18076][DEBUG] SFTP Session : SSH.SftpSession
+[2022.01.31 22:03:45.722][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV
+[2022.01.31 22:03:45.744][-18076][ERROR] Impossible de trouver le chemin d'acc?s ??Y:\03_DEV\02_OnBase\Diffusion\ECM_MIG_BIKE_TAS_p0_76903_20211101.csv??, car il n'existe pas.
+[2022.01.31 22:03:45.752][-18076][ERROR] System.Management.Automation.ItemNotFoundException
+[2022.01.31 22:06:51.256][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:06:51.260][-18076][INFO] TPL_transfert.ps1 - Ver 0.1 
+[2022.01.31 22:06:51.264][-18076][INFO] ----------------------------------------------------------------------------------------------------------------------
+[2022.01.31 22:06:51.268][-18076][INFO] Build CSV list from \\fs_AppsData_ge3\Apps_Data$\ONBASE\DEV\Diffusion
+[2022.01.31 22:06:51.397][-18076][INFO] Setup connection to SFTP (sftppub.tcs.ch)
+[2022.01.31 22:06:51.652][-18076][DEBUG] Session : SSH.SftpSession
+[2022.01.31 22:06:51.658][-18076][DEBUG] List CSV     : ECM_MIG_BIKE_TAS_p0_76903_20211101.csv
+[2022.01.31 22:06:51.668][-18076][DEBUG] SFTP Session : SSH.SftpSession
+[2022.01.31 22:06:51.673][-18076][INFO] SFTP UPLOAD - source:ECM_MIG_BIKE_TAS_p0_76903_20211101.csv dest:/RECINT/Onbase/InputSFDC/DEV

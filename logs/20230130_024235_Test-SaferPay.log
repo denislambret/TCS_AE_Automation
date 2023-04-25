@@ -1,0 +1,51 @@
+**********************
+PowerShell transcript start
+Start time: 20230130144235
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.1.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.1.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1674651179-96a0fb54-87a7-4fc9-bf10-4be539e7a3e21674651173002\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-4024-512267.json' -FeatureFlags @() 
+Process ID: 21672
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20230130 14:42:35][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230130 14:42:35][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Test-SaferPay.ps1 v1.0
+[20230130 14:42:35][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230130 14:42:35][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] Select date :01/30/2023 14:42:35
+[20230130 14:42:35][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Connect to SFTP...
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Connection ID associated #17
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Check file(s) from /advancePay/In/
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] Source directory : /advancePay/In/
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] File list returned :
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Check file(s) from /advancePay/Failed/
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] Source directory : /advancePay/Failed/
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] File list returned : TCS_avancepay_20230127_061957.csv, TCS_avancepay_20221214_061710.csv, TCS_avancepay_20221128_062013.csv, TCS_avancepay_20230112_061741.csv, TCS_avancepay_20230124_061540.csv, TCS_avancepay_20230113_061805.csv,
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][WARNING] -> Name TCS_avancepay_20230127_061957.csv, Length 10357, User ID 14, Group ID 50, Accessed 27.01.2023 14:04:52, Modified 27.01.2023 06:17:21 Name TCS_avancepay_20221214_061710.csv, Length 5143, User ID 14, Group ID 50, Accessed 14.12.2022 05:51:29, Modified 14.12.2022 05:51:29 Name TCS_avancepay_20221128_062013.csv, Length 6830, User ID 14, Group ID 50, Accessed 28.11.2022 05:56:44, Modified 28.11.2022 05:56:44 Name TCS_avancepay_20230112_061741.csv, Length 7364, User ID 14, Group ID 50, Accessed 27.01.2023 15:28:39, Modified 12.01.2023 06:17:09 Name TCS_avancepay_20230124_061540.csv, Length 11199, User ID 14, Group ID 50, Accessed 27.01.2023 15:28:39, Modified 24.01.2023 06:13:51 Name TCS_avancepay_20230113_061805.csv, Length 15535, User ID 14, Group ID 50, Accessed 27.01.2023 14:10:04, Modified 13.01.2023 06:17:16 found in /advancePay/Failed/
+[20230130 14:42:36][Test-SaferPay.ps1][TCSGROUP\LD06974][WARNING] There should be no file here at control time ! Please check directory...
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] Get file(s) from /advancePay/Success/
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] SFTP current location :/
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] Get SFTP location /advancePay/Success
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][ERROR] No file found on SFTP for the given date. Normally a file should be available for the date even if empty.
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][ERROR] Aborting control with KO code.
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][DEBUG] Close SFTP session #17
+True
+[20230130 14:42:37][Test-SaferPay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+False
+**********************
+PowerShell transcript end
+End time: 20230130144237
+**********************

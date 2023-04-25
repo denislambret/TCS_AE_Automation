@@ -1,0 +1,57 @@
+**********************
+PowerShell transcript start
+Start time: 20230210102345
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.1.0' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.1.0\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.1.0
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1676017244-8c4c4d80-a097-4fdf-bac8-cf7e414627181676017241039\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-9420-474975.json' -FeatureFlags @() 
+Process ID: 26464
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Test-AvancePay.ps1 v1.0
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Selected date : 02/09/2023 10:23:46
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Connect to SFTP server
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Connection ID associated #1
+[20230210 10:23:46][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ....................................................................................................................................
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Check file(s) from
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Scanned source directory :
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] File list returned : null
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] No file found.... Check is OK.
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ....................................................................................................................................
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Check file(s) from
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Scanned source directory :
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] File list returned : null
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] No file found.... Check is OK.
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ....................................................................................................................................
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Get file(s) from
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] SFTP current location : /
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Get SFTP location     : /advancePay/Success
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Filtered on           : 02/09/2023 00:00:00
+[20230210 10:23:47][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Downloading -> TCS_avancepay_20230209_061835.csv
+[20230210 10:23:48][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Transactions found in TCS_avancepay_20230209_061835.csv -> 140 transaction(s).
+[20230210 10:23:48][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Build statistics to date;transactions;input_files;failed_Files
+[20230210 10:23:48][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] CSV Output file is  : Y:\03_DEV\06_GITHUB\tcs-1\Projects\SAP_AvancePay\data\transactions_saferpay_202306.csv
+[20230210 10:23:49][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Remove work file Y:\03_DEV\06_GITHUB\tcs-1\Projects\SAP_AvancePay/TCS_avancepay_20230209_061835.csv
+[20230210 10:23:49][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] Close connection to SFTP
+[20230210 10:23:49][Test-AvancePay.ps1][TCSGROUP\LD06974][DEBUG] Close SFTP session #1
+[20230210 10:23:49][Test-AvancePay.ps1][TCSGROUP\LD06974][INFO] ------------------------------------------------------------------------------------------------------------------------------------
+**********************
+PowerShell transcript end
+End time: 20230210102349
+**********************
