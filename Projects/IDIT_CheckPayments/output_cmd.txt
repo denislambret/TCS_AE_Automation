@@ -1,0 +1,5 @@
+INFO   [2022-12-20 09:41:49] Processing files Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\tmp\*.xml 
+INFO   [2022-12-20 09:41:51] File processed                                File=camt.054_P_CH2509000000120066587_1115788820_0_2022122000032882.xml.treated NumPayments=1823
+INFO   [2022-12-20 09:41:51] File processed                                File=camt.054_P_CH4009000000120011900_1111183850_0_2022121923402754.xml.treated NumPayments=57
+INFO   [2022-12-20 09:41:55] File processed                                File=camt.054_P_CH8609000000120024167_1111203185_0_2022121923521451.xml.treated NumPayments=12723
+INFO   [2022-12-20 09:41:55] CSV file output written                       NumFiles=3 OutputFile=incoming-payments.csv TotalPayments=14603
