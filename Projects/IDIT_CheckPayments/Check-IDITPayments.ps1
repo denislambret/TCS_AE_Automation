@@ -3,10 +3,10 @@
 #----------------------------------------------------------------------------------------------------------------------------------
 # Author  : DLA
 # Date    : 20221029
-# Version : 1.1
+# Version : 1.0
 #----------------------------------------------------------------------------------------------------------------------------------
 # 20221029 - Add sendMail parameter to enable / disable email diffusion
-# 20230418 - Correct different display bugs and counting logic.
+#
 #----------------------------------------------------------------------------------------------------------------------------------
 
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -251,12 +251,13 @@ PROCESS {
     $source_path = $conf.conf.pathes.camt_source_path
     Log -Level 'DEBUG' -Message "Build source CAMT files list from $source_path..."
     if (-not $date) {$date = (get-Date)};
-    #$listCamtFiles= get-ChildItem ($source_path + '\*.treated') | Where-Object {$_.LastWriteTime -ge ((get-Date).AddDays($dateShift)).Date}
-    #Log -Level 'DEBUG' -Message("get-ChildItem ("+$source_path +" '\*.treated') | Where-Object {$_.LastWriteTime -ge "+((get-Date).AddDays($dateShift)).Date+"}")
-	$listCamtFiles= get-ChildItem ($source_path + '\*.treated') | Where-Object {$_.LastWriteTime -ge ($date.AddDays($dateShift)).Date}
-    
-	$countXMLFile = ($listCamtFiles).Count
-    
+    $datestr = $date.AddDays($dateShift).toString("yyyyMMdd")
+	Log -Level 'DEBUG' -Message("List all XML for " + $datestr)
+	$listCamtFiles= get-ChildItem ($source_path + '\*.treated') | Where-Object {$_.name -match $datestr}
+	                #| Where-Object {($_.LastWriteTime -ge ($date.AddDays($dateShift)).date) -and ($_.LastWriteTime -le ($date.AddDays($dateShift+1)).date)} `
+					
+    $countXMLFile = ($listCamtFiles).Count
+	Write-Host $countXMLFile
     if ($countXMLFile -eq 0) {
         Log -Level "ERROR" -Message "No XML camt file found !!!"
         Log -Level "ERROR" -Message "Aborting Payments control."
@@ -276,8 +277,7 @@ PROCESS {
 	Log -Level 'DEBUG' -Message "Count records from source XML..."
     $countRecords = ($listCamtFiles | Get-Content | Select-String -pattern '<Ref>').Count
     Log -Level 'DEBUG' -Message $SEP_L2
-	
-    Log -Level 'DEBUG' -Message("Copy CAMT to work directory "+($script_path + "\tmp\"))
+	Log -Level 'DEBUG' -Message("Copy CAMT to work directory "+($script_path + "\tmp\"))
     $listCamtFiles | foreach-object {Copy-Item -path ($source_path + "\" + $_.name) -Destination ($script_path + "\tmp\" + $_.name)}
     $listCamtFiles = get-ChildItem ($script_path + '\tmp\camt*.*') | Where-Object {$_.LastWriteTime -ge ($date.AddDays($dateShift)).Date}
 

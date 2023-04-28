@@ -184,7 +184,7 @@ PROCESS {
         )
 
         $nopasswd     = New-Object System.Security.SecureString # defines empty sec string to not popup dialog requesting for a password
-        $credential   = New-Object System.Management.Automation.PSCredential ($user,$nopasswd) #Set Credetials to connect to server
+        $credential   = New-Object System.Management.Automation.PSCredential($user,$nopasswd) #Set Credetials to connect to server
 
         # Establish the SFTP connection
         Log -Level 'DEBUG' -Message ('Credential : ' + ($credential | Format-Table -AutoSize))
@@ -228,7 +228,7 @@ PROCESS {
         )
 
         # Reprendre le secure string a l'appel de léafonction
-        $password       = ConvertTo-SecureString $passwordd -AsPlainText -Force
+        $password       = ConvertTo-SecureString $password -AsPlainText -Force
         $credential   = New-Object System.Management.Automation.PSCredential($user, $password) 
         Log -Level 'DEBUG' -Message ('Credential : ' + $credential | Format-Table -AutoSize)
 
@@ -349,7 +349,7 @@ PROCESS {
     #       Close SFTP connection when finished
     Log -Level 'INFO' -message ('Connect to SFTP server ' + $conf.conf.sftp_servers.sftp_server_poste.computername )
 
-    $session = Connect-SFTPPrivKey -server $conf.conf.sftp_servers.sftp_server_poste.computername -user $conf.conf.sftp_servers.sftp_server_poste.computername -privKey $conf.conf.sftp_servers.sftp_server_poste.privkey
+    $session = Connect-SFTPPrivKey -server $conf.conf.sftp_servers.sftp_server_poste.computername -user $conf.conf.sftp_servers.sftp_server_poste.username -privKey $conf.conf.sftp_servers.sftp_server_poste.privkey
     
     if (($null -eq $session) -or ($session.SessionId -eq -1)) {
         log -Level 'ERROR' -Message('Unable to connect to SFTP. Please check server avaibility and credentials.')
@@ -358,7 +358,7 @@ PROCESS {
     }
     log -Level 'INFO' -Message ('Connection ID associated #' + $session.SessionId)
 
-
+    ;
     # 2.3- Check if we have file(s) in $sftp_input_path
     # Note : this directory should be empty at control execution
     log -Level 'INFO' -Message $SEP_L2
