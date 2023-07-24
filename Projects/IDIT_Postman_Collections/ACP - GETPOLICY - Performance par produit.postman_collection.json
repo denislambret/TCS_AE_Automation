@@ -1,0 +1,1706 @@
+{
+	"info": {
+		"_postman_id": "6a374651-eed8-4e42-b9f9-43e6cd5fb2c8",
+		"name": "ACP - GETPOLICY - Performance par produit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27203268"
+	},
+	"item": [
+		{
+			"name": "ACP - GET Policy Bike insurance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO011680237-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Bike insurance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO104131856-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Bike insurance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO105632329-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Bike insurance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100677736-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Bike insurance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO101525942-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Camping Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100180421-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Camping Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO105946983-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Camping Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO105703729-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Camping Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO101681181-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Camping Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100637758-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Card Assistance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012138236-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Card Assistance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000680526-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Card Assistance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000873808-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Card Assistance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000886413-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Card Assistance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001417298-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy ETI Travel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103041537-10300",
+						"00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy ETI Travel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012507538-10300",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy ETI Travel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO003147459-10300",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy ETI Travel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000782282-10300",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy ETI Travel",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000766811-10300",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001505895-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001921219-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO102474268-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012172034-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Home",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001712716-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Building",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012378276-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Building",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO000693490-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Building",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103940742-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Building",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO010792048-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Building",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO011839881-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100186506-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO010792048-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001316769-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO011293905-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Driver",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012011977-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Internet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO003234021-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Internet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO003327912-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Internet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO013047670-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Internet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO002705210-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Internet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001560578-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001270213-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012087869-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO011293905-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO002426697-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Legal Protection Private",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001516999-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103041537-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103041537-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO106409862-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO013010975-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103372014-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership Bike",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO101144755-11200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership Bike",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012941967-11200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ACP - GET Policy Membership Bike",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "675e838a884a418f18280d692f20af03",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
+					"protocol": "https",
+					"host": [
+						"iapi-acp",
+						"tcsgroup",
+						"ch"
+					],
+					"path": [
+						"tcs-acp",
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO104933730-11200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

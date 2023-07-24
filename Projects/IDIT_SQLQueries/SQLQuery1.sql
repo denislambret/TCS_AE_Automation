@@ -1,0 +1,1 @@
+select * from T_MKT_CAM_SALES_CHANNELS_TCS where id=3000162

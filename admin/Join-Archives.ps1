@@ -111,7 +111,7 @@ if (-not (Test-Path $path)) {
 } 
 
 # Create log list, group by date et log process name
-log -Level "INFO" -Message ("GET - Build log files list from $path using filter " + $filter)
+log -Level "INFO" -Message ("GET - Build files list from $path using filter " + $filter)
 $fullList = New-Object -TypeName 'System.Collections.ArrayList'
 
 if ($recurse) {
@@ -169,7 +169,7 @@ foreach ($item in $fullList) {
 
     $rc = Compress-Archive -Path ($item.Group.FullName) -DestinationPath ($dest) -Update -CompressionLevel Optimal -ErrorAction Inquire
     if ($remove) {
-            foreach ($file in $item.Group.Name) { Remove-Item $file -ErrorAction SilentlyContinue -whatif}
+            foreach ($file in $item.Group.Name) { Remove-Item $file -ErrorAction SilentlyContinue }
         }
 }
 Pop-Location

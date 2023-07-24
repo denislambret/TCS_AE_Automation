@@ -1,0 +1,4181 @@
+{
+	"info": {
+		"_postman_id": "dbd4dc94-0174-4fa1-bd68-576fee61f628",
+		"name": "IDIT - PRD - Sanity Checks NIP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18876454"
+	},
+	"item": [
+		{
+			"name": "00_Sanity checks NIP",
+			"item": [
+				{
+					"name": "00_Bearer",
+					"item": [
+						{
+							"name": "01 - partner - OAuth token SFDC",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var bearer_token_partner_sdfc = jsonData.access_token.replace(\"bearer\",\"\")\r",
+											"\r",
+											"\r",
+											"pm.test(\"Success HTTP response code : \" + pm.response.code, () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set oauth token as environment variable 'bearer_token_partner_sdfc'.\", function () {\r",
+											"    postman.setEnvironmentVariable(\"bearer_token_partner_sdfc\", bearer_token_partner_sdfc);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "{{CLIENT_ID_SFDC-TCS-PARTNER}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{CLIENT_SECRET_SFDC-TCS-PARTNER}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "all",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://{{OAUTH_PARTNER_URL}}",
+									"protocol": "https",
+									"host": [
+										"{{OAUTH_PARTNER_URL}}"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "01 - partner - Oauth token SFDC",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "fr",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{CLIENT_ID_SFDC-TCS-PARTNER}}",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{CLIENT_ID_SECRET_SFDC-TCS-PARTNER}}",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "all",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://{{OAUTH_PARTNER_URL}}",
+											"protocol": "https",
+											"host": [
+												"{{OAUTH_PARTNER_URL}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,0;"
+										},
+										{
+											"key": "Accept-Language",
+											"value": "fr"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.29.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "2d658d20-7aac-4bac-a938-179f3515bbd5"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.34.10"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "8f5edcb762408a17005ce4c2"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 16:00:23 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgNjlhODY4ZDQ0NDIxNWI1YjU2ODg4ZThlNTZmNjY3MmPEjK4N08bwAOStBKFU4Q53JgfykPgNqn2nlsWqBsQkT0rok5T1Z_MoQgrShh0K4X9QPe5Rt_oCKEtB-LFa-glsVViR8e71NxKkintRxo0JrQuoXZ7pxxDEaMmao0cpgbM\",\n    \"scope\": \"all\",\n    \"expires_in\": 3600,\n    \"consented_on\": 1648396823\n}"
+								}
+							]
+						},
+						{
+							"name": "02 - Partner - OAuth token BOOMY",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);\r",
+											"var bearer_token_partner_boomy = jsonData.access_token.replace(\"bearer\",\"\")\r",
+											"\r",
+											"\r",
+											"pm.test(\"Success HTTP response code : \" + pm.response.code, () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time is less than 1000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Set oauth token as environment variable 'bearer_token_partner_boomy'.\", function () {\r",
+											"    postman.setEnvironmentVariable(\"bearer_token_partner_boomy\", bearer_token_partner_boomy);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept-Language",
+										"value": "fr"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "grant_type",
+											"value": "client_credentials",
+											"type": "text"
+										},
+										{
+											"key": "client_id",
+											"value": "{{CLIENT_ID_BOOMMI_APPESB_PARTNER}}",
+											"type": "text"
+										},
+										{
+											"key": "client_secret",
+											"value": "{{CLIENT_SECRET_BOOMMI_APPESB_PARTNER}}",
+											"type": "text"
+										},
+										{
+											"key": "scope",
+											"value": "all",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://eapi.tcsgroup.ch/tcs/partner-catalog/oauth-tcs-native-3600/oauth2/token",
+									"protocol": "https",
+									"host": [
+										"eapi",
+										"tcsgroup",
+										"ch"
+									],
+									"path": [
+										"tcs",
+										"partner-catalog",
+										"oauth-tcs-native-3600",
+										"oauth2",
+										"token"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "02 - Partner - OAuth token BOOMY",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept-Language",
+												"value": "fr"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "client_credentials",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{CLIENT_ID_BOOMMI_APPESB_PARTNER}}",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{CLIENT_SECRET_BOOMMI_APPESB_PARTNER}}",
+													"type": "text"
+												},
+												{
+													"key": "scope",
+													"value": "all",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://eapi.tcsgroup.ch/tcs/partner-catalog/oauth-tcs-native-3600/oauth2/token",
+											"protocol": "https",
+											"host": [
+												"eapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"partner-catalog",
+												"oauth-tcs-native-3600",
+												"oauth2",
+												"token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default,100;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default,0;"
+										},
+										{
+											"key": "Accept-Language",
+											"value": "fr"
+										},
+										{
+											"key": "User-Agent",
+											"value": "PostmanRuntime/7.29.0"
+										},
+										{
+											"key": "Accept",
+											"value": "*/*"
+										},
+										{
+											"key": "Postman-Token",
+											"value": "49efe008-988b-4d3c-9faa-61ad53918573"
+										},
+										{
+											"key": "Accept-Encoding",
+											"value": "gzip, deflate, br"
+										},
+										{
+											"key": "X-Client-IP",
+											"value": "172.30.34.10"
+										},
+										{
+											"key": "X-Global-Transaction-ID",
+											"value": "8f5edcb7624ff75c008b49f0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-store"
+										},
+										{
+											"key": "Pragma",
+											"value": "no-cache"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 08 Apr 2022 08:50:36 GMT"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token_type\": \"Bearer\",\n    \"access_token\": \"AAIgZjNjNDg0MGNmNjI2ODU2MmIyMWE0YjhjMGJkNGIwZTnDg5dvINQijVaIgyIqQEXhtsVp_MpVPKw-ZtFEh94hDQV5r2cByFezkVuwCrSc0b1_h8V_o-iMkWrvoqeKcnEqGskc_jx3N0ocmUrVDpg8qIwInw5yzM7-jzjZGHumh3M\",\n    \"scope\": \"all\",\n    \"expires_in\": 3600,\n    \"consented_on\": 1649407836\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "10_insurrance",
+					"item": [
+						{
+							"name": "Policy Bike Insurance Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Bike insurance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO011680237-10500",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Bike insurance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO104131856-10500",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Bike insurance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO105632329-10500",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Bike insurance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO100677736-10500",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Bike insurance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO101525942-10500",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Camping Membership Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Camping Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO100180421-10200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Camping Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO105946983-10200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Camping Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO105703729-10200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Camping Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO101681181-10200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Camping Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO100637758-10200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Card Assistance Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Card Assistance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012138236-10400",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Card Assistance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000680526-10400",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Card Assistance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000873808-10400",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Card Assistance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000886413-10400",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Card Assistance",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001417298-10400",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Home Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Home",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001505895-11100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Home",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001921219-11100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Home",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO102474268-11100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Home",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012172034-11100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Home",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001712716-11100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy ETI Travel Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy ETI Travell",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO103041537-10300",
+												"00"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy ETI Travel",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012507538-10300",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy ETI Travel",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO003147459-10300",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy ETI Travel",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000782282-10300",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy ETI Travel",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000766811-10300",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Legal Protection Building Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Legal Protection Building",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012378276-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Building",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO000693490-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Building",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO103940742-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Building",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO010792048-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Building",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO011839881-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Legal Protection Driver Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO100186506-10700",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO010792048-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO010792048-11000",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001316769-10700",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO011293905-10700",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Driver",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012011977-10700",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Legal Protection Internet Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Legal Protection Internet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO003234021-10900",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Internet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO003327912-10900",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Internet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO013047670-10900",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Internet",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO002705210-10900",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Internet",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001560578-10900",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Private",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001270213-10800",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Private",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012087869-10800",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Membership Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO106409862-10100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO013010975-10100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO103372014-10100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO103041537-10100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO103041537-10100",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Membership Bike Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Membership Bike",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+											"protocol": "https",
+											"host": [
+												"iapi-acp",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs-acp",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO012941967-11200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership Bike",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO104933730-11200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Membership Bike",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO101144755-11200",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Policy Legal Protection Private Copy",
+							"item": [
+								{
+									"name": "PRD - GET Policy Legal Protection Private",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO002426697-10800",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Private",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO001516999-10800",
+												"01"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "PRD - GET Policy Legal Protection Private",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"// Local test variables\r",
+													"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+													"\r",
+													"// Test HTTP Response code - success if on 2xx\r",
+													"pm.test(\"HTTP response code\", () => {\r",
+													"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+													"});\r",
+													"\r",
+													"// Check response time base on environment requirement\r",
+													"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{X_IBM_CLIENTID}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
+											"protocol": "https",
+											"host": [
+												"iapi",
+												"tcsgroup",
+												"ch"
+											],
+											"path": [
+												"tcs",
+												"internal-catalog",
+												"insurance",
+												"v2",
+												"policies",
+												"PO011293905-10800",
+												"01"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "10 - NIP - internal - insurance - policy (no bearer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											"\r",
+											"// Check headers sent\r",
+											"pm.test(\"Check X Headers \" , function () {\r",
+											"    pm.response.to.have.header('X-Global-Transaction-Id');\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "{{CLIENT_ID_ALIS_INTERNAL}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{INTERNAL_CATALOG_URL}}/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
+									"protocol": "https",
+									"host": [
+										"{{INTERNAL_CATALOG_URL}}"
+									],
+									"path": [
+										"insurance",
+										"v2",
+										"policies"
+									],
+									"query": [
+										{
+											"key": "personal-reference",
+											"value": "{{PERSONAL_REF}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "10 - internal - insurance - policy (no bearer)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{CLIENT_ID_ALIS_INTERNAL}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
+											"protocol": "https",
+											"host": [
+												"{{INTERNAL_CATALOG_URL}}"
+											],
+											"path": [
+												"insurance",
+												"v2",
+												"policies"
+											],
+											"query": [
+												{
+													"key": "personal-reference",
+													"value": "{{PERSONAL_REF}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-Global-Transaction-Id",
+											"value": "fb80387d6241682a00c2d553"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "6097a8f2-ae6b-11ec-b83a-ac1e3f2c0000"
+										},
+										{
+											"key": "X-Correlation-ID",
+											"value": "6097a8f2-ae6b-11ec-b83a-ac1e3f2c0000"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "IBM App Connect Enterprise"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Mar 2022 07:47:55 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default-rate-limit,200000;name=hard-limits-per-sec,15;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default-rate-limit,199998;name=hard-limits-per-sec,14;"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"a3q2p000003MVonAAG\",\n        \"number\": \"COV-015295474\",\n        \"premium-amount\": 93,\n        \"total-discount\": 0,\n        \"written-premium\": 93,\n        \"coverage-end-date\": \"2023-03-01\",\n        \"coverage-start-date\": \"2022-03-02\",\n        \"first-effective-date\": \"2022-03-02\",\n        \"first-start-date\": \"2022-03-02\",\n        \"version\": \"1\",\n        \"policy-holder-account\": {\n            \"physical-person-id\": \"103486687\"\n        },\n        \"status\": \"Active\",\n        \"currency\": \"CHF\",\n        \"beneficiary-accounts\": [\n            {\n                \"physical-person-id\": \"103486687\"\n            }\n        ],\n        \"billing-company-code\": \"1000\",\n        \"policy-GC\": \"2018\",\n        \"section\": \"AG\",\n        \"youngster-flag\": false,\n        \"member-flag\": false,\n        \"payment-status\": true,\n        \"product-characteristic-values\": [\n            {\n                \"product-characteristic-id\": \"breakdownVariant\",\n                \"product-characteristic-value\": \"MOT\",\n                \"product-characteristic-label\": \"Avec dépannage\"\n            },\n            {\n                \"product-characteristic-id\": \"familyVariant\",\n                \"product-characteristic-value\": \"IND\",\n                \"product-characteristic-label\": \"Individuel\"\n            }\n        ],\n        \"seller-group-account\": \"28\",\n        \"product-info\": {\n            \"product-version\": \"2018\",\n            \"commercial-product-code\": \"101\",\n            \"commercial-product-name\": \"Sociétariat\"\n        },\n        \"creation-date\": \"2022-03-01\",\n        \"intermediary\": \"300083872\",\n        \"sales-channel\": \"08\",\n        \"apporteur-group\": \"28\",\n        \"is-covered\": true,\n        \"policy-active-periods\": [\n            {\n                \"start-date\": \"2022-03-02\",\n                \"end-date\": \"2023-03-01\",\n                \"is-covered\": true\n            }\n        ],\n        \"first-year-free\": false,\n        \"marketing-discount\": 0,\n        \"seller-account\": {\n            \"physical-person-id\": \"300083872\"\n        },\n        \"intermediary-account-contact\": {\n            \"legal-person-id\": \"700014924\"\n        },\n        \"seller-group\": \"28\",\n        \"sponsor\": {},\n        \"insured-objects\": [\n            {\n                \"insured-object-id\": \"a1R2p00000AkgFSEAZ\",\n                \"insured-object-type\": \"InsuredPerson\",\n                \"physical-person-id\": \"103486687\",\n                \"insured-covers\": [\n                    {\n                        \"cover-code\": \"MOBILITY_PROTECTION\",\n                        \"cover-designation\": \"MOBILITY_PROTECTION\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"LP_ACCIDENT_CASCO\",\n                        \"cover-designation\": \"LP_ACCIDENT_CASCO\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"SECTION\",\n                        \"cover-designation\": \"SECTION\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"LEXCALL\",\n                        \"cover-designation\": \"LEXCALL\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"MEMBERSHIP\",\n                        \"cover-designation\": \"MEMBERSHIP\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    }\n                ]\n            }\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "11 - NIP -partner - insurance - policy (sfdc bearer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											"\r",
+											"// Check headers sent\r",
+											"pm.test(\"Check X Headers \" , function () {\r",
+											"    pm.response.to.have.header('X-Global-Transaction-Id');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearer_token_partner_sdfc}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "{{CLIENT_ID_SFDC-TCS-PARTNER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{PARTNER_CATALOG_URL}}/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
+									"protocol": "https",
+									"host": [
+										"{{PARTNER_CATALOG_URL}}"
+									],
+									"path": [
+										"insurance",
+										"v2",
+										"policies"
+									],
+									"query": [
+										{
+											"key": "personal-reference",
+											"value": "{{PERSONAL_REF}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "11 - partner - insurance - policy (sfdc bearer)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{CLIENT_ID_SFDC-TCS-PARTNER}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://{{PARTNER_CATALOG_URL}}/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
+											"protocol": "https",
+											"host": [
+												"{{PARTNER_CATALOG_URL}}"
+											],
+											"path": [
+												"insurance",
+												"v2",
+												"policies"
+											],
+											"query": [
+												{
+													"key": "personal-reference",
+													"value": "{{PERSONAL_REF}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-Global-Transaction-Id",
+											"value": "8f5edcb762408a2f0041af51, 8f5edcb762408a2f0041af51"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "110977f4-ade7-11ec-8fd5-ac1e3f2c0000"
+										},
+										{
+											"key": "X-Correlation-ID",
+											"value": "110977f4-ade7-11ec-8fd5-ac1e3f2c0000"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "IBM App Connect Enterprise"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 16:00:48 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default-rate-limit,200000;name=hard-limits-per-sec,15;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default-rate-limit,163941;name=hard-limits-per-sec,14;"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"a3q2p000003MVonAAG\",\n        \"number\": \"COV-015295474\",\n        \"premium-amount\": 93,\n        \"total-discount\": 0,\n        \"written-premium\": 93,\n        \"coverage-end-date\": \"2023-03-01\",\n        \"coverage-start-date\": \"2022-03-02\",\n        \"first-effective-date\": \"2022-03-02\",\n        \"first-start-date\": \"2022-03-02\",\n        \"version\": \"1\",\n        \"policy-holder-account\": {\n            \"physical-person-id\": \"103486687\"\n        },\n        \"status\": \"Active\",\n        \"currency\": \"CHF\",\n        \"beneficiary-accounts\": [\n            {\n                \"physical-person-id\": \"103486687\"\n            }\n        ],\n        \"billing-company-code\": \"1000\",\n        \"policy-GC\": \"2018\",\n        \"section\": \"AG\",\n        \"youngster-flag\": false,\n        \"member-flag\": false,\n        \"payment-status\": true,\n        \"product-characteristic-values\": [\n            {\n                \"product-characteristic-id\": \"breakdownVariant\",\n                \"product-characteristic-value\": \"MOT\",\n                \"product-characteristic-label\": \"Avec dépannage\"\n            },\n            {\n                \"product-characteristic-id\": \"familyVariant\",\n                \"product-characteristic-value\": \"IND\",\n                \"product-characteristic-label\": \"Individuel\"\n            }\n        ],\n        \"seller-group-account\": \"28\",\n        \"product-info\": {\n            \"product-version\": \"2018\",\n            \"commercial-product-code\": \"101\",\n            \"commercial-product-name\": \"Sociétariat\"\n        },\n        \"creation-date\": \"2022-03-01\",\n        \"intermediary\": \"300083872\",\n        \"sales-channel\": \"08\",\n        \"apporteur-group\": \"28\",\n        \"is-covered\": true,\n        \"policy-active-periods\": [\n            {\n                \"start-date\": \"2022-03-02\",\n                \"end-date\": \"2023-03-01\",\n                \"is-covered\": true\n            }\n        ],\n        \"first-year-free\": false,\n        \"marketing-discount\": 0,\n        \"seller-account\": {\n            \"physical-person-id\": \"300083872\"\n        },\n        \"intermediary-account-contact\": {\n            \"legal-person-id\": \"700014924\"\n        },\n        \"seller-group\": \"28\",\n        \"sponsor\": {},\n        \"insured-objects\": [\n            {\n                \"insured-object-id\": \"a1R2p00000AkgFSEAZ\",\n                \"insured-object-type\": \"InsuredPerson\",\n                \"physical-person-id\": \"103486687\",\n                \"insured-covers\": [\n                    {\n                        \"cover-code\": \"MOBILITY_PROTECTION\",\n                        \"cover-designation\": \"MOBILITY_PROTECTION\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"LP_ACCIDENT_CASCO\",\n                        \"cover-designation\": \"LP_ACCIDENT_CASCO\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"SECTION\",\n                        \"cover-designation\": \"SECTION\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"LEXCALL\",\n                        \"cover-designation\": \"LEXCALL\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    },\n                    {\n                        \"cover-code\": \"MEMBERSHIP\",\n                        \"cover-designation\": \"MEMBERSHIP\",\n                        \"start-date\": \"2022-03-02\",\n                        \"end-date\": \"2023-03-01\",\n                        \"mandatory\": false\n                    }\n                ]\n            }\n        ]\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "20_check-soc",
+					"item": [
+						{
+							"name": "20 - NIP -  partner - check-soc-status (boomy bearer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											"\r",
+											"// Check headers sent\r",
+											"pm.test(\"Check X Headers \" , function () {\r",
+											"    pm.response.to.have.header('X-Global-Transaction-Id');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearer_token_partner_boomy}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "{{CLIENT_ID_BOOMMI_APPESB_PARTNER}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{PARTNER_CATALOG_URL}}/clients-prospects/v1/check-soc-status?refPerso={{PERSONAL_REF}}",
+									"protocol": "https",
+									"host": [
+										"{{PARTNER_CATALOG_URL}}"
+									],
+									"path": [
+										"clients-prospects",
+										"v1",
+										"check-soc-status"
+									],
+									"query": [
+										{
+											"key": "refPerso",
+											"value": "{{PERSONAL_REF}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "20 - partner - check-soc-status (boomy bearer)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{CLIENT_ID_BOOMMI_APPESB_PARTNER}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://{{PARTNER_CATALOG_URL}}/clients-prospects/v1/check-soc-status?refPerso={{PERSONAL_REF}}",
+											"protocol": "https",
+											"host": [
+												"{{PARTNER_CATALOG_URL}}"
+											],
+											"path": [
+												"clients-prospects",
+												"v1",
+												"check-soc-status"
+											],
+											"query": [
+												{
+													"key": "refPerso",
+													"value": "{{PERSONAL_REF}}"
+												}
+											]
+										}
+									},
+									"_postman_previewlanguage": null,
+									"header": null,
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "30_observation",
+					"item": [
+						{
+							"name": "30 - NIP - internal - observation (no bearer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											"\r",
+											"// Check headers sent\r",
+											"pm.test(\"Check X Headers \" , function () {\r",
+											"    pm.response.to.have.header('X-Global-Transaction-Id');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"user-agent": true,
+									"connection": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-IBM-Client-Id",
+										"value": "{{CLIENT_ID_ALIS_INTERNAL}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://{{INTERNAL_CATALOG_URL}}/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
+									"protocol": "https",
+									"host": [
+										"{{INTERNAL_CATALOG_URL}}"
+									],
+									"path": [
+										"clients-prospects",
+										"v1",
+										"customerObservationLines"
+									],
+									"query": [
+										{
+											"key": "personal-reference",
+											"value": "{{PERSONAL_REF}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "30 - internal - observation (no bearer)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-IBM-Client-Id",
+												"value": "{{CLIENT_ID_ALIS_INTERNAL}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
+											"protocol": "https",
+											"host": [
+												"{{INTERNAL_CATALOG_URL}}"
+											],
+											"path": [
+												"clients-prospects",
+												"v1",
+												"customerObservationLines"
+											],
+											"query": [
+												{
+													"key": "personal-reference",
+													"value": "{{PERSONAL_REF}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-Global-Transaction-Id",
+											"value": "fb80387d6241683400c33641"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "662cfb96-ae6b-11ec-8874-ac1e3f2c0000"
+										},
+										{
+											"key": "X-Correlation-ID",
+											"value": "662cfb96-ae6b-11ec-8874-ac1e3f2c0000"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "IBM App Connect Enterprise"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 28 Mar 2022 07:48:04 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default-rate-limit,200000;name=hard-limits-per-sec,15;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default-rate-limit,199998;name=hard-limits-per-sec,14;"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "[]"
+								}
+							]
+						},
+						{
+							"name": "31 - NIP - partner - observation (sfdc bearer)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											"\r",
+											"// Check headers sent\r",
+											"pm.test(\"Check X Headers \" , function () {\r",
+											"    pm.response.to.have.header('X-Global-Transaction-Id');\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{bearer_token_partner_sdfc}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{PARTNER_CATALOG_URL}}/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
+									"protocol": "https",
+									"host": [
+										"{{PARTNER_CATALOG_URL}}"
+									],
+									"path": [
+										"clients-prospects",
+										"v1",
+										"customerObservationLines"
+									],
+									"query": [
+										{
+											"key": "personal-reference",
+											"value": "{{PERSONAL_REF}}"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "31 - partner - observation (sfdc bearer)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://{{PARTNER_CATALOG_URL}}/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
+											"protocol": "https",
+											"host": [
+												"{{PARTNER_CATALOG_URL}}"
+											],
+											"path": [
+												"clients-prospects",
+												"v1",
+												"customerObservationLines"
+											],
+											"query": [
+												{
+													"key": "personal-reference",
+													"value": "{{PERSONAL_REF}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "Keep-Alive"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "X-Global-Transaction-Id",
+											"value": "8f5edcb762408a49003471f3, 8f5edcb762408a49003471f3"
+										},
+										{
+											"key": "X-Request-ID",
+											"value": "20440dba-ade7-11ec-8874-ac1e3f2c0000"
+										},
+										{
+											"key": "X-Correlation-ID",
+											"value": "20440dba-ade7-11ec-8874-ac1e3f2c0000"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=utf-8"
+										},
+										{
+											"key": "Server",
+											"value": "IBM App Connect Enterprise"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 27 Mar 2022 16:01:13 GMT"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "name=default-rate-limit,200000;name=hard-limits-per-sec,15;"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "name=default-rate-limit,199999;name=hard-limits-per-sec,14;"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "[]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "100_System_Batch_engine",
+					"item": [
+						{
+							"name": "101 - NIP - IDIT WSI - Get batch dashboard list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// Local test variables\r",
+											"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+											"\r",
+											"// Test HTTP Response code - success if on 2xx\r",
+											"pm.test(\"HTTP response code\", () => {\r",
+											"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+											"});\r",
+											"\r",
+											"// Check response time base on environment requirement\r",
+											"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "userName",
+										"value": "{{WSI_IDIT_USER}}"
+									},
+									{
+										"key": "password",
+										"value": "{{WSI_IDIT_PASSWORD}}"
+									}
+								],
+								"url": {
+									"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/batch/dashboard?",
+									"protocol": "https",
+									"host": [
+										"{{WSI_IDIT_URL}}"
+									],
+									"path": [
+										"idit-web",
+										"api",
+										"batch",
+										"dashboard"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "bearer_token_partner_sdfc",
+			"value": "0",
+			"type": "string"
+		}
+	]
+}
