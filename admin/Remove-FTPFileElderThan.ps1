@@ -1,40 +1,36 @@
 #----------------------------------------------------------------------------------------------------------------------------------
-# Script  : Copy-IDITPaymentsCamt.ps1
+# Script  : Remove_FTPFileElderThan.ps1
 #----------------------------------------------------------------------------------------------------------------------------------
-# Author  : DLA
-# Date    : 20230414
-# Version : 1.0
+# Author  : Denis Lambret
+# Date    : 17.08.2023
+# Version : 0.1
 #----------------------------------------------------------------------------------------------------------------------------------
-# 20230414 - Initial version
-#
+# Command parameters
+#----------------------------------------------------------------------------------------------------------------------------------
+#  -source
+#  -days
+#  -hours
+#  -months
+#  -filter
+#----------------------------------------------------------------------------------------------------------------------------------
+# Synopsys
+#----------------------------------------------------------------------------------------------------------------------------------
+# Remove a selection of file from a source FTP directory based on filter param
 #----------------------------------------------------------------------------------------------------------------------------------
 
-#----------------------------------------------------------------------------------------------------------------------------------
-#                                             C O M M A N D   P A R A M E T E R S
-#----------------------------------------------------------------------------------------------------------------------------------
-param (
-    # configuration file
-	[Parameter( 
-        Mandatory = $false,
-        Position = 1
-    )]
-    $conf,
+param(
+        [Parameter(Mandatory=$true)][string] $source,
+        [switch] $recurse,
+        [Parameter(Mandatory = $true,Position = 1)] $conf,
+        [Parameter(Mandatory=$true)][string] $filter,
+        [int] $months,
+        [int] $hours,
+        [int] $days,
+        [int] $minutes,
+        [int] $seconds,
+        [bool] $help
+    )
     
-    # sendMail diffusion toggle
-	[Parameter( 
-                Mandatory = $false,
-                Position = 1
-            )]
-    [switch]
-    $sendMail,
-	
-    # help switch
-    [switch]
-    $help
-)
-
-
-
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                 I N I T I A L I Z A T I O N
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -44,118 +40,31 @@ param (
         Create log instance
 #>
 BEGIN {
-    # Import root paths and constants
     Import-Module libEnvRoot
     Import-Module libConstants
     Import-Module Posh-SSH
-
-    $script_path      = $global:ScriptRoot + "\Projects\IDIT_CheckPayments"
+    $script_path      = $global:ScriptRoot + "\admin"
     $config_path      = $script_path + "\PRD.conf"
     $log_path         = $global:LogRoot
     $lib_path         = $env:PWSH_SCRIPTS_LIBS
     $Env:PSModulePath = $Env:PSModulePath + ";" + $lib_path
-     
-    # Import external libs
+    $Env:PSModulePath = $Env:PSModulePath + ";" + $env:PWSH_SCRIPTS_LIBS
+    $log_path = $env:PWSH_SCRIPTS_LOGS
     Import-Module libLog
-    Import-Module libSendMail
-    
     if (-not (Start-Log -path $log_path -Script $MyInvocation.MyCommand.Name)) { exit 1 }
-    $rc = Set-DefaultLogLevel -Level 'INFO'
-    $rc = Set-MinLogLevel -Level 'DEBUG'
+    $rc = Set-DefaultLogLevel -Level "INFO"
+    $rc = Set-MinLogLevel -Level "DEBUG"
 }
 
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                               C O M M A N D   P A R A M E T E R S
+#----------------------------------------------------------------------------------------------------------------------------------
 PROCESS {
-    #----------------------------------------------------------------------------------------------------------------------------------
-    #                                                   I N C L U D E S 
-    #----------------------------------------------------------------------------------------------------------------------------------
-   
-    #----------------------------------------------------------------------------------------------------------------------------------
-    #                                            G L O B A L   V A R I A B L E S
-    #----------------------------------------------------------------------------------------------------------------------------------
-    <#
-        .SYNOPSIS
-            Global variables
-        
-        .DESCRIPTION
-            Set script's global variables as AUTHOR, VERSION, and Last modif date
-			Also define output separator line size for nice formating
-			Define standart script exit codes
-    #>
-    $VERSION      = "1.0"
-    $AUTHOR       = "DLA"
-    $SCRIPT_DATE  = "20230413"
-    $LineSize     = 112
-    $SEP_L1       = '-' * $LineSize
-    $SEP_L2       = '.' * $LineSize
-    $EXIT_OK      = 0
-    $EXIT_KO      = 1
-    $dateShift    = 0
-    
-    $recipients = @(" ")
 
     #----------------------------------------------------------------------------------------------------------------------------------
     #                                                  F U N C T I O N S 
     #----------------------------------------------------------------------------------------------------------------------------------
 
-    #..................................................................................................................................
-    # Function : helper
-    #..................................................................................................................................
-    # Display help message and exit gently script with EXIT_OK
-    #..................................................................................................................................
-    function helper {
-        "Do something usefull for you..."
-        " "
-        "Options : "
-        "-conf       Config file - Default is PROD.conf"
-        "-sendmail   Send info email to distribution list"
-        "-Help       Display command help"
-    }
-    
-    #..................................................................................................................................
-    # Function : Clean-TemporaryDirectory
-    #..................................................................................................................................
-    # Execute query to retrieve list of payments from IDIT
-    #..................................................................................................................................
-    function Clean-TemporaryDirectory {
-        Log -Level 'DEBUG' -Message  "Clean temporary directory...."
-        Remove-Item ($script_path + "\tmp\*.*")
-        if (test-path ($script_path + "\incoming-payments.csv")) { Remove-Item ($script_path + "\incoming-payments.csv")}
-    }
-  
-    #..................................................................................................................................
-    # Function : Send-Message
-    #..................................................................................................................................
-    # Send email message to TCS SMTP server
-    #..................................................................................................................................
-    function Send-Message {
-        param(
-            [string] $subject,
-            [string] $body
-        )
-
-        $from = $conf.conf.mail.from
-        $recipients = $conf.conf.mail.to
-        $secStr = New-Object System.Security.SecureString
-        $creds = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "NTAUTHORITY\ANONYMOUSLOGON",$secStr
-        $myAttachment = ($script_path + "/tmp/" +  $global:log_name)
-        Log -Level 'DEBUG' -Message ("Send email to mail list")
-        Copy-Item ($global:log_path + "\" +  $global:log_name)  ($script_path + "/tmp")
-        
-        try {
-			send-mailmessage -to $recipients -from $from -subject $subject -body $body -attachment $myAttachment -smtpServer $conf.conf.mail.smtp_srv -credential $creds
-		}
-		catch {
-			Log -Level 'ERROR' -Message('Error While sending mail to distribution list')
-			Log -Level 'ERROR' -Message($error)
-			
-			# Return KO
-			return $false
-		}
-		
-		# Return OK
-		return $true
-    }
-    
     #..................................................................................................................................
     # Function : Get-SFTPPrivKey()
     #..................................................................................................................................
@@ -290,9 +199,9 @@ PROCESS {
     }
 
     #..................................................................................................................................
-    # Function : Count-Transaction
+    # Function : Close-SFTP
     #..................................................................................................................................
-    # Count total number of transaction in source XML camt file
+    # Close SFTP connection
     #..................................................................................................................................
     function Close-SFTP() {
         # Close session
@@ -304,22 +213,32 @@ PROCESS {
     }
     
     #----------------------------------------------------------------------------------------------------------------------------------
-    #                                             _______ _______ _____ __   _
-    #                                             |  |  | |_____|   |   | \  |
-    #                                             |  |  | |     | __|__ |  \_|
+    #                                                 G L O B A L   V A R I A B L E S
     #----------------------------------------------------------------------------------------------------------------------------------
-    <#
-        .DESCRIPTION
-    #>
+    $VERSION = "0.1"
+    $AUTHOR  = "Denis Lambret"
+    $SEP_L1  = '----------------------------------------------------------------------------------------------------------------------'
+    $SEP_L2  = '......................................................................................................................'
     
-    # Script info 
-    Log -Level 'INFO' -Message $SEP_L1
-    log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " v" + $VERSION)
-    Log -Level 'INFO' -Message $SEP_L1
+    #----------------------------------------------------------------------------------------------------------------------------------
+    #                                                             M A I N
+    #----------------------------------------------------------------------------------------------------------------------------------
+    Log -Level 'INFO' -Message ($SEP_L1)
+    Log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " - ver "+ $VERSION)
+    Log -Level 'INFO' -Message ($SEP_L1)
+	
+    if ((-not $path) -or (-not (Test-Path -path $path))) {
+        Log -Level 'ERROR' -Message "Please provide a valid path"
+        Stop-Log
+        exit 0
+    }
+
+    if ((-not $seconds) -and (-not $minutes) -and (-not $hours) -and (-not $days) -and (-not $months)) {
+        Log -Level 'ERROR' -Message "Please provide a valid period for search"
+        Stop-Log
+        exit 0
+    }
     
-    # Display inline help if required
-    if ($help) { helper }
- 
     # 1 - Load script config file
     if ($conf -and (Test-Path $conf)) {
         $config_path = $conf
@@ -336,20 +255,8 @@ PROCESS {
 		exit $EXIT_KO
     }
     
-    # 2 - Get CAMT from Share
-    # 2.1 - Check input parameters & initialize work variables
-    if (-not $date) {
-        $selectDate = (get-date).AddDays(-1) 
-    } else {
-        $selectDate = [Datetime]::ParseExact($date, 'yyyyMMdd 00:00:00', $null)
-        $selectDate = $selectDate.AddHours(-24);
-    }
-    log -Level 'DEBUG' -Message('Selected date : ' + $selectDate)
-
-    # 2.2 - Open SFTP connection and retrieve file based on date given on invokation
-    #       Close SFTP connection when finished
+    # 2- Build file candidates list
     Log -Level 'INFO' -message ('Connect to SFTP server ' + $conf.conf.sftp_servers.sftp_server_poste.computername )
-
     $session = Connect-SFTPPrivKey -server $conf.conf.sftp_servers.sftp_server_poste.computername -user $conf.conf.sftp_servers.sftp_server_poste.username -privKey $conf.conf.sftp_servers.sftp_server_poste.privkey
     
     if (($null -eq $session) -or ($session.SessionId -eq -1)) {
@@ -357,23 +264,35 @@ PROCESS {
         log -Level 'ERROR' -Message('Aborting control with KO code.')
         Exit-KO
     }
+
     log -Level 'INFO' -Message ('Connection ID associated #' + $session.SessionId)
-
-    ;
-    # 2.3- Check if we have file(s) in $sftp_input_path
-    # Note : this directory should be empty at control execution
-    log -Level 'INFO' -Message $SEP_L2
-    $countInputFiles = 0
-    $listRemoteFiles = Get-SFTPFiles -remotePath $conf.conf.sftp_servers.sftp_server_poste.sftp_input_path -localPath $conf.conf.pathes.backup_path -filter '*camt*' -date $selectDate
-    $countInputFiles = ($listRemoteFiles).Count
-    Log -Level 'INFO' -message ($countInputFiles + ' file(s) copied')
-
-    # 3 - Do post cleaning of tmp directory and end sftp connection
-    Log -Level 'INFO' -Message $SEP_L2
-    Close-SFTP;
+    Log -Level 'INFO' -Message ("Build file list applying " + $filter + " filter pattern for directory " + $source) 
+    $list = Get-SFTPFiles -RemotePath $source -Filter $filter -Date (Get-Date -f 'YYYY-MM-DD')
+     
+    Log -Level 'INFO' -Message ($SEP_L1)
+    if     ($months)  { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addMonths(-1 * $months)} }
+    elseif ($days)    { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addDays(-1 * $days)} }
+    elseif ($hours)   { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addHours(-1 * $hours)} }
+    elseif ($minutes) { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addMinutes(-1 * $minutes)} }
+    elseif ($seconds) { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addSeconds(-1 * $seconds)} }
     
-    # 4 - Standard exit
-    Stop-Log | Out-Null
-    exit $EXIT_OK
+	Log -Level 'INFO' -Message (" " + (($list).Count) + " file(s) electable for removal found.") 
+    
+    # 3 - Process candidates list
+	foreach ($item in $list) {
+        
+        Log -Level "INFO" -Message ("REMOVE source: " + $item)
+        try {
+            Remove-Item $item -recurse -WhatIf
+        }
+        catch {
+            Log -Level 'ERROR' -Message ("REMOVE source: " + $item + " -> Unable to remove file !")
+        }
+    }
+    
+    # 4 - End processing here
+    close-SFTP
+    Stop-Log
+    exit EXIT_OK
     #----------------------------------------------------------------------------------------------------------------------------------
 }

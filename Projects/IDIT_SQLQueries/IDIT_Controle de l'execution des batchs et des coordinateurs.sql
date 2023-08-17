@@ -3,18 +3,24 @@ select id, JOB_DESC, SYSTEM_TRIGGER_CRON_EXPR, *
 from T_BATCH_JOB
 where SYSTEM_TRIGGER_CRON_EXPR is not null
 
--- Liste des schedules
+-- Liste des schedules Quartz
 select top 1000 *
 from QRTZ_CRON_TRIGGERS as cr
 
 select top 1000 *
 from QRTZ_TRIGGERS
 
--- Detail du Daily standard
+-- Detail du Daily standard coordinator
 select *
-from IDIT_ACP.dbo.T_JOB_PLAN_STEP 
+from T_JOB_PLAN_STEP 
 where plan_id=1000003
-order by DEPEND_ON
+order by DEPEND_ON;
+
+-- Detail du GL Export coordinator
+select *
+from T_JOB_PLAN_STEP
+where plan_id=1000008
+order by DEPEND_ON;
 
 -- Detail du BIG Renew Daily 
 --select * from iDIT_ACP.dbo.T_BATCH_JOB where id='1000072'

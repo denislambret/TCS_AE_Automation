@@ -9,10 +9,12 @@ update sh_batch_log set status = 21 where status in (19,20,23) and transfer_type
 update t_batch_job_group set IS_LONG_AND_LOW_FREQUENT=1 where id= 1000022;
 
 -- 4. Correction limites daily + big renew
-update T_JOB_PLAN_STEP set NOT_BEFORE='' where plan_id=1000003;
-update T_JOB_PLAN_STEP set NOT_AFTER='' where plan_id=1000003;
-update T_JOB_PLAN_STEP set NOT_BEFORE='' where plan_id=1000007;
-update T_JOB_PLAN_STEP set NOT_AFTER='' where plan_id=1000007;
+update T_JOB_PLAN_STEP set NOT_BEFORE=null where plan_id=1000003;
+update T_JOB_PLAN_STEP set NOT_AFTER=null where plan_id=1000003;
+update T_JOB_PLAN_STEP set NOT_BEFORE=null where plan_id=1000007;
+update T_JOB_PLAN_STEP set NOT_AFTER=null where plan_id=1000007;
+update T_JOB_PLAN_STEP set NOT_BEFORE=null where plan_id=1000002;
+update T_JOB_PLAN_STEP set NOT_AFTER=null where plan_id=1000002;
 
 -- 5.Correction limites du GL
 update T_JOB_PLAN_STEP set NOT_AFTER='18:00' where id=1000072;
