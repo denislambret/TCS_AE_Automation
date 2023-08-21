@@ -22,7 +22,7 @@ param(
         [Parameter(Mandatory=$true)][string] $source,
         [switch] $recurse,
         [Parameter(Mandatory = $true,Position = 1)] $conf,
-        [Parameter(Mandatory=$true)][string] $filter,
+        [Parameter(Mandatory = $false)][string] $filter,
         [int] $months,
         [int] $hours,
         [int] $days,
@@ -53,7 +53,7 @@ BEGIN {
     Import-Module libLog
     if (-not (Start-Log -path $log_path -Script $MyInvocation.MyCommand.Name)) { exit 1 }
     $rc = Set-DefaultLogLevel -Level "INFO"
-    $rc = Set-MinLogLevel -Level "DEBUG"
+    $rc = Set-MinLogLevel -Level "INFO"
 }
 
 #----------------------------------------------------------------------------------------------------------------------------------
@@ -133,12 +133,13 @@ PROCESS {
             [Parameter( 
                 Mandatory = $false,
                 Position = 3
-            )] [SecureString]$password
+            )] [String] $password
         )
 
         # Reprendre le secure string a l'appel de léafonction
-        $password       = ConvertTo-SecureString $password -AsPlainText -Force
-        $credential   = New-Object System.Management.Automation.PSCredential($user, $password) 
+        #$password       = ConvertTo-SecureString $password -AsPlainText -Force
+        $sec_pwd        = $password | ConvertTo-SecureString -AsPlainText -Force
+        $credential     = New-Object System.Management.Automation.PSCredential($user, $sec_pwd) 
         Log -Level 'DEBUG' -Message ('Credential : ' + $credential | Format-Table -AutoSize)
 
         # Establish the SFTP connection
@@ -160,7 +161,7 @@ PROCESS {
     #..................................................................................................................................
     # Retrieve files from SFTP according a date
     #..................................................................................................................................
-    function Get-SFTPFiles() {
+    function Get-SFTPFileList() {
         param(
             [string] $remotePath,
             [string] $localPath,
@@ -168,34 +169,30 @@ PROCESS {
             [dateTime] $date
         );
 
-        $sftp_source = '/advancePay/Success'
-        
-        
+                
         # Get remote location
+               
+        try {
+            Set-SFTPLocation -SessionId $Session.SessionId -Path $remotePath
+        }
+        catch {
+            Log -Level 'ERROR' -Message($remotePath + ' does not seem to exist.')
+            Log -Level 'ERROR' -Message($Error)
+            return $null
+        }
+        
+        
+        
         $location = Get-SFTPLocation -SessionId $session.SessionId 
-        Log -Level 'DEBUG' -message('SFTP current location                  : ' + $location)
-        Log -Level 'DEBUG' -message('Get SFTP location                      : ' + $remotePath)
-        Log -Level 'DEBUG' -message('Get local location                     : ' + $localPath)
-        Log -Level 'DEBUG' -message('Filtered on date equal or greater than : ' + $date.date)
+        Log -Level 'INFO' -message('Get SFTP location                     : ' + $remotePath)
+        Log -Level 'INFO' -message('Filtered on date equal or lesser than : ' + $date.date)
 
         # Lists directory files into variable
-        $fileList = Get-SFTPChildItem -sessionID $session.SessionID -path $remotePath`
-                  | where-object {$_.LastWriteTime.date -gt $date.date} `
-                  | Sort-Object -Property LastWriteTime -Descending
-
-        # Download content(s) for counting
-        if ($fileList) {
-            $fileList | ForEach-Object {
-                try {
-                    Log -Level 'INFO' -Message("Downloading -> " + $_.name + " to " + $localPath + '\' + $_.name )
-                    Get-SFTPFile -SessionId $session.SessionID -RemoteFile ($remotePath + '/' + $_.name) -localPath $localPath -overwrite
-                }
-                catch {
-                    log -Level 'ERROR' -Message('Error while downloading ' + $_.name + ': ' + $error )
-                }
-            }
-        }
-        return $fileList
+        Log -Level 'DEBUG' -Message('Get-SFTPChildItem -sessionID '+$session.SessionID+' -path '+$remotePath)
+        $fileList = Get-SFTPChildItem -sessionID $session.SessionID ` -path $remotePath 
+                  | where-object {$_.LastWriteTime.date -lt $date.date} `
+                  | Sort-Object -Property LastWriteTime -Descending 
+       return $fileList
     }
 
     #..................................................................................................................................
@@ -205,7 +202,7 @@ PROCESS {
     #..................................................................................................................................
     function Close-SFTP() {
         # Close session
-        Log -Level 'DEBUG' -message ('Close SFTP session #' + $session.SessionId)
+        Log -Level 'INFO' -message ('Close SFTP session #' + $session.SessionId)
         Remove-SFTPSession -SessionId $session.SessionID | Out-Null
         
         # End normally SFTP routine.
@@ -226,17 +223,11 @@ PROCESS {
     Log -Level 'INFO' -Message ($SEP_L1)
     Log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " - ver "+ $VERSION)
     Log -Level 'INFO' -Message ($SEP_L1)
-	
-    if ((-not $path) -or (-not (Test-Path -path $path))) {
-        Log -Level 'ERROR' -Message "Please provide a valid path"
-        Stop-Log
-        exit 0
-    }
+
 
     if ((-not $seconds) -and (-not $minutes) -and (-not $hours) -and (-not $days) -and (-not $months)) {
-        Log -Level 'ERROR' -Message "Please provide a valid period for search"
-        Stop-Log
-        exit 0
+        Log -Level 'WARNING' -Message "Please provide a valid period for search.... Set one week in the past by default."
+        $days = 7
     }
     
     # 1 - Load script config file
@@ -256,20 +247,27 @@ PROCESS {
     }
     
     # 2- Build file candidates list
-    Log -Level 'INFO' -message ('Connect to SFTP server ' + $conf.conf.sftp_servers.sftp_server_poste.computername )
-    $session = Connect-SFTPPrivKey -server $conf.conf.sftp_servers.sftp_server_poste.computername -user $conf.conf.sftp_servers.sftp_server_poste.username -privKey $conf.conf.sftp_servers.sftp_server_poste.privkey
+    Log -Level 'INFO' -message ('Connect to SFTP server ' + $conf.conf.sftp_servers.sftp_server.computername )
+    $session = Connect-SFTPDefault -server $conf.conf.sftp_servers.sftp_server.computername -user $conf.conf.sftp_servers.sftp_server.username -password $conf.conf.sftp_servers.sftp_server.userpwd
     
-    if (($null -eq $session) -or ($session.SessionId -eq -1)) {
+    if (($session -eq $null) -or ($session.SessionId -eq -1)) {
         log -Level 'ERROR' -Message('Unable to connect to SFTP. Please check server avaibility and credentials.')
         log -Level 'ERROR' -Message('Aborting control with KO code.')
         Exit-KO
     }
 
-    log -Level 'INFO' -Message ('Connection ID associated #' + $session.SessionId)
+    log -Level 'DEBUG' -Message ('Connection ID associated #' + $session.SessionId)
     Log -Level 'INFO' -Message ("Build file list applying " + $filter + " filter pattern for directory " + $source) 
-    $list = Get-SFTPFiles -RemotePath $source -Filter $filter -Date (Get-Date -f 'YYYY-MM-DD')
-     
+    $list = Get-SFTPFileList -RemotePath $source -Filter $filter -Date (Get-Date -f 'yyyy-MM-dd')
+    
+    if ($list -eq $null) {
+        # No file to proceed
+        $rc = Close-SFTP
+        $rc = Stop-Log
+        exit $EXIT_OK
+    }
     Log -Level 'INFO' -Message ($SEP_L1)
+    
     if     ($months)  { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addMonths(-1 * $months)} }
     elseif ($days)    { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addDays(-1 * $days)} }
     elseif ($hours)   { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addHours(-1 * $hours)} }
@@ -277,13 +275,15 @@ PROCESS {
     elseif ($seconds) { $list = $list | Where-Object {$_.LastWriteTime -lt (Get-Date).addSeconds(-1 * $seconds)} }
     
 	Log -Level 'INFO' -Message (" " + (($list).Count) + " file(s) electable for removal found.") 
+    Log -Level 'INFO' -Message ($SEP_L2)
     
     # 3 - Process candidates list
-	foreach ($item in $list) {
+    foreach ($item in $list) {
         
-        Log -Level "INFO" -Message ("REMOVE source: " + $item)
         try {
-            Remove-Item $item -recurse -WhatIf
+            # Remove-Item $item -recurse -WhatIf
+            Log -Level 'DEBUG' -Message ('Remove : ' + $item.Name)
+            #Remove-SFTPItem -path $item.Name
         }
         catch {
             Log -Level 'ERROR' -Message ("REMOVE source: " + $item + " -> Unable to remove file !")
@@ -291,8 +291,9 @@ PROCESS {
     }
     
     # 4 - End processing here
-    close-SFTP
-    Stop-Log
-    exit EXIT_OK
+    $rc = Close-SFTP
+    $rc = Stop-Log
+    Log -Level 'INFO' -Message ($SEP_L1)
+    exit $EXIT_OK
     #----------------------------------------------------------------------------------------------------------------------------------
 }
