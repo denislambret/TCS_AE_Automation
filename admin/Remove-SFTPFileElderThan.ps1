@@ -21,7 +21,7 @@
 param(
         [Parameter(Mandatory=$true)][string] $source,
         [switch] $recurse,
-        [Parameter(Mandatory = $true,Position = 1)] $conf,
+        [Parameter(Mandatory = $false,Position = 1)] $conf,
         [Parameter(Mandatory = $false)][string] $filter,
         [int] $months,
         [int] $hours,
@@ -43,13 +43,13 @@ BEGIN {
     Import-Module libEnvRoot
     Import-Module libConstants
     Import-Module Posh-SSH
-    $script_path      = $global:ScriptRoot + "\admin"
-    $config_path      = $script_path + "\PRD.conf"
+    $script_path      = $global:ScriptRoot + "\tools"
+    $config_path      = $script_path + "\IDIT_INPAYMENTS.conf"
     $log_path         = $global:LogRoot
     $lib_path         = $env:PWSH_SCRIPTS_LIBS
     $Env:PSModulePath = $Env:PSModulePath + ";" + $lib_path
     $Env:PSModulePath = $Env:PSModulePath + ";" + $env:PWSH_SCRIPTS_LIBS
-    $log_path = $env:PWSH_SCRIPTS_LOGS
+    #$log_path = $env:PWSH_SCRIPTS_LOGS
     Import-Module libLog
     if (-not (Start-Log -path $log_path -Script $MyInvocation.MyCommand.Name)) { exit 1 }
     $rc = Set-DefaultLogLevel -Level "INFO"
@@ -189,9 +189,7 @@ PROCESS {
 
         # Lists directory files into variable
         Log -Level 'DEBUG' -Message('Get-SFTPChildItem -sessionID '+$session.SessionID+' -path '+$remotePath)
-        $fileList = Get-SFTPChildItem -sessionID $session.SessionID ` -path $remotePath 
-                  | where-object {$_.LastWriteTime.date -lt $date.date} `
-                  | Sort-Object -Property LastWriteTime -Descending 
+        $fileList = Get-SFTPChildItem -sessionID $session.SessionID ` -path $remotePath | where-object {$_.LastWriteTime.date -lt $date.date} | Sort-Object -Property LastWriteTime -Descending 
        return $fileList
     }
 
@@ -282,11 +280,12 @@ PROCESS {
         
         try {
             # Remove-Item $item -recurse -WhatIf
-            Log -Level 'DEBUG' -Message ('Remove : ' + $item.Name)
-            #Remove-SFTPItem -path $item.Name
+            Log -Level 'INFO' -Message ('Remove : ' + $item.fullname)
+            Remove-SFTPItem -sessionID $session.SessionID -path $item.fullname
         }
         catch {
             Log -Level 'ERROR' -Message ("REMOVE source: " + $item + " -> Unable to remove file !")
+			Log -Level 'ERROR' -Message ("Error code : " + $error)
         }
     }
     
