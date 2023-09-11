@@ -43,7 +43,7 @@ BEGIN {
     Import-Module libEnvRoot
     Import-Module libConstants
     Import-Module Posh-SSH
-    $script_path      = $global:ScriptRoot + "\tools"
+    $script_path      = $global:ScriptRoot + "\admin"
     $config_path      = $script_path + "\IDIT_INPAYMENTS.conf"
     $log_path         = $global:LogRoot
     $lib_path         = $env:PWSH_SCRIPTS_LIBS
