@@ -13,8 +13,8 @@ $countCCM = (Get-ChildItem $lastDir/*.csv  | Sort-Object $_.LastWriteDate | gc).
 write-Host "CCM Files     : " $countCCMFiles " file(s)"
 write-Host "CCM count     : " $countCCM " record(s)"
 # Count Scan
-$scanFile = Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -last 1
-$countScan = (Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -last 1 | gc).Count
+$scanFile = Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -first 1
+$countScan = (Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -first 1 | gc).Count
 write-Host "Scan index    : " ($countScan - 1) 
 write-Host "Scanned docs  : " ($countScan - 1) " record(s)"
 write-Host "----------------------------------------------------------------------------------------------------------"
