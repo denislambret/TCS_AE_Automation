@@ -18,9 +18,7 @@
 #                                            C O M M A N D   P A R A M E T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
 param (  
-    # Server IP + port to check
-	[string]$conf,
-	
+    
 	# Connection limits
 	[int]$Limit,
 	
@@ -164,22 +162,12 @@ PROCESS {
     log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " v" + $VERSION)
     Log -Level 'INFO' -Message $SEP_L1
     
-    # Display inline help if required
-    if ($conf -and (Test-Path $conf)) {
-		$conf_path = $conf
-	} else {
-		Log -Level 'ERRROR' -Message('Configuration file not found!')
-		Exit-KO
-	}
-	
 	if ($limit) {
 		$LimitConnections = $limit
 	}
 	
 	if ($help) { helper }
     
-    # 0 - Load config file
-    $conf_string = Get-Content ($conf)
 
     # 1 - Get netstat connections list on server
     $list = &netstat -a| Select-String -pattern 'CLOSE_WAIT'
@@ -195,7 +183,7 @@ PROCESS {
     
     
     # Standard exit
-    Log -Level 'INFO' -Message('Number of connections on ' + $conf_string + ' below limits defined (max. ' + $LimitConnections + ' - Count : ' + ($list).Count + ')')
+    Log -Level 'INFO' -Message('Number of connections on current server is below limits defined (max. ' + $LimitConnections + ' - Count : ' + ($list).Count + ')')
 	$list | foreach-object {Log -Level 'DEBUG' -Message($_)}
     Exit-OK
     #----------------------------------------------------------------------------------------------------------------------------------
