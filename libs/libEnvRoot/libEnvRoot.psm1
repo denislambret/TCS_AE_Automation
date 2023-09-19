@@ -109,12 +109,13 @@ function Set-EnvRoot
     # $global:global_conf = "D:\dev\40_PowerShell\tcs\libs\global.json"   
     
     # TCS Laptop env
-    $global:ScriptRoot  = Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT'
-    $global:LogRoot     = $global:ScriptRoot + "\logs"
-    $global:LibRoot     = $global:ScriptRoot + "\libs"
-    $global:TempDir     = $global:ScriptRoot + "\tmp"
-    $global:ConfDir     = $global:ScriptRoot + "\conf"
-    $global:global_conf = $global:ScriptRoot + "\libs\global.json"   
+
+    $global:ScriptRoot  = [string](Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT').PWSH_SCRIPT_ROOT
+    $global:LogRoot     = [string]$global:ScriptRoot + "\logs"
+    $global:LibRoot     = [string]$global:ScriptRoot + "\libs"
+    $global:TempDir     = [string]$global:ScriptRoot + "\tmp"
+    $global:ConfDir     = [string]$global:ScriptRoot + "\conf"
+    $global:global_conf = [string]$global:ScriptRoot + "\libs\global.json"   
 
     if ($Env:PSModulePath -notlike  $LibRoot) { 
         $Env:PSModulePath = $Env:PSModulePath + ";" + $global:LibRoot 

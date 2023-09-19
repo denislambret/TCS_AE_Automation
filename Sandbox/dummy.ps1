@@ -1,3 +1,4 @@
-$values = ("un","deux","trois")
+Import-Module libEnvRoot
 
-return $values
+$global:LogRoot
+$global:LibRoot

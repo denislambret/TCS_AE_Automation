@@ -21,7 +21,10 @@ param (
     
 	# Connection limits
 	[int]$Limit,
-	
+
+    # Kill close wait connections
+	[switch]$kill,
+
 	# help switch
     [switch] $help
 )
@@ -122,6 +125,7 @@ PROCESS {
 
         foreach ($item in $connections) {
             try {
+                Log -Level 'INFO' -Message('Kill process #' + $item.owningProcess)
                 Stop-Process -id $item.OwningProcess
             }
             catch {
@@ -170,8 +174,8 @@ PROCESS {
     
 
     # 1 - Get netstat connections list on server
-    $list = &netstat -a| Select-String -pattern 'CLOSE_WAIT'
-
+    $list = Get-NetTCPConnection | Where-Object { ($_.State -eq 'CloseWait')  -or ($_.State -eq 'TimeWait') } | Select-Object LocalAddress, LocalPort, RemoteAddress, RemotePort, State
+    
     # 2 -  Test list size and define if we are over or below connection limits.
     if (($list).Count -gt $LimitConnections) {
         # Error Case
@@ -181,6 +185,10 @@ PROCESS {
         Exit-KO
     }
     
+    # Kill if necessary
+    if ($kill) {
+        Kill-TCPCloseWaitConnections $list
+    }
     
     # Standard exit
     Log -Level 'INFO' -Message('Number of connections on current server is below limits defined (max. ' + $LimitConnections + ' - Count : ' + ($list).Count + ')')

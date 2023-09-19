@@ -40,7 +40,7 @@ BEGIN {
 			Also define output separator line size for nice formating
 			Define standart script exit codes
     #>
-    $Env:PSModulePath = $Env:PSModulePath+";d:\Scripts\libs"
+    #$Env:PSModulePath = $Env:PSModulePath + ";d:\Scripts\libs"
     Import-Module libEnvRoot
     Import-Module libConstants
     Import-Module libLog

@@ -1,0 +1,36 @@
+**********************
+PowerShell transcript start
+Start time: 20230918135257
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.9.2\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.9.2' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.9.2\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.9.2
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1695036161-66bb3815-5486-4231-9131-70c4aac2fa0f1695036157641\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-16268-669538.json' -FeatureFlags @() 
+Process ID: 3204
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20230918 13:52:58][Archive-Logs.ps1][TCSGROUP\LD06974][Info] Archive-Logs.ps1 v0.2
+[20230918 13:52:58][Archive-Logs.ps1][TCSGROUP\LD06974][Info] ------------------------------------------------------------------------------------------------------------------------------------
+[20230918 13:52:58][Archive-Logs.ps1][TCSGROUP\LD06974][INFO] GET - Build log files list from Y:\03_DEV\06_GITHUB\tcs-1\logs using filter *.log
+[20230918 13:52:59][Archive-Logs.ps1][TCSGROUP\LD06974][INFO] PATCH - Update archive Y:\03_DEV\06_GITHUB\tcs-1\logs\archives\2023\04\202304_Copy-IDITPaymentsCamt.zip by adding 6 file(s)
+[20230918 13:53:00][Archive-Logs.ps1][TCSGROUP\LD06974][INFO] PATCH - Update archive Y:\03_DEV\06_GITHUB\tcs-1\logs\archives\2023\06\202306_Extract_CCMPlisBatchIdx.zip by adding 21 file(s)
+[20230918 13:53:03][Archive-Logs.ps1][TCSGROUP\LD06974][INFO] PATCH - Update archive Y:\03_DEV\06_GITHUB\tcs-1\logs\archives\2023\06\202306_Get-TransactionLogs.zip by adding 2 file(s)
+[20230918 13:53:04][Archive-Logs.ps1][TCSGROUP\LD06974][Info] ------------------------------------------------------------------------------------------------------------------------------------
+False
+**********************
+PowerShell transcript end
+End time: 20230918135304
+**********************
