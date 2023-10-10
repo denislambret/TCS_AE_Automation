@@ -60,7 +60,6 @@ BEGIN {
     $lib_path         = $env:PWSH_SCRIPTS_LIBS
     $Env:PSModulePath = $Env:PSModulePath + ";" + $lib_path
      
-
     # Import external libs
     Import-Module libLog
     Import-Module libSendMail
