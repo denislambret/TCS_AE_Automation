@@ -7,6 +7,7 @@ $ext_pdf = "*.pdf"
 $source_csv = $source + '\' + $ext_csv
 $source_pdf = $source + '\' + $ext_pdf
 
+# Build CSV list
 $listCSVFile = Get-ChildItem -path $source_csv 
 Write-Host "CSV List :" ($listCSVFile).Count "record(s) "
 
@@ -17,6 +18,7 @@ $listCSVFile | ForEach-Object {
     }
 }
 
+# Build PDF List
 $listPDFFile = Get-ChildItem -path $source_pdf
 Write-Host "PDF List :" ($listPDFFile).Count "record(s) "
 
