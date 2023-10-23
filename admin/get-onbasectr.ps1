@@ -9,12 +9,12 @@ write-Host "--------------------------------------------------------------------
 $lastDir = Get-ChildItem -Path $ccm_path -Directory | Sort-Object CreationTime -Descending | Select-Object -First 1
 write-Host "CCM directory : " $lastDir
 $countCCMFiles = (Get-ChildItem $lastDir/*.csv).Count
-$countCCM = (Get-ChildItem $lastDir/*.csv  | Sort-Object $_.LastWriteDate | gc).Count
+$countCCM = (Get-ChildItem $lastDir/*.csv  | Sort-Object $_.LastWriteTime | gc).Count
 write-Host "CCM Files     : " $countCCMFiles " file(s)"
 write-Host "CCM count     : " $countCCM " record(s)"
 # Count Scan
-$scanFile = Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -last 1
-$countScan = (Get-ChildItem $scan_path *.csv | Sort-Object $_.LastWriteDate | Select-Object -last 1 | gc).Count
-write-Host "Scan index    : " ($countScan - 1) 
+$scanFile = Get-ChildItem $scan_path *.csv | Sort-Object -property LastWriteTime | Select-Object -last 1
+$countScan = (Get-ChildItem $scan_path *.csv | Sort-Object -property LastWriteTime | Select-Object -first 1 | gc).Count
+write-Host "Scan file     : " $scanFile " "
 write-Host "Scanned docs  : " ($countScan - 1) " record(s)"
 write-Host "----------------------------------------------------------------------------------------------------------"

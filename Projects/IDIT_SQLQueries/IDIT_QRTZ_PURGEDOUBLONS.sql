@@ -7,8 +7,12 @@
 --------------------------------------------------------------------------------
 
 -- Quick snapshot view
-select * from QRTZ_CRON_TRIGGERS 
-select COUNT(*) as NB from QRTZ_CRON_TRIGGERS 
+SELECT * 
+FROM T_BATCH_JOB
+WHERE ID = 1000045;
+SELECT COUNT(*) AS NB FROM T_BATCH_JOB;
+SELECT * FROM QRTZ_CRON_TRIGGERS 
+SELECT COUNT(*) AS NB FROM QRTZ_CRON_TRIGGERS 
 
 -- Removal
 DECLARE @insertDate datetime2;
@@ -113,5 +117,5 @@ INSERT INTO BACKUP_TCS332 select * from @sheet WHERE INSERT_DATE = @insertDate;
 -- select * from BACKUP_TCS192
 
 -- Quick snapshot view
-select * from QRTZ_CRON_TRIGGERS 
-select COUNT(*) as NB from QRTZ_CRON_TRIGGERS 
+SELECT * FROM QRTZ_CRON_TRIGGERS 
+SELECT COUNT(*) AS NB FROM QRTZ_CRON_TRIGGERS 
