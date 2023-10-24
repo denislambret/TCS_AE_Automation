@@ -1,4 +1,6 @@
+Remove-Variable * -ErrorAction SilentlyContinue
 Import-Module libEnvRoot
 
-$global:LogRoot
-$global:LibRoot
+Test-EnvRoot;
+Set-EnvRoot;
+#Remove-RootPath;
