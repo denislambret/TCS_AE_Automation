@@ -87,8 +87,29 @@ WHERE ID IN (10013,10020)
 SELECT ID, DESCRIPTION, DEVELOPER_DESC, UPDATE_DATE, DISCONTINUE_DATE, ACCOUNT_TYPE
 FROM T_CONTACT_ROLE;
 
+-- List passwords history (table S_USER_PASSWORD_HISTORY)
+SELECT TOP (1000) [ID]
+      ,[USER_PASSWORD]
+      ,[PASSWORD_CREATION_DATE]
+      ,[USER_ID]
+      ,[DISCONTINUE_DATE]
+      ,[UPDATE_VERSION]
+      ,[UPDATE_DATE]
+      ,[UPDATE_USER]
+      ,[EXT_DATA]
+  FROM [S_USER_PASSWORD_HISTORY]
+  where user_id = (select userid from T_USER where  NAME_OF_USER = 'Administrator')
+  order  by PASSWORD_CREATION_DATE desc
 
+-- Password are stored in s_user_additional_data
+ SELECT *
+ FROM s_user_additional_data
+ WHERE USER_ID = 1;
 
-
-
+ -- if you change password in s_user additional_data to selected below then all should fine with password (unhashed) valid before yesterday
+ -- So the trick is to get password from S_USER_PASSWORD_HISTORY on the elder record. The hash print match the initial password. So we update s_user_additional_data with the value obtained.
+UPDATE s_user_additional_data SET
+	USER_PASSWORD='irPvMJpwgL0='
+WHERE USER_ID = 1
+ 
 
