@@ -159,11 +159,35 @@ function Set-EnvRoot
     $global:TempDir     = [string]$global:ScriptRoot + "\tmp"
     $global:ConfDir     = [string]$global:ScriptRoot + "\conf"
     $global:global_conf = [string]$global:ScriptRoot + "\libs\global.json"   
-
-
+    
+    $rootPath = [string](Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT').PWSH_SCRIPT_ROOT
+    $EnvVar = @{ 
+        scriptroot =$rootPath;
+        'log' = $rootPath + "\log";
+        'lib' = $rootPath + "\lib";
+        'tmp' = $rootPath + "\tmp";
+        'conf' = $rootPath + "\conf"
+    }
+    
     if ($Env:PSModulePath -notlike  $LibRoot) { 
         $Env:PSModulePath = $Env:PSModulePath + ";" + $global:LibRoot 
     }
+}
+
+function Get-EnvRoot 
+{
+    Write-Host "Script Root   : " $global:ScriptRoot
+    Write-Host "Log           : " $global:LogRoot
+    Write-Host "Lib           : " $global:LibRoot
+    Write-Host "Conf          : " $global:ConfDir
+    Write-Host "Temporary     : " $global:TempDir
+    Write-Host "Env variables : " $EnvVar
+    Write-Host "Script Root   : " $EnvVar['scriptRoot']
+    Write-Host "Log           : " $envvar['log']
+    Write-Host "Lib           : " $envvar['lib']
+    Write-Host "Conf          : " $envvar['conf']
+    Write-Host "Temporary     : " $envvar['tmp']
+    return $EnvVar
 }
 
 #..................................................................................................................................
@@ -191,16 +215,9 @@ function Test-EnvRoot {
 }
 
 #----------------------------------------------------------------------------------------------------------------------------------
-#                                                     M A I N
-#----------------------------------------------------------------------------------------------------------------------------------
-
-#----------------------------------------------------------------------------------------------------------------------------------
 #                                                E X P O R T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
-Export-ModuleMember -Function Set-EnvRoot
+Export-ModuleMember -Function Get-RootPath, Test-RootPath, Remove-RootPath, Test-EnvRoot, Set-EnvRoot, Get-EnvRoot
+Export-ModuleMember -Variable EnvVar
 
 
-#----------------------------------------------------------------------------------------------------------------------------------
-#                                                E X P O R T E R S
-#----------------------------------------------------------------------------------------------------------------------------------
-Export-ModuleMember -Function Get-RootPath, Test-RootPath, Remove-RootPath, Test-EnvRoot, Set-EnvRoot
