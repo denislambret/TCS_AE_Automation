@@ -94,9 +94,9 @@ BEGIN {
     Import-Module Posh-SSH
 
     Set-EnvRoot
-    $script_path      = $global:ScriptRoot + "\Projects\POSTFINANCE_MoveFileCompta"
+    $script_path      = "Y:\03_DEV\06_GITHUB\tcs-1\Projects\POSTFINANCE_MoveFileCompta"
     $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'
-    
+    $dest = 'Y:\03_DEV\06_GITHUB\tcs-1\data\output'
     # Log initialization
     if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
         "FATAL : Log initializzation failed!"
@@ -153,147 +153,6 @@ PROCESS {
         "-Help      Display command help"
     }
    
-#     #..................................................................................................................................
-# # Function : Get-SFTPPrivKey()
-# #..................................................................................................................................
-# #  - Connect to SFTP 
-# #  - Retrieve Saferpay files for a given date
-# #..................................................................................................................................
-# function Connect-SFTPPrivKey {
-#     param(
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 1
-#         )][string]
-#         $server,
-        
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 2
-#         )][string]
-#         $user,
-
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 3
-#         )][string]
-#         $privKey
-#     )
-
-#     $nopasswd     = New-Object System.Security.SecureString # defines empty sec string to not popup dialog requesting for a password
-#     $credential   = New-Object System.Management.Automation.PSCredential($user,$nopasswd) #Set Credetials to connect to server
-
-#     # Establish the SFTP connection
-#     Log -Level 'DEBUG' -Message ('Credential : ' + ($credential | Format-Table -AutoSize))
-#     Log -Level 'DEBUG' -Message ('New-SFTPSession -ComputerName ' +  $server + ' -Credential ' + $credential + ' -KeyFile ' + $privKey + ' -AcceptKey')
-#     $sftpSession = New-SFTPSession -ComputerName $server -Credential $credential -KeyFile $privKey -AcceptKey -ErrorVariable $err
-    
-#     if ($null -ne $sftpSession) {
-#         Log -Level 'DEBUG' -Message ('session    : ' + ($sftpSession | Format-List))
-#         Log -Level 'DEBUG' -Message ('session ID : ' + $sftpSession.sessionID)
-#         Log -Level 'DEBUG' -Message("isConnected :"+$sftpSession.isConnected)
-    
-#     } else {
-#         Log -Level 'DEBUG' -Message ('Error var  : ' + $err)
-#         return -1;
-#     }
-#     return $sftpSession
-# }
-
-# #..................................................................................................................................
-# # Function : Get-SFTPDefault()
-# #..................................................................................................................................
-# #  - Connect to SFTP 
-# #  - Retrieve Saferpay files for a given date
-# #..................................................................................................................................
-# function Connect-SFTPDefault {
-#     param(
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 1
-#         )]
-#         $server,
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 2
-#         )] $user,
-
-#         [Parameter( 
-#             Mandatory = $false,
-#             Position = 3
-#         )] [String] $password
-#     )
-
-#     # Reprendre le secure string a l'appel de léafonction
-#     #$password       = ConvertTo-SecureString $password -AsPlainText -Force
-#     $sec_pwd        = $password | ConvertTo-SecureString -AsPlainText -Force
-#     $credential     = New-Object System.Management.Automation.PSCredential($user, $sec_pwd) 
-#     Log -Level 'DEBUG' -Message ('Credential : ' + $credential | Format-Table -AutoSize)
-
-#     # Establish the SFTP connection
-#     $sftpSession = New-SFTPSession -ComputerName $server -Credential $credential -ErrorVariable $err 
-#     if ($null -ne $sftpSession) {
-#         Log -Level 'DEBUG' -Message ('session    : ' + ($sftpSession | Format-List))
-#         Log -Level 'DEBUG' -Message ('session ID : ' + $sftpSession.sessionID)
-#         Log -Level 'DEBUG' -Message("isConnected :"+$sftpSession.isConnected)
-#     } else {
-#         Log -Level 'ERROR' -Message ('Error var  : ' + $err)
-#         return -1;
-#     }
-#     return $sftpSession
-
-# }
-
-# #..................................................................................................................................
-# # Function : Get-SFTPFiles($remotePath, $localPath, $filter,$date)
-# #..................................................................................................................................
-# # Retrieve files from SFTP according a date
-# #..................................................................................................................................
-# function Get-SFTPFileList() {
-#     param(
-#         [string] $remotePath,
-#         [string] $localPath,
-#         [string] $filter,
-#         [dateTime] $date
-#     );
-
-            
-#     # Get remote location
-            
-#     try {
-#         Set-SFTPLocation -SessionId $sftpSession.SessionId -Path $remotePath
-#     }
-#     catch {
-#         Log -Level 'ERROR' -Message($remotePath + ' does not seem to exist.')
-#         Log -Level 'ERROR' -Message($Error)
-#         return $null
-#     }
-    
-    
-    
-#     $location = Get-SFTPLocation -SessionId $sftpSession.SessionId 
-#     Log -Level 'INFO' -message('Get SFTP location                     : ' + $remotePath)
-#     Log -Level 'INFO' -message('Filtered on date equal or lesser than : ' + $date.date)
-
-#     # Lists directory files into variable
-#     Log -Level 'DEBUG' -Message('Get-SFTPChildItem -sessionID '+$sftpSession.SessionID+' -path '+$remotePath)
-#     $fileList = Get-SFTPChildItem -sessionID $sftpSession.SessionID ` -path $remotePath | where-object {$_.LastWriteTime.date -lt $date.date} | Sort-Object -Property LastWriteTime -Descending 
-#     return $fileList
-# }
-
-# #..................................................................................................................................
-# # Function : Close-SFTP
-# #..................................................................................................................................
-# # Close SFTP connection
-# #..................................................................................................................................
-# function Close-SFTP() {
-#     # Close session
-#     Log -Level 'INFO' -message ('Close SFTP session #' + $sftpSession.SessionId)
-#     Remove-SFTPSession -SessionId $sftpSession.SessionID | Out-Null
-    
-#     # End normally SFTP routine.
-#     return $OK;
-# }
 
     #----------------------------------------------------------------------------------------------------------------------------------
     #                                             _______ _______ _____ __   _
@@ -330,25 +189,57 @@ PROCESS {
     
    
      # Do something here
-    # 1 - 
+    # 1 - Get connected to SFTP
     $confRoot = $conf.conf
     $sec_pwd        = $confRoot.sftp_servers.sftp_server_tcs.userpwd | ConvertTo-SecureString -AsPlainText -Force
     $credential     = New-Object System.Management.Automation.PSCredential($confRoot.sftp_servers.sftp_server_tcs.username, $sec_pwd ) 
-    $sftpSession    = New-SFTPSession -ComputerName $confRoot.sftp_servers.sftp_server_tcs.computername -Credential $credential -Verbose
+    try {
+        $sftpSession    = New-SFTPSession -ComputerName $confRoot.sftp_servers.sftp_server_tcs.computername -Credential $credential
+    }
+    catch {
+        Log -Level 'ERROR' -Message "An error occurred while connecting to SFTP server."
+        Log -Level 'ERROR' -Message($_)
+        Log -Level 'ERROR' -Message($_.ScriptStackTrace)
+    }
     
+    # 2 - Get file source list
+    $srcFileList = Get-SFTPChildItem -SFTPSession $sftpSession -path $confRoot.sftp_servers.sftp_server_tcs.sftp_input_path
+    Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) on SFTP source')
     
-    # 1 - Get file source list
-    $srcFileList = Get-SFTPChildItem  -SFTPSession $sftpSession -path $confRoot.sftp_servers.sftp_server_tcs.sftp_input_path
+
+    # 3 - Filter source list
+    Log -Level 'INFO' -message 'Sorting and filtering SFTP file list'
+    $srcFileList = $srcFileList | ?{
+        $_.LastWriteTime -gt '01.01.2023' `
+        -and ($_.name -match ".xml$")
+    } 
+    Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) after filtering initial list')
     
-    $srcFileList | ?{
-        $_.LastWriteTime -gt '01.01.2023' -and (-not($_.name -match ".treated$"))
-    } | Select-Object -Property name,LastWriteTime,Length|  ft -autosize
-    
-    
-    $srcFileList | Select-Object -Property name,LastWriteTime,Length|  ft -autosize
+    if (($srcFileList).Count -eq 0) {
+        Log -Level 'INFO' -message 'There nothing left to do...'
+        Log -Level 'INFO' -message $SEP_L1
+        Stop-Log | Out-Null
+        exit $EXIT_OK
+    }
+
+    # 4 - Download source file to dest + rename original
+    Log -Level 'INFO' -message $SEP_L2
+    $srcFileList | %{
+        try {
+            Log -Level 'INFO' -message ("Copy "+ $_.FullName + " to " + $dest)
+            Get-SFTPItem -SFTPSession $sftpSession -path $_.FullName -destination $dest -force
+            Log -Level 'INFO' -message ("Rename source to " + ($_.name + '.downloaded'))
+            Rename-SFTPFile -SFTPSEssion $sftpSession -path $_.FullName -NewName ($_.name + '.downloaded')
+        } catch {
+            Log -Level 'ERROR' -Message "An error occurred while copy/rename files :"
+            Log -Level 'ERROR' -Message($_)
+            Log -Level 'ERROR' -Message($_.ScriptStackTrace)
+        }
+    }
+     
 
     # 5 - Close connexion
-    Remove-SFTPSession -SessionId $sftpSession.SessionID | Out-Null
+    Remove-SFTPSession -SFTPSEssion $sftpSession | Out-Null
     
     # Standard exit
     Log -Level 'INFO' -message $SEP_L1
