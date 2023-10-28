@@ -1,17 +1,44 @@
 #----------------------------------------------------------------------------------------------------------------------------------
-# Script  : script_name
+# Script  : Move-FileCompta.ps1
 #----------------------------------------------------------------------------------------------------------------------------------
-# Author  : author trigram
-# Date    : YYYYMMDD
-# Version : X.X
+# Author  : DLA
+# Date    : 20231028
+# Version : 1.0
 #----------------------------------------------------------------------------------------------------------------------------------
 <#
     .SYNOPSIS
-        A brief description of the function or script.
+        
+    Script de copie des incoming payment non traités vers repertoire de depose finance.
 
     .DESCRIPTION
-        A longer description.
+    
+    Contexte
+    Tous les jours, la Poste dépose des fichiers de transaction CAMT (paiement de BVR) dans un répertoire FTP accessible par le TCS.
+    Le nom de chaque fichier contient le numéro de l'IBAN et du Delivery Number pour lequel les paiement ont été faits (refs. 02. QR Code Official IBAN- QR IBAN status).
+    
+    Situation actuelle
+    Il existe un processus automatisé, développé dans le cadre du projet NIS, qui traite les fichiers de paiement qui ont été générées par IDIT.
+    Chaque fichier traité par ce processus est renommé avec le suffix .treated (ref. IDIT - Contrôle des fichiers Incoming Payment).
+    Le choix de fichier à traiter par ce processus est définit dans un fichier de mapping NIPO-1375 - Le projet Jira n'existe pas ou vous n'êtes pas autorisé(e) à l'afficher.
+    Les autres fichiers qui ne sont pas traités par ce processus (pas de suffix .treated) sont téléchargé manuellement par l'équipe de comptabilité (TRANCHET Christophe) pour un tratement manuel dans SAP.
+    
+    Situation souhaitée
+    Les fichiers qui ne sont pas traité par le processus d'IDIT soient téléchargés automatiquement à un répertoire accessible exclusivement par l'équipe de comptabilité.
+    Les fichiers téléchargés sont renommer avec le suffix .downloaded dans le répertoire SFTP de PostFinance (similaire au processus IDIT où les fichiers sont renommés .treated)
 
+    Liste des comptes camt a traiter :
+
+    - TCS	                    CH8609000000120024167 	1111200329  SAP
+    - T&L Camping	            CH7009000000120053070	1111189590	SAP
+    - T&L Training & Events	    CH7609000000177043566	1111205029  SAP
+    - Academie Mobilité SA	    CH6709000000123782774	1111189602  SAP
+    - TCS Voyages SA	        CH0609000000151620156	1111190795  SAP
+    - Chacomo	                CH1809000000158817922	1116241979	SAP
+    - BMW	                    CH6509000000159517319	1116427001	SAP
+    - Swiss eMobility	        CH4509000000128207631	1111182929	SAP
+
+    Reference :  https://confluence.tcsgroup.ch/pages/viewpage.action?pageId=632497603
+    
     .PARAMETER FirstParameter
         Description of each of the parameters.
         Note:
@@ -26,10 +53,11 @@
         Description of objects that can be piped to the script.
 
     .OUTPUTS
-        Description of objects that are output by the script.
+        Return code 0 - Script successsfully executed
+        Return code 1 - Script in error
 
     .EXAMPLE
-        Example of how to run the script.
+        Move-FileCompta.ps1 
 
     .LINK
         Links to further documentation.
@@ -96,7 +124,7 @@ BEGIN {
     Set-EnvRoot
     $script_path      = "Y:\03_DEV\06_GITHUB\tcs-1\Projects\POSTFINANCE_MoveFileCompta"
     $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'
-    $dest = 'Y:\03_DEV\06_GITHUB\tcs-1\data\output'
+    
     # Log initialization
     if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
         "FATAL : Log initializzation failed!"
@@ -175,6 +203,9 @@ PROCESS {
     # Display inline help if required
     if ($help) { helper }
     
+
+    $delay = '01.01.2023'
+    
     # 1 - Load script config file
     try {
         [XML]$conf = Get-Content $config_path
@@ -187,7 +218,7 @@ PROCESS {
         exit $EXIT_KO
     }
     
-   
+     
      # Do something here
     # 1 - Get connected to SFTP
     $confRoot = $conf.conf
@@ -226,8 +257,8 @@ PROCESS {
     Log -Level 'INFO' -message $SEP_L2
     $srcFileList | %{
         try {
-            Log -Level 'INFO' -message ("Copy "+ $_.FullName + " to " + $dest)
-            Get-SFTPItem -SFTPSession $sftpSession -path $_.FullName -destination $dest -force
+            Log -Level 'INFO' -message ("Copy "+ $_.FullName + " to " + $confRoot.pathes.local_path)
+            Get-SFTPItem -SFTPSession $sftpSession -path $_.FullName -destination $confRoot.pathes.local_path -force
             Log -Level 'INFO' -message ("Rename source to " + ($_.name + '.downloaded'))
             Rename-SFTPFile -SFTPSEssion $sftpSession -path $_.FullName -NewName ($_.name + '.downloaded')
         } catch {
