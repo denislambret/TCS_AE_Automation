@@ -258,6 +258,7 @@ PROCESS {
         Log -Level 'ERROR' -Message "An error occurred while connecting to SFTP server."
         Log -Level 'ERROR' -Message($_)
         Log -Level 'ERROR' -Message($_.ScriptStackTrace)
+        exit $EXIT_KO
     }
     
     # 2 - Get file source list
@@ -268,10 +269,10 @@ PROCESS {
     # 3 - Filter source list
     Log -Level 'INFO' -message 'Sorting and filtering SFTP file list'
     $srcFileList = $srcFileList | ?{
-        $_.LastWriteTime -gt '01.01.2023' `
+        $_.LastWriteTime -gt $delay `
         -and ($_.name -match ".xml$")
     } 
-    Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) after filtering initial list')
+    Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) electable for copy to ' + $confRoot.pathes.local_path )
     
     if (($srcFileList).Count -eq 0) {
         Log -Level 'INFO' -message 'There nothing left to do...'
@@ -285,13 +286,17 @@ PROCESS {
     $srcFileList | %{
         try {
             Log -Level 'INFO' -message ("Copy "+ $_.FullName + " to " + $confRoot.pathes.local_path)
-            Get-SFTPItem -SFTPSession $sftpSession -path $_.FullName -destination $confRoot.pathes.local_path -force
+            Get-SFTPItem -SFTPSession $sftpSession -path $_.FullName -destination $confRoot.pathes.local_path -ErrorAction SilentlyContinue
             Log -Level 'INFO' -message ("Rename source to " + ($_.name + '.downloaded'))
             Rename-SFTPFile -SFTPSEssion $sftpSession -path $_.FullName -NewName ($_.name + '.downloaded')
         } catch {
             Log -Level 'ERROR' -Message "An error occurred while copy/rename files :"
             Log -Level 'ERROR' -Message($_)
             Log -Level 'ERROR' -Message($_.ScriptStackTrace)
+            Log -Level 'INFO' -message $SEP_L1
+            $sftpSession.dispose()
+            Stop-Log | Out-Null
+            exit $EXIT_KO
         }
     }
      
