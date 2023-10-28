@@ -7,7 +7,11 @@
 #----------------------------------------------------------------------------------------------------------------------------------
 <#
     .SYNOPSIS
-        
+
+    Move-FileCompta.ps1 -conf <conffile> -delay <x> -unit <minute/hour/day(s)>
+        -conf   XML configuration file (default is scriptname.conf on script executionpath)
+        -delay  Time filter to select only file created between now and (now.delay)
+        -unit   Delay unit in second, minute, hour, day
     Script de copie des incoming payment non traités vers repertoire de depose finance.
 
     .DESCRIPTION
@@ -78,14 +82,23 @@ param (
         ValueFromPipelineByPropertyName = $true,
         Position = 0
         )
-    ] $path,
+    ] $config_path,
     
-    # path for the result generated during process
+   
     [Parameter(
         Mandatory = $false,
         ValueFromPipelineByPropertyName = $true,
         Position = 0)
-    ] $dest,
+    ] $delay,
+
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $true,
+        Position = 0)
+    ]
+    [ValidateSet('second', 'minute', 'hour', 'day')]
+     $unit,
+   
     
     # help switch
     [switch] $help
@@ -203,8 +216,22 @@ PROCESS {
     # Display inline help if required
     if ($help) { helper }
     
+    if (($unit) -and ($delay)) {
+        if ($unit -eq 'second') {
+            $delay = (Get-date).AddSeconds($delay)
+        } elseif ($unit -eq 'minute') {
+            $delay = (Get-date).AddMinutes($delay)
+        } elseif ($unit -eq 'hour') {
+            $delay = (Get-date).AddGours($delay)
+        }
+        elseif ($unit -eq 'day') {
+            $delay = (Get-date).AddDays($delay)
+        }
+    } else {
+        $delay = (Get-date).AddDays(-1)
+    }
 
-    $delay = '01.01.2023'
+    #$delay = '01.01.2023'
     
     # 1 - Load script config file
     try {
