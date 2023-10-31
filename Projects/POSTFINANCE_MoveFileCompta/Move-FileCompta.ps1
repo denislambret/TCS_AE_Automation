@@ -82,7 +82,8 @@ param (
         ValueFromPipelineByPropertyName = $true,
         Position = 0
         )
-    ] $config_path,
+    ]
+    [alias('conf')] $config_path,
     
    
     [Parameter(
@@ -134,9 +135,9 @@ BEGIN {
     Import-Module libLog
     Import-Module Posh-SSH
 
-    Set-EnvRoot
+    #Set-EnvRoot
     $script_path      = "Y:\03_DEV\06_GITHUB\tcs-1\Projects\POSTFINANCE_MoveFileCompta"
-    $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'
+    if (-not $config_path) { $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'}
     
     # Log initialization
     if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
@@ -189,9 +190,10 @@ PROCESS {
         "Do something usefull for you..."
         " "
         "Options : "
-        "-path      Source directory / file"
-        "-dest      Destination directory / file"
-        "-Help      Display command help"
+        "-conf     Configuration file"
+        "-unit     Filter period unit"
+        "-delay    Filter period value"
+        "-Help     Display command help"
     }
    
 
@@ -213,29 +215,14 @@ PROCESS {
     log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " v" + $VERSION)
     Log -Level 'INFO' -Message $SEP_L1
     
-    # Display inline help if required
-    if ($help) { helper }
-    
-    if (($unit) -and ($delay)) {
-        if ($unit -eq 'second') {
-            $delay = (Get-date).AddSeconds($delay)
-        } elseif ($unit -eq 'minute') {
-            $delay = (Get-date).AddMinutes($delay)
-        } elseif ($unit -eq 'hour') {
-            $delay = (Get-date).AddGours($delay)
-        }
-        elseif ($unit -eq 'day') {
-            $delay = (Get-date).AddDays($delay)
-        }
-    } else {
-        $delay = (Get-date).AddDays(-1)
-    }
+   
 
     #$delay = '01.01.2023'
     
     # 1 - Load script config file
     try {
         [XML]$conf = Get-Content $config_path
+        $confRoot = $conf.conf
     }
     catch [System.IO.FileNotFoundException] {
         Log -Level "ERROR" -Message ("Configuration file not found " + $config_path)
@@ -245,10 +232,30 @@ PROCESS {
         exit $EXIT_KO
     }
     
+     # Process command line + Display inline help if required
+     if ($help) { helper }
+     
+     if ((-not ($unit)) -or (-not ($delay))) {
+        $delay = $confRoot.options.delay.value
+        $unit = $confRoot.options.delay.unit
+     }
+
+     if ($unit -eq 'second') {
+         $delay = (Get-date).AddSeconds(-1 * $delay)
+     } elseif ($unit -eq 'minute') {
+         $delay = (Get-date).AddMinutes(-1 * $delay)
+     } elseif ($unit -eq 'hour') {
+         $delay = (Get-date).AddGours(-1 * $delay)
+     }
+     elseif ($unit -eq 'day') {
+         $delay = (Get-date).AddDays(-1 * $delay)
+     }
+     
+     Log -Level 'DEBUG' -Message ('Filter delay period set to : ' + $delay + ' ' + $unit)
      
      # Do something here
     # 1 - Get connected to SFTP
-    $confRoot = $conf.conf
+    
     $sec_pwd        = $confRoot.sftp_servers.sftp_server_tcs.userpwd | ConvertTo-SecureString -AsPlainText -Force
     $credential     = New-Object System.Management.Automation.PSCredential($confRoot.sftp_servers.sftp_server_tcs.username, $sec_pwd ) 
     try {
@@ -267,11 +274,29 @@ PROCESS {
     
 
     # 3 - Filter source list
+    # Date and name filtering
     Log -Level 'INFO' -message 'Sorting and filtering SFTP file list'
     $srcFileList = $srcFileList | ?{
         $_.LastWriteTime -gt $delay `
         -and ($_.name -match ".xml$")
     } 
+    
+    # Accounts list filtering
+    $tmpList = @()
+    $srcFileList | foreach-object {
+        if ($_.name -match 'camt.054_P_CH(\d{19})_(\d{10})_(\d)_(\d{16}).xml$') {
+            $iban = "CH" + $Matches[1]
+            $number = $Matches[2]
+            $seq = $Matches[3]
+            $timestamp = $Matches[4]
+
+            if ($iban -in $confRoot.accounts.account.iban) {
+                $tmpList += $_
+            }
+        }
+    }
+    $srcFileList = $tmpList
+    
     Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) electable for copy to ' + $confRoot.pathes.local_path )
     
     if (($srcFileList).Count -eq 0) {
@@ -294,7 +319,7 @@ PROCESS {
             Log -Level 'ERROR' -Message($_)
             Log -Level 'ERROR' -Message($_.ScriptStackTrace)
             Log -Level 'INFO' -message $SEP_L1
-            $sftpSession.dispose()
+            (get-sftpsession | Select-object SessionId) | remove-sftpsession
             Stop-Log | Out-Null
             exit $EXIT_KO
         }
