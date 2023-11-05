@@ -3,37 +3,16 @@
 /logs/**/*.log
 /libs/libEnvRoot/*.psm1
 
-# Data directories
+# No Logs filter
+/**/*.log
+
+# No ZIP filter
 /**/*.zip
-/data/input/*.csv
-/data/input/*.dat
-/data/input/*.txt
-/data/input/*.pdf
 
-/data/input/Verification/*.csv
-/data/input/Verification/*.dat
-/data/input/Verification/*.txt
-/data/input/Verification/*.pdf
-
-/data/input/CCM_Plis/*.csv
-/data/input/CCM_Plis/*.dat
-/data/input/CCM_Plis/*.txt
-/data/input/CCM_Plis/*.pdf
-
-/data/input/Logs/*.log
-/data/output/Logs/*.log
-/data/output/*.dat
-
-/Sandbox/genHTML/conf.xml
-
-/data/input/testfolder/*.*
-/data/input/testfolder2/*.*
-
-/data/input/testfolder/*
-/data/input/testfolder2/*
-
-/projects/**/*.log
-/logs/*.log
-
-
-
+# No Data directories filters
+/data/**/*.csv
+/data/**/*.dat
+/data/**/*.txt
+/data/**/*.pdf
+/data/**/*.log
+/data/**/*.xml

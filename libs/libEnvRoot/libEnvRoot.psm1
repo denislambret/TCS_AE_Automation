@@ -7,7 +7,40 @@
 #----------------------------------------------------------------------------------------------------------------------------------
 <#
     .SYNOPSIS
-        Implement portability environment variables for PWS scripts
+        Implemnt all vital environm,ents pathes to run scripts.
+    
+    .DESCRIPTION
+        This library intends to load an XML descriptor files with all mandatory path values for :
+        - scripts
+        - logs
+        - data
+        - temporary directories
+#>
+#----------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                            G L O B A L   V A R I A B L E S
+#----------------------------------------------------------------------------------------------------------------------------------
+<#
+    .SYNOPSIS
+        Global variables
+    
+    .DESCRIPTION
+        Set script's global variables 
+#>
+$VERSION = "1.0"
+$AUTHOR  = "Denis Lambret"
+$SEP_L1  = '----------------------------------------------------------------------------------------------------------------------'
+$SEP_L2  = '......................................................................................................................'
+$EXIT_OK = 0
+$EXIT_KO = 1
+
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                                  F U N C T I O N S 
+#----------------------------------------------------------------------------------------------------------------------------------
+<#  Implement portability environment variables for PWS scripts
 
     .DESCRIPTION
         Implement alll basic env variables to run script and ease portability.
@@ -36,7 +69,7 @@ $AUTHOR  = "Denis Lambret"
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
 #----------------------------------------------------------------------------------------------------------------------------------
-$ROOT_PATH = "Y:\03_DEV\06_GITHUB\tcs-1\libs”
+$ROOT_PATH = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automation”
 
 #..................................................................................................................................
 # Function : Get-RootPath
@@ -45,7 +78,7 @@ function Get-RootPath {
     if (Test-RootPath) {
         return (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore).PWSH_SCRIPT_ROOT
     } else {
-        $false
+        return $false
     }
 }
 
@@ -54,13 +87,12 @@ function Get-RootPath {
 #..................................................................................................................................
 Function Test-RootPath {
     if ((Get-Item -Path 'HKLM:\Software\TCS' -ErrorAction Ignore)) {
-        if (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore) {
-            $true
-        } else {
-            $false
-        }
+        $rc = (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore)
+        if (-not $rc) { 
+            return $false
+        } 
     } else {
-        $false
+        return $false
     }  
 }
 
@@ -69,15 +101,25 @@ Function Test-RootPath {
 #..................................................................................................................................
 function Set-RootPath {
     if (-not (Get-Item -Path 'HKLM:\Software\TCS' -ErrorAction Ignore)) {
-        New-Item -Path 'HKLM:\Software' -Name 'TCS' -Value 'TCS Apps branch'
+        try {
+            New-Item -Path 'HKLM:\Software' -Name 'TCS' -Value 'TCS Apps branch'
+        }
+        catch {
+            Write-Host "Error creating TCS registry branch"
+            return $false
+        }
     } 
 
     if (-not (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore)) { 
-        New-ItemProperty -Path HKLM:\Software\TCS -Name 'PWSH_SCRIPT_ROOT' -Value $ROOT_PATH | Out-Null
+        try {
+            New-ItemProperty -Path HKLM:\Software\TCS -Name 'PWSH_SCRIPT_ROOT' -Value $ROOT_PATH | Out-Null
+        } catch {
+            Write-Host "Error creating TCS registry value PWSH_SCRIPT_ROOT"
+            return $false
+        }
     } else  {
         return $false
     }
-    return $true
 }
  
 #..................................................................................................................................
@@ -86,50 +128,73 @@ function Set-RootPath {
 function Remove-RootPath {
     if ((Get-Item -Path 'HKLM:\Software\TCS' -ErrorAction Ignore)) {
         if (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore) {
-            Remove-ItemProperty -Path 'HKLM:\Software\TCS' -Name “PWSH_SCRIPT_ROOT” 
-            $true
+            try {
+                Remove-ItemProperty -Path 'HKLM:\Software\TCS' -Name “PWSH_SCRIPT_ROOT” 
+            } catch {
+                return $false
+            }
         } else {
-            $false
+            return $false
         }
     } else {
-        $false
+        return $false
     }  
  }
+
+ function Remove-EnvRoot {
+    if (-not (Remove-RootPath)) {
+        return $false
+    }
+ }
+
 
 #..................................................................................................................................
 # Function : Set-EnvRoot
 #..................................................................................................................................
 function Set-EnvRoot 
-{
-    
-    # Home env
-    # $global:ScriptRoot  = "D:\dev\40_PowerShell\tcs"
-    # $global:LogRoot     = "D:\dev\40_PowerShell\tcs\log"
-    # $global:LibRoot     = "D:\dev\40_PowerShell\tcs\libs"    
-    # $global:global_conf = "D:\dev\40_PowerShell\tcs\libs\global.json"   
-    
-    # TCS Laptop env
-
+{   
     $global:ScriptRoot  = [string](Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT').PWSH_SCRIPT_ROOT
     $global:LogRoot     = [string]$global:ScriptRoot + "\logs"
     $global:LibRoot     = [string]$global:ScriptRoot + "\libs"
     $global:TempDir     = [string]$global:ScriptRoot + "\tmp"
     $global:ConfDir     = [string]$global:ScriptRoot + "\conf"
     $global:global_conf = [string]$global:ScriptRoot + "\libs\global.json"   
-
+    
+    $rootPath = [string](Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT').PWSH_SCRIPT_ROOT
+    $EnvVar = @{ 
+        scriptroot =$rootPath;
+        'log' = $rootPath + "\log";
+        'lib' = $rootPath + "\lib";
+        'tmp' = $rootPath + "\tmp";
+        'conf' = $rootPath + "\conf"
+    }
+    
     if ($Env:PSModulePath -notlike  $LibRoot) { 
         $Env:PSModulePath = $Env:PSModulePath + ";" + $global:LibRoot 
     }
+}
+
+function Get-EnvRoot 
+{
+    Write-Host "Script Root   : " $global:ScriptRoot
+    Write-Host "Log           : " $global:LogRoot
+    Write-Host "Lib           : " $global:LibRoot
+    Write-Host "Conf          : " $global:ConfDir
+    Write-Host "Temporary     : " $global:TempDir
+    Write-Host "Env variables : " $EnvVar
+    Write-Host "Script Root   : " $EnvVar['scriptRoot']
+    Write-Host "Log           : " $envvar['log']
+    Write-Host "Lib           : " $envvar['lib']
+    Write-Host "Conf          : " $envvar['conf']
+    Write-Host "Temporary     : " $envvar['tmp']
+    return $EnvVar
 }
 
 #..................................................................................................................................
 # Function : Test-EnvRoot
 #..................................................................................................................................
 function Test-EnvRoot {
-    if (Test-RootPath) {
-        return $true
-    }
-    else {
+    if (-not (Test-RootPath)) {
         Write-Host "---------------------------------------------------------------------------------------------------------------"
         Write-Host "  !!! WARNING !!!"
         Write-Host "---------------------------------------------------------------------------------------------------------------"
@@ -141,33 +206,18 @@ function Test-EnvRoot {
         $key = $Host.UI.RawUI.ReadKey()
         if (($key.Character -eq 'y') -or ($key.Character -eq 'Y')) {
             if (Set-RootPath) {
-                Write-Host " "
                 Write-Host "Registry successfully updated !"
-                return $true
             } else {
-                Write-Host " "
                 Write-Error "Something went wrong updating registry. Change not applied !"
-                return $false
             }
         }
-
     }
-    
 }
-
-#----------------------------------------------------------------------------------------------------------------------------------
-#                                                     M A I N
-#----------------------------------------------------------------------------------------------------------------------------------
-# Test if the system is already setup for running scripts otherwise suggest auto installation
-Test-EnvRoot
-
-# Set Environment variables for scripts.
-Set-EnvRoot
-
-
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                E X P O R T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
-Export-ModuleMember -Function Get-RootPath, Test-RootPath, Remove-RootPath, Test-EnvRoot, Set-EnvRoot
+Export-ModuleMember -Function Get-RootPath, Test-RootPath, Remove-RootPath, Test-EnvRoot, Set-EnvRoot, Get-EnvRoot
+Export-ModuleMember -Variable EnvVar
+
 

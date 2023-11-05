@@ -1,4 +1,3 @@
-clear
 $root_dir = "."
 $errEvtFileName = $root_dir + "\" + (Get-Date -f 'yyyyMMdd') + "_error_evt.csv"
 $warnEvtFileName = $root_dir + "\" + (Get-Date -f 'yyyyMMdd') + "_warning_evt.csv"

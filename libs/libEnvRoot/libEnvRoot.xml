@@ -1,0 +1,9 @@
+<pathes>
+    <root path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\"/>
+    <logs path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\logs"/>
+    <tmp  path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\data"/>
+    <tools path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\tools"/>
+    <admin path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\admin"/>
+    <data path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\data"/>
+    <lib path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs"/>
+</pathes>
