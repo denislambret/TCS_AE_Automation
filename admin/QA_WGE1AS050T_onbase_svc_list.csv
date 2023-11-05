@@ -1,6 +1,0 @@
-rank;name;description;defaultStatus;retry;delay
-1;w3svc;World Wide Web Publishing Service;Running;3;5
-2;Hyland Ser;Hyland Services;Running;3;5
-3;Hyland Unity Scheduler Service_UnityScheduler;Hyland Unity Scheduler Service;Running;3;5
-4;Hyland.Core.Distribution.NTService;Hyland Distribution Service;Stopped;3;5
-5;Hyland.Diagnostics.NTService;Hyland Diagnostics Service;Stopped;3;5

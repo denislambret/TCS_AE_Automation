@@ -1,0 +1,95 @@
+**********************
+PowerShell transcript start
+Start time: 20231010142419
+Username: TCSGROUP\LD06974
+RunAs User: TCSGROUP\LD06974
+Configuration Name: 
+Machine: Y0001194 (Microsoft Windows NT 10.0.19045.0)
+Host Application: C:\Program Files\PowerShell\7\pwsh.dll -NoProfile -ExecutionPolicy Bypass -Command Import-Module 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.9.4\modules\PowerShellEditorServices\PowerShellEditorServices.psd1'; Start-EditorServices -HostName 'Visual Studio Code Host' -HostProfileId 'Microsoft.VSCode' -HostVersion '2023.9.4' -AdditionalModules @('PowerShellEditorServices.VSCode') -BundledModulesPath 'c:\Users\LD06974\.vscode\extensions\ms-vscode.powershell-2023.9.4\modules' -EnableConsoleRepl -StartupBanner "PowerShell Extension v2023.9.4
+Copyright (c) Microsoft Corporation.
+
+https://aka.ms/vscode-powershell
+Type 'help' to get help.
+" -LogLevel 'Normal' -LogPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\logs\1696842640-788360fb-b3ac-41c2-840d-16936397c3441696842636285\EditorServices.log' -SessionDetailsPath 'c:\Users\LD06974\AppData\Roaming\Code\User\globalStorage\ms-vscode.powershell\sessions\PSES-VSCode-15476-447420.json' -FeatureFlags @() 
+Process ID: 16060
+PSVersion: 7.3.0
+PSEdition: Core
+GitCommitId: 7.3.0
+OS: Microsoft Windows 10.0.19045
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.10032.0, 6.0.0, 6.1.0, 6.2.0, 7.0.0, 7.1.0, 7.2.0, 7.3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+[20231010 14:24:19][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ----------------------------------------------------------------------------------------------------------------
+[20231010 14:24:20][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] check-IDITPayments.ps1 v0.1
+[20231010 14:24:20][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ----------------------------------------------------------------------------------------------------------------
+[20231010 14:24:20][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Clean temporary directory....
+
+Remove-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:126:9
+Line |
+ 126 |          Remove-Item ($script_path + "\tmp\*.*")
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist.
+
+Remove-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:126:9
+Line |
+ 126 |          Remove-Item ($script_path + "\tmp\*.*")
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist.
+
+
+Get-Content: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:241:22
+Line |
+ 241 |          [XML]$conf = Get-Content $config_path
+     |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist.
+
+Get-Content: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:241:22
+Line |
+ 241 |          [XML]$conf = Get-Content $config_path
+     |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist.
+
+[20231010 14:24:21][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Build source CAMT files list from ...
+[20231010 14:24:21][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] List all XML for 20231009
+0
+[20231010 14:24:21][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] No XML camt file found !!!
+[20231010 14:24:21][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] Aborting Payments control.
+[20231010 14:24:21][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Send email to mail list
+
+Copy-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:200:9
+Line |
+ 200 |          Copy-Item ($global:log_path + "\" +  $global:log_name)  ($scr …
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231010_022419_check-IDITPayments.log'.
+
+Copy-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:200:9
+Line |
+ 200 |          Copy-Item ($global:log_path + "\" +  $global:log_name)  ($scr …
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231010_022419_check-IDITPayments.log'.
+
+PS>TerminatingError(Send-MailMessage): "Cannot validate argument on parameter 'To'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again."
+[20231010 14:24:22][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] Error While sending mail to distribution list
+[20231010 14:24:22][check-IDITPayments.ps1][TCSGROUP\LD06974][ERROR] Cannot validate argument on parameter 'To'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again. Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231010_022419_check-IDITPayments.log'. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot validate argument on parameter 'To'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again. Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231010_022243_check-IDITPayments.log'. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot validate argument on parameter 'To'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again. Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231010_021551_check-IDITPayments.log'. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot validate argument on parameter 'To'. The argument is null or empty. Provide an argument that is not null or empty, and then try the command again. Could not find a part of the path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\logs\20231009_120105_check-IDITPayments.log'. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\PRD.conf' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist. Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\libs\global.json' because it does not exist. Impossible de créer un fichier déjà existant. Impossible de créer un fichier déjà existant. Impossible de créer un fichier déjà existant. Impossible de créer un fichier déjà existant.
+[20231010 14:24:22][check-IDITPayments.ps1][TCSGROUP\LD06974][INFO] ................................................................................................................
+[20231010 14:24:23][check-IDITPayments.ps1][TCSGROUP\LD06974][DEBUG] Clean temporary directory....
+
+Remove-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:126:9
+Line |
+ 126 |          Remove-Item ($script_path + "\tmp\*.*")
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist.
+
+Remove-Item: Y:\03_DEV\06_GITHUB\tcs-1\Projects\IDIT_CheckPayments\check-IDITPayments.ps1:126:9
+Line |
+ 126 |          Remove-Item ($script_path + "\tmp\*.*")
+     |          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Cannot find path 'Y:\03_DEV\06_GITHUB\tcs-1\libs\Projects\IDIT_CheckPayments\tmp' because it does not exist.
+
+**********************
+PowerShell transcript end
+End time: 20231010142423
+**********************
