@@ -53,33 +53,9 @@ function Set-EnvRoot
     $global:TmpRoot     = $conf.pathes.tmp.path
     $global:LibRoot     = $conf.pathes.lib.path
     $global:DataRoot    = $conf.pathes.data.path
-<<<<<<< HEAD
     $global:global_conf = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs\global.json"   
-    
+ 
 
-    # Chalet Env
-
-    # $global:ScriptRoot  = "G:\dev\20_GitHub\tcs"
-    # $global:LogRoot     = "G:\dev\20_GitHub\tcs\log"
-    # $global:LibRoot     = "G:\dev\20_GitHub\tcs\libs"
-
-    # Home env
-    #$global:ScriptRoot  = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs"
-    #$global:LogRoot     = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\log"
-    #$global:LibRoot     = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs"    
-    #$global:global_conf = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs\global.json"   
-    
-    # TCS Laptop env
-    #$global:ScriptRoot  = "Y:\03_DEV\06_GITHUB\tcs-1"
-    #$global:LogRoot     = "Y:\03_DEV\06_GITHUB\tcs-1\logs"
-    #$global:LibRoot     = "Y:\03_DEV\06_GITHUB\tcs-1\libs"
-    #$global:global_conf = "Y:\03_DEV\06_GITHUB\tcs-1\libs\global.json"   
-
-=======
-    $global:global_conf = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs\global.json"   
-    
-
->>>>>>> 81a86f5adb744c9fb3f6b450a202614d47816bb2
     if ($Env:PSModulePath -notlike  $LibRoot) { 
         $Env:PSModulePath = $Env:PSModulePath + ";" + $global:LibRoot 
     }

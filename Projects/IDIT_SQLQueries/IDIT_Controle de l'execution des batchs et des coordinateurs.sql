@@ -84,13 +84,13 @@ where l.STATUS in ('4','8','9','17','19','20','22','23')
 order by UPDATE_DATE desc
 
 -- Run le 17.07.2023 à 14:51
-update sh_batch_log set status = 6 where status = 4 and TRANSFER_TYPE in (1000001,1000067,1000072);    -- Started > Failed  
+-- update sh_batch_log set status = 6 where status = 4 and TRANSFER_TYPE in (1000001,1000067,1000072);    -- Started > Failed  
 
 -- 1 rows
-update sh_batch_log set status = 21 where status in (19,23,20) and transfer_type != 13844; -- Recurring Job Scheduled,Recurring Job Paused > Recurring Job Unscheduled (13844=rapports)
+-- update sh_batch_log set status = 21 where status in (19,23,20) and transfer_type != 13844; -- Recurring Job Scheduled,Recurring Job Paused > Recurring Job Unscheduled (13844=rapports)
 
 -- 12 rows
-update t_batch_job_group set IS_LONG_AND_LOW_FREQUENT=1 where id= 1000022;
+-- update t_batch_job_group set IS_LONG_AND_LOW_FREQUENT=1 where id= 1000022;
 
 -- 1 rows
 select * 
