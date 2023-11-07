@@ -290,7 +290,7 @@ PROCESS {
             $seq = $Matches[3]
             $timestamp = $Matches[4]
 
-            if ($iban -in $confRoot.accounts.account.iban) {
+            if (($iban -in $confRoot.accounts.account.iban) -and ($number -in $number)) {
                 $tmpList += $_
             }
         }
