@@ -1,4 +1,13 @@
 <pathes>
+<<<<<<< HEAD
+    <root path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\"/>
+    <logs path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\logs"/>
+    <tmp  path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\data"/>
+    <tools path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\tools"/>
+    <admin path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\admin"/>
+    <data path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\data"/>
+    <lib path="D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs"/>
+=======
     <root path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE"/>
     <logs path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\logs"/>
     <tmp  path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\data"/>
@@ -6,4 +15,5 @@
     <admin path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\admin"/>
     <data path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\data"/>
     <lib path="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs"/>
+>>>>>>> 81a86f5adb744c9fb3f6b450a202614d47816bb2
 </pathes>
