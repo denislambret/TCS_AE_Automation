@@ -137,11 +137,11 @@ BEGIN {
 
     #Set-EnvRoot
     $script_path      = "Y:\03_DEV\06_GITHUB\tcs-1\Projects\POSTFINANCE_MoveFileCompta"
-    if (-not $config_path) { $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'}
+    if (-not $config_path) { $config_path = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'}
     
     # Log initialization
     if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
-        "FATAL : Log initializzation failed!"
+        "FATAL : Log initialization failed!"
         exit $EXIT_KO
     }
     
@@ -290,7 +290,7 @@ PROCESS {
             $seq = $Matches[3]
             $timestamp = $Matches[4]
 
-            if ($iban -in $confRoot.accounts.account.iban) {
+            if (($iban -in $confRoot.accounts.account.iban) -and ($number -in $confRoot.accounts.account.number)) {
                 $tmpList += $_
             }
         }
