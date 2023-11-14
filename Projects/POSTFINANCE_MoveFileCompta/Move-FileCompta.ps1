@@ -51,6 +51,7 @@
         but within the param block, directly above each parameter.
 
     .PARAMETER SecondParameter
+    
         Description of each of the parameters.
 
     .INPUTS

@@ -11,5 +11,5 @@
 # Get powershell version table and rReturn OK
 #----------------------------------------------------------------------------------------------------------------------------------
 
-$PSVersionTable | ft
+$PSVersionTable | format-table
 exit 0;
