@@ -1,5 +1,5 @@
 clear
-$root_dir = "D:\dev\40_PowerShell\PowerShell\bin"
+$root_dir = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\Sandbox"
 $errEvtFileName = $root_dir + "\" + (Get-Date -f 'yyyyMMdd') + "_error_evt.csv"
 $warnEvtFileName = $root_dir + "\" + (Get-Date -f 'yyyyMMdd') + "_warning_evt.csv"
 

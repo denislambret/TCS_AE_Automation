@@ -25,8 +25,11 @@ function Get-ServerCrendentials {
     $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
     if (Test-Path $catalog) {
         [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
-        if ($srvList.servers.server.alias -contains $srv) {
+        if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
+            if ($node -eq $null) {
+                $node = $srvList.SelectSingleNode("/servers/server[@ComputerName='$srv']")
+            }
             # $node | Select-Object group, alias, name, user
 
             # Create credentials for remote connection
@@ -41,6 +44,38 @@ function Get-ServerCrendentials {
     return $null
 }
 
+function Get-ServerDefinition {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$true, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("server","ComputerName")]
+        [ValidateNotNullOrEmpty()]
+        [string]$srv
+    )
 
-$cred = Get-ServerCrendentials -ComputerName 'WGE3AS161D'
-$cred
+    
+    $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+    if (Test-Path $catalog) {
+        [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+        if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
+            $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
+            if ($node -eq $null) {
+                $node = $srvList.SelectSingleNode("/servers/server[@ComputerName='$srv']")
+            }
+            return $node
+        }
+        "Server not found"
+        return $null
+    } else {
+        "Catalog not found... Please check servers_catalog.xml is in /conf."
+        return $null
+    }
+}
+
+$cred = Get-ServerCrendentials -ComputerName obdev
+$cred | ft
+$node = Get-ServerDefinition -ComputerName obdev
+$node | ft
+
+
