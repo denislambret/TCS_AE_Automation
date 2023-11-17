@@ -1,10 +1,10 @@
 Import-Module SimplySql -Force
 
-$user = "dbadmin"
-[securestring]$password = ConvertTo-SecureString -String "1234qwerASD!" -AsPlainText -Force
+$user = "dev"
+[securestring]$password = ConvertTo-SecureString -String "1234qwerASD" -AsPlainText -Force
 [pscredential]$cred = New-Object System.Management.Automation.PSCredential ($user, $password) 
-$server = "192.168.1.100"
-$db = 'wdb'
+$server = "192.168.1.3"
+$db = 'WeatherDB'
 
 
 
@@ -14,18 +14,24 @@ try {
 catch {
     Write-Host $Error
     Write-Host $StackTrace 
+    exit
 }
 
-$start = '2023-10-10 00:00:00'
-$end = '2023-10-10 23:59:59'
+"Setting up dates..."
+$start = '2023-11-01 00:00:00'
+$end = '2023-11-31 23:59:59'
 
-$query = "`
-SELECT date_timestamp, Locations.name, temp, pressure, humidity, clouds_cover, Rain_1h
- FROM RawRecords
- INNER JOIN Locations ON id_location = Locations.id
- WHERE id_location = 6
- AND date_timestamp BETWEEN '$start' AND '$end' 
- ORDER BY date_timestamp DESC
+"Query snow report summary"
+
+$query = "
+SELECT date_timestamp, Locations.name, AVG(temp - 273.15) AS 'Average temperature', SUM(Snow_1h) AS 'total snow'
+FROM RawRecords
+INNER JOIN Locations ON RawRecords.id_location = Locations.id
+WHERE RawRecords.id_location = 6
+AND date_timestamp BETWEEN '$start' AND '$end' 
+AND Snow_1h > 0
+GROUP BY DAY(date_timestamp), Locations.name
+ORDER BY date_timestamp
 "
 
 try {
@@ -35,6 +41,7 @@ catch {
     Write-Host $Error
     Write-Host $StackTrace 
 }
+
 
 $results | Format-Table -AutoSize
 
