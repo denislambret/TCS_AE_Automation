@@ -1,3 +1,5 @@
+Import-Module Posh-SSH
+
 function Get-ServerCrendentials {
     [CmdletBinding(SupportsShouldProcess=$true)] param(
         [Parameter(Mandatory=$false, 
@@ -22,9 +24,10 @@ function Get-ServerCrendentials {
         [string]$srv
     )
     
-    $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+    $catalog = $DEFAULT_CONF_PATH + "\servers_catalog.xml"
+	$srv = $srv.ToUpper()
     if (Test-Path $catalog) {
-        [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+        [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
             if ($node -eq $null) {
@@ -40,7 +43,6 @@ function Get-ServerCrendentials {
     } else {
         "Catalog not found... Please check servers_catalog.xml is in /conf."
     }
-    
     return $null
 }
 
@@ -53,11 +55,11 @@ function Get-ServerDefinition {
         [ValidateNotNullOrEmpty()]
         [string]$srv
     )
-
     
-    $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
-    if (Test-Path $catalog) {
-        [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+    $catalog = $DEFAULT_CONF_PATH + "\servers_catalog.xml"
+    $srv = $srv.ToUpper()
+	if (Test-Path $catalog) {
+        [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
             if ($node -eq $null) {
@@ -73,7 +75,6 @@ function Get-ServerDefinition {
     }
 }
 
-
 function Enter-RemoteServerPSSession {
     [CmdletBinding(SupportsShouldProcess=$true)] param(
         [Parameter(Mandatory=$true, 
@@ -85,8 +86,9 @@ function Enter-RemoteServerPSSession {
     )
     
         
-        $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
-        if (Test-Path $catalog) {
+        $catalog = $DEFAULT_CONF_PATH + "servers_catalog.xml"
+        $srv = $srv.ToUpper()
+		if (Test-Path $catalog) {
             [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
             if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
                 $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
@@ -114,12 +116,15 @@ function Enter-RemoteServerPSSession {
         }
 }
 
+$cred = Get-ServerCrendentials -server obdev
+$srv = (Get-ServerDefinition -server obdev).ComputerName
+$session = New-PSSession -ComputerName $srv -Credential $cred
 
-$cred = Get-ServerCrendentials -ComputerName obdev
-$cred | ft
-$node = Get-ServerDefinition -ComputerName obdev
-$node | ft
+try {
+   copy-item  'D:\Scripts\data\input\test.txt' -Destination 'd:\work' -ToSession $session 
+}
+catch {
+   $error
+}
 
-
-
-
+Remove-PSSession -Session $session 
