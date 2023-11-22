@@ -30,7 +30,7 @@
     .DESCRIPTION
         Set script's global variables 
 #>
-$VERSION = "1.0"
+$VERSION = "1.1"
 $AUTHOR  = "Denis Lambret"
 
 $EnvVar = @{}
@@ -123,8 +123,9 @@ function Remove-RootPath {
     if ((Get-Item -Path 'HKLM:\Software\TCS' -ErrorAction Ignore)) {
         if (Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT' -ErrorAction Ignore) {
             try {
-                Remove-ItemProperty -Path 'HKLM:\Software\TCS' -Name “PWSH_SCRIPT_ROOT” 
+                Remove-ItemProperty -Path 'HKLM:\Software\TCS' -Name “PWSH_SCRIPT_ROOT” -ErrorAction Stop
             } catch {
+                $error
                 return $false
             }
         } else {
@@ -159,7 +160,7 @@ function Set-EnvRoot
     try {
         $rootPath = [string](Get-ItemProperty -Path 'HKLM:\Software\TCS' -Name 'PWSH_SCRIPT_ROOT').PWSH_SCRIPT_ROOT
     } catch {
-        $_.Exception.Message
+        $error
         return $false
     }
     
