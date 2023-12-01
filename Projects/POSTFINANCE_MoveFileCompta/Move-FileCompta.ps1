@@ -51,7 +51,6 @@
         but within the param block, directly above each parameter.
 
     .PARAMETER SecondParameter
-    
         Description of each of the parameters.
 
     .INPUTS
@@ -84,7 +83,7 @@ param (
         Position = 0
         )
     ]
-    [alias('conf')] $config_path,
+    [alias('conf','c')] $config_path,
     
    
     [Parameter(
@@ -131,18 +130,23 @@ BEGIN {
 			Also define output separator line size for nice formating
 			Define standart script exit codes
     #>
-    # Import-Module libEnvRoot
+    
+	$lib_path         = $env:PWSH_SCRIPTS_LIBS
+    $Env:PSModulePath = $Env:PSModulePath + ";" + $lib_path
+	
+	# Import-Module libEnvRoot
     Import-Module libConstants
     Import-Module libLog
-    Import-Module Posh-SSH
+    Import-Module Posh-SSH -force
 
+    
     #Set-EnvRoot
-    $script_path      = "Y:\03_DEV\06_GITHUB\tcs-1\Projects\POSTFINANCE_MoveFileCompta"
-    if (-not $config_path) { $config_path = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'}
+    $script_path      = "d:\scripts\Projects\POSTFINANCE_MoveFileCompta"
+    if (-not $config_path) { $config_path      = $script_path + "\" + ($MyInvocation.MyCommand.Name -replace 'ps1','')+ 'conf'}
     
     # Log initialization
-    if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
-        "FATAL : Log initialization failed!"
+    if (-not (Start-Log -path 'D:\Scripts\logs' -Script $MyInvocation.MyCommand.Name)) { 
+        "FATAL : Log initializzation failed!"
         exit $EXIT_KO
     }
     
@@ -257,10 +261,12 @@ PROCESS {
      # Do something here
     # 1 - Get connected to SFTP
     
-    $sec_pwd        = $confRoot.sftp_servers.sftp_server_tcs.userpwd | ConvertTo-SecureString -AsPlainText -Force
-    $credential     = New-Object System.Management.Automation.PSCredential($confRoot.sftp_servers.sftp_server_tcs.username, $sec_pwd ) 
+    $sec_pwd        = $confRoot.sftp_servers.sftp_server.userpwd | ConvertTo-SecureString -AsPlainText -Force
+    $credential     = New-Object System.Management.Automation.PSCredential($confRoot.sftp_servers.sftp_server.username, $sec_pwd ) 
     try {
-        $sftpSession    = New-SFTPSession -ComputerName $confRoot.sftp_servers.sftp_server_tcs.computername -Credential $credential
+        # $sftpSession    = New-SFTPSession -ComputerName $confRoot.sftp_servers.sftp_server_tcs.computername -Credential $credential -AcceptKey -Force -Verbose
+		
+		$sftpSession = New-SFTPSession -ComputerName $confRoot.sftp_servers.sftp_server.computername -Credential $credential -KeyFile $confRoot.sftp_servers.sftp_server.privKey -AcceptKey
     }
     catch {
         Log -Level 'ERROR' -Message "An error occurred while connecting to SFTP server."
@@ -270,7 +276,7 @@ PROCESS {
     }
     
     # 2 - Get file source list
-    $srcFileList = Get-SFTPChildItem -SFTPSession $sftpSession -path $confRoot.sftp_servers.sftp_server_tcs.sftp_input_path
+    $srcFileList = Get-SFTPChildItem -SFTPSession $sftpSession -path $confRoot.sftp_servers.sftp_server.sftp_input_path
     Log -Level 'INFO' -message('Count ' + ($srcFileList).Count + ' item(s) on SFTP source')
     
 
