@@ -27,7 +27,7 @@
 #>
 
 # Separators definitions
-$LineSize     = 132
+$LineSize     = 140
 $SEP_L1       = '-' * $LineSize
 $SEP_L2       = '.' * $LineSize
 

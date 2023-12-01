@@ -19,4 +19,5 @@
     <server ComputerName='WDC2AS009P' 	alias='EXT23PRD2' 	group='ccm' name='Exstream_23_PRD_node_2' 	user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
     <server ComputerName='WDC1AS008P' 	alias='OTDS1' 		group='ccm' name='OTDS_node_1' 				user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
     <server ComputerName='WDC2AS008P' 	alias='OTDS2' 		group='ccm' name='OTDS_node_2' 				user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='mopsos.ddns.net' 	alias='MOPSOS' 	group='nas' name='Mopsos'       			user='denis.lambret' 	    pwd='1234SamsungS23U+' 	maxRetries='3'/>
 </servers>
