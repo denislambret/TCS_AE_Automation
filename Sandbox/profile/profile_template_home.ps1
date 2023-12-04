@@ -1,23 +1,9 @@
-# 1. Write details
-$ME = whoami
+# 1. Initialize
 Clear
-"----------------------------------------------------------------------------------------------------------------------------------------------"
-" ____               _       _____ 
-|  _ \__      _____| |__   |___  |
-| |_) \ \ /\ / / __| '_ \     / / 
-|  __/ \ V  V /\__ \ | | |   / /  
-|_|     \_/\_/ |___/_| |_|  /_/   "   
- "----------------------------------------------------------------------------------------------------------------------------------------------"
- "Host app  : [$($Host.Name)]"
- "Hostname  : $(hostname)"
- "profile   : Microsoft.Powershell_profile.ps1"
- "Logged as : $ME"
- "----------------------------------------------------------------------------------------------------------------------------------------------"
- "Profile v 1.0.2 - 14.11.2023"
- "----------------------------------------------------------------------------------------------------------------------------------------------"
 
 # 2. Global variables declarations
 $ME = whoami
+$catalog = "D:\dev\01_GITHUB\TCS_AE_Automation\conf\servers_catalog.xml"
 
 # 3. Set Format enumeration olimit
 $FormatEnumerationLimit = 99
@@ -30,12 +16,10 @@ $PSDefaultParameterValues = @{
 }
 
 # 5. Set home and modules
-$Env:PSModulePath = $Env:PSModulePath+";C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs"
+$Env:PSModulePath = $Env:PSModulePath+";"
 $Provider = Get-PSProvider FileSystem
-$Provider.Home = 'C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE'
+$Provider.Home = 'D:\Dev'
 Set-Location -Path ~
-'Setting home to ' + $Provider.Home
-"----------------------------------------------------------------------------------------------------------------------------------------------"
 
 # 6. Add a new functions
 
@@ -59,14 +43,14 @@ function Env:   { Set-Location Env: }
 # Customize prompt with resource wather on prompt
 function prompt
 {
- $ps = Get-Process -id $pid
- "$($executionContext.SessionState.Path.CurrentLocation)$('>' *  ($nestedPromptLevel + 1))" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
+    $ps = Get-Process -id $pid
+    "$($executionContext.SessionState.Path.CurrentLocation)$('>' *  ($nestedPromptLevel + 1))" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
 }
 
 function stats
 {
- $ps = Get-Process -id $pid
- "PS PID: $pid PM(M) {0:N2} WS(M) {1:N2} VM(M) {2:N2} CPU(s) {3:N2} `r`n" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
+    $ps = Get-Process -id $pid
+    "PS PID: $pid PM(M) {0:N2} WS(M) {1:N2} VM(M) {2:N2} CPU(s) {3:N2} `r`n" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
 }
 
 # Get detailed help on a command
@@ -177,7 +161,7 @@ Function Get-EmptyDirectory {
     }
 
 Function List-ProfileFunctions {
-	Get-ChildItem function: | ?{ $_.Name -notmatch ".`:"}
+              Get-ChildItem function: | ?{ $_.Name -notmatch ".`:"}
 }
 
 Function Clear-ElderThan2Weeks {
@@ -197,25 +181,25 @@ Function Clear-ElderThan2Weeks {
     .EXAMPLE
         Clear-ElderThan2Weeks -path xxxxxxxxxxx -Filter *.log
     #>
-	[CmdletBinding()]
+              [CmdletBinding()]
         param(
             [Parameter(Mandatory = $true,Position = 0)][string]    $Path,
-			[Parameter(Mandatory = $true,Position = 1)][string]    $Filter
+                                          [Parameter(Mandatory = $true,Position = 1)][string]    $Filter
         )
-		
-	if (-not (Test-Path $path)) {
-		"Error : Directory " + $path +" not found"
-		return -1
-	}
-	
-	if (-not $Filter) {
-		"Error : No filter pattern defined!"
-		return -1
-	}
-	
-	$listCandidates = Get-ChildItem -Path $path -recurse | Where-Object { $_.LastWrtieTime -le (Get-Date).AddDays(-15) } 
-	"File(s) electible for removal : " + ($listCandidates).Count
-	$listCandidates | Remove-Item
+                            
+              if (-not (Test-Path $path)) {
+                            "Error : Directory " + $path +" not found"
+                            return -1
+              }
+              
+              if (-not $Filter) {
+                            "Error : No filter pattern defined!"
+                            return -1
+              }
+              
+              $listCandidates = Get-ChildItem -Path $path -recurse | Where-Object { $_.LastWrtieTime -le (Get-Date).AddDays(-15) } 
+              "File(s) electible for removal : " + ($listCandidates).Count
+              $listCandidates | Remove-Item
 }
 
 function Get-ServerCrendentials {
@@ -242,9 +226,8 @@ function Get-ServerCrendentials {
         [string]$srv
     )
     
-    $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
     if (Test-Path $catalog) {
-        [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+        [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
             if ($node -eq $null) {
@@ -274,10 +257,8 @@ function Get-ServerDefinition {
         [string]$srv
     )
 
-    
-    $catalog = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
     if (Test-Path $catalog) {
-        [xml]$srvList = Get-Content "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\conf\servers_catalog.xml"
+        [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
             if ($node -eq $null) {
@@ -293,10 +274,171 @@ function Get-ServerDefinition {
     }
 }
 
+function isAdmin {
+    $elevated = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    return $elevated
+}
 
-# 7. Set aliases 
-Set-Alias gh    Get-Help
-Set-Alias ghd   Get-HelpDetailed
-Set-Alias ll    Get-ChildItem 
-Set-Alias gcred Get-ServerCrendentials
-Set-Alias gsrv  Get-ServerDefinition
+function Set-AsAdministrator {
+    Start-Process wt pwsh -Verb runAs
+    if (-not (isAdmin)) {
+
+    } else {
+        Write-Host -BackgroundColor Red -ForegroundColor White "Elevated to Administrator role !!!"
+    }
+}
+
+function get-TopProcessMem {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit
+    )
+    if (-not $limit) { $limit = 10}
+    return (get-process | Sort WS -Descending | Select -First $limit)
+}
+
+function Get-TopProcessCPU {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit
+    )
+    if (-not $limit) { $limit = 10}
+    return (get-process | Sort CPU -Descending | Select -First $limit)
+}
+
+function Get-TopFileSize {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("p")]
+        [ValidateNotNullOrEmpty()]
+        [string]$path,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=2)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [Alias("r")]
+        [ValidateNotNullOrEmpty()]
+        [switch]$recurse
+    )
+    if (-not $limit) { $limit = 10}
+    if ($recurse) {
+        $list = Get-ChildItem -Path $path -File -Recurse 
+    } else {
+        $list = Get-ChildItem -Path $path -File
+    }
+    $list = $list | Select-Object DirectoryName, Name, Mode, Length, @{Label='Length_MB'; Expression={"{0:N2}" -f [math]::Round(($_.Length/1MB),2)}} , Attributes | Sort-Object Length -Descending  | Select-Object -First $limit
+    #$list = $list | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N2}" -f ($_.Length/1MB)}} , DirectoryName,  {Label='Length'; Expression={"{0:N2}" -f $_.Length}} Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $limit
+	return $list
+}
+
+function Get-TopFileElder {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("p")]
+        [ValidateNotNullOrEmpty()]
+        [string]$path,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=2)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [Alias("r")]
+        [ValidateNotNullOrEmpty()]
+        [string]$recurse,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [ValidateNotNullOrEmpty()]
+        [switch]$period
+    )
+
+    if (-not $limit) { $limit = 10}
+    if (-not $period) { $limit = 7}
+    
+    if ($recurse) {
+        $list= Get-ChildItem -path $path -File -recurse
+    } else {
+        $list = Get-ChildItem -Path $path -File 
+    }
+    
+    $list = $list | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays($period) | Select-Object -First $limit}  
+    return $list
+
+}
+
+
+#Function to get the largest N files on a specific computer's drive
+Function Get-LargestFilesOnDrive
+{
+Param([String]$ComputerName = $env:COMPUTERNAME,[Char]$Drive = 'C', [Int]$Top = 10)
+Get-ChildItem -Path \\$ComputerName\$Drive$ -Recurse | Select-Object Name, @{Label='Length_MB'; Expression={"{0:N0}" -f [math]::Round(($_.Length/1MB))}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap    
+}
+
+#Function to get the largest N files on a specific UNC path and its sub-paths
+Function Get-LargestFilesOnPath
+{
+    Param([String]$Path = '.\', [Int]$Top = 10)
+    Get-ChildItem -Path $Path -Recurse | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N0}" -f ($_.Length/1MB)}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap
+}
+# 6. Set aliases 
+Set-Alias gh        Get-Help
+Set-Alias ghd       Get-HelpDetailed
+Set-Alias ll        Get-ChildItem 
+Set-Alias gcred     Get-ServerCrendentials
+Set-Alias gsrv      Get-ServerDefinition
+Set-Alias admin     Set-AsAdministrator
+Set-Alias topc      Get-TopProcessCPU
+Set-Alias topm      Get-TopProcessMem
+Set-Alias topfs     Get-TopFileSize
+Set-Alias topfe     Get-TopFileElder
+
+# 7. Display splash screen
+'----------------------------------------------------------------------------------------------------------------------------------------------'
+'						 ____               _       _____ 
+						|  _ \__      _____| |__   |___  |
+						| |_) \ \ /\ / / __| |_ \     / / 
+						|  __/ \ V  V /\__ \ | | |   / /  
+						|_|     \_/\_/ |___/_| |_|  /_/      
+
+----------------------------------------------------------------------------------------------------------------------------------------------'
+ 'Profile v 1.0.2 - 14.11.2023'
+ '----------------------------------------------------------------------------------------------------------------------------------------------'
+ "Host app  : [$($Host.Name)]"
+ "Hostname  : $(hostname)"
+ "profile   : Microsoft.Powershell_profile.ps1"
+ Write-Host -NoNewline "Logged as : $ME as "
+    if (isAdmin) {
+        Write-Host -BackgroundColor Red -ForegroundColor White ' ! Administrator ! '
+    } else {
+        Write-Host -BackgroundColor DarkGreen -ForegroundColor White ' Standard user '
+    }
+
+'----------------------------------------------------------------------------------------------------------------------------------------------'
+'Setting home to ' + $Provider.Home
+'----------------------------------------------------------------------------------------------------------------------------------------------'
