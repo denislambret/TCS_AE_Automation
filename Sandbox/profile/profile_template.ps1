@@ -1,6 +1,30 @@
 # 1. Write details
 $ME = whoami
 Clear
+
+
+# 2. Global variables declarations
+$ME = whoami
+
+# 3. Set Format enumeration olimit
+$FormatEnumerationLimit = 99
+
+# 4. Set some command defaults
+$PSDefaultParameterValues = @{
+  "*:autosize"       = $true
+  'Receive-Job:keep' = $true
+  '*:Wrap'           = $true
+}
+
+# 5. Set home and modules
+$Env:PSModulePath = $Env:PSModulePath+";C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs"
+$Provider = Get-PSProvider FileSystem
+$Provider.Home = 'C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE'
+Set-Location -Path ~
+'Setting home to ' + $Provider.Home
+"----------------------------------------------------------------------------------------------------------------------------------------------"
+
+# 6. Display splash screen
 "----------------------------------------------------------------------------------------------------------------------------------------------"
 "                                                            @#*********************@                       
                                                              @+-*#################=-@                       
@@ -39,33 +63,18 @@ Clear
  "Host app  : [$($Host.Name)]"
  "Hostname  : $(hostname)"
  "profile   : Microsoft.Powershell_profile.ps1"
- "Logged as : $ME"
+  Write-Host -NoNewline "Logged as : $ME as "
+    if (isAdmin) {
+        Write-Host -BackgroundColor Red -ForegroundColor White " ! Administrator ! "
+    } else {
+        Write-Host -BackgroundColor DarkGreen -ForegroundColor White " Standard user "
+    }
+ 
  "----------------------------------------------------------------------------------------------------------------------------------------------"
  "Profile v 1.0.2 - 14.11.2023"
  "----------------------------------------------------------------------------------------------------------------------------------------------"
 
-# 2. Global variables declarations
-$ME = whoami
-
-# 3. Set Format enumeration olimit
-$FormatEnumerationLimit = 99
-
-# 4. Set some command defaults
-$PSDefaultParameterValues = @{
-  "*:autosize"       = $true
-  'Receive-Job:keep' = $true
-  '*:Wrap'           = $true
-}
-
-# 5. Set home and modules
-$Env:PSModulePath = $Env:PSModulePath+";C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs"
-$Provider = Get-PSProvider FileSystem
-$Provider.Home = 'C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE'
-Set-Location -Path ~
-'Setting home to ' + $Provider.Home
-"----------------------------------------------------------------------------------------------------------------------------------------------"
-
-# 6. Add a new functions
+ # 7. Add a new functions
 
 # Useful shortcuts for traversing directories
 function cd...  { cd ..\.. }
@@ -321,6 +330,24 @@ function Get-ServerDefinition {
     }
 }
 
+function isAdmin {
+    $elevated = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+    return $elevated
+}
+
+function Set-AsAdministrator {
+    Start-Process pwsh -Verb runAs
+    if (-not (isAdmin)) {
+
+    } else {
+        Write-Host -BackgroundColor Red -ForegroundColor White "Elevated to Administrator role !!!"
+    }
+}
+
+function Set-AsAdministror {
+
+}
+
 
 # 7. Set aliases 
 Set-Alias gh    Get-Help
@@ -328,3 +355,4 @@ Set-Alias ghd   Get-HelpDetailed
 Set-Alias ll    Get-ChildItem 
 Set-Alias gcred Get-ServerCrendentials
 Set-Alias gsrv  Get-ServerDefinition
+Set-Alias admin Set-AsAdministrator
