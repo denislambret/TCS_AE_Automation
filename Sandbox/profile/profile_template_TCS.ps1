@@ -321,6 +321,123 @@ function Get-ServerDefinition {
     }
 }
 
+function get-TopProcessMem {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit
+    )
+    if (-not $limit) { $limit = 10}
+    return (get-process | Sort WS -Descending | Select -First $limit)
+}
+
+function Get-TopProcessCPU {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit
+    )
+    if (-not $limit) { $limit = 10}
+    return (get-process | Sort CPU -Descending | Select -First $limit)
+}
+
+function Get-TopFileSize {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("p")]
+        [ValidateNotNullOrEmpty()]
+        [string]$path,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=2)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [Alias("r")]
+        [ValidateNotNullOrEmpty()]
+        [switch]$recurse
+    )
+    if (-not $limit) { $limit = 10}
+    if ($recurse) {
+        $list = Get-ChildItem -Path $path -File -Recurse 
+    } else {
+        $list = Get-ChildItem -Path $path -File
+    }
+    $list = $list | Select-Object DirectoryName, Name, Mode, Length, @{Label='Length_MB'; Expression={"{0:N2}" -f [math]::Round(($_.Length/1MB),2)}} , Attributes | Sort-Object Length -Descending  | Select-Object -First $limit
+    #$list = $list | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N2}" -f ($_.Length/1MB)}} , DirectoryName,  {Label='Length'; Expression={"{0:N2}" -f $_.Length}} Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $limit
+	return $list
+}
+
+function Get-TopFileElder {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("p")]
+        [ValidateNotNullOrEmpty()]
+        [string]$path,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=2)]         
+        [Alias("l")]
+        [ValidateNotNullOrEmpty()]
+        [string]$limit,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [Alias("r")]
+        [ValidateNotNullOrEmpty()]
+        [string]$recurse,
+
+        [Parameter(Mandatory=$false, 
+        ValueFromPipeline=$false, 
+        Position=3)]         
+        [ValidateNotNullOrEmpty()]
+        [switch]$period
+    )
+
+    if (-not $limit) { $limit = 10}
+    if (-not $period) { $limit = 7}
+    
+    if ($recurse) {
+        $list= Get-ChildItem -path $path -File -recurse
+    } else {
+        $list = Get-ChildItem -Path $path -File 
+    }
+    
+    $list = $list | Where-Object {$_.LastWriteTime -gt (Get-Date).AddDays($period) | Select-Object -First $limit}  
+    return $list
+
+}
+
+#Function to get the largest N files on a specific computer's drive
+Function Get-LargestFilesOnDrive
+{
+Param([String]$ComputerName = $env:COMPUTERNAME,[Char]$Drive = 'C', [Int]$Top = 10)
+Get-ChildItem -Path \\$ComputerName\$Drive$ -Recurse | Select-Object Name, @{Label='Length_MB'; Expression={"{0:N0}" -f [math]::Round(($_.Length/1MB))}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap    
+}
+
+#Function to get the largest N files on a specific UNC path and its sub-paths
+Function Get-LargestFilesOnPath
+{
+    Param([String]$Path = '.\', [Int]$Top = 10)
+    Get-ChildItem -Path $Path -Recurse | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N0}" -f ($_.Length/1MB)}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap
+}
 
 # 7. Set aliases 
 Set-Alias gh    Get-Help
@@ -328,3 +445,7 @@ Set-Alias ghd   Get-HelpDetailed
 Set-Alias ll    Get-ChildItem 
 Set-Alias gcred Get-ServerCrendentials
 Set-Alias gsrv  Get-ServerDefinition
+Set-Alias topc      Get-TopProcessCPU
+Set-Alias topm      Get-TopProcessMem
+Set-Alias topfs     Get-TopFileSize
+Set-Alias topfe     Get-TopFileElder

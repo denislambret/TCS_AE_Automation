@@ -406,6 +406,7 @@ Function Get-LargestFilesOnPath
     Param([String]$Path = '.\', [Int]$Top = 10)
     Get-ChildItem -Path $Path -Recurse | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N0}" -f ($_.Length/1MB)}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap
 }
+
 # 6. Set aliases 
 Set-Alias gh        Get-Help
 Set-Alias ghd       Get-HelpDetailed
