@@ -3080,15 +3080,15 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
 											"protocol": "https",
 											"host": [
-												"iapi-acp",
+												"iapi",
 												"tcsgroup",
 												"ch"
 											],
 											"path": [
-												"tcs-acp",
+												"tcs",
 												"internal-catalog",
 												"insurance",
 												"v2",
