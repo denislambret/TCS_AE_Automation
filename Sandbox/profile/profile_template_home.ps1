@@ -3,7 +3,10 @@ Clear
 
 # 2. Global variables declarations
 $ME = whoami
-$catalog = "D:\dev\01_GITHUB\TCS_AE_Automation\conf\servers_catalog.xml"
+$root = 'D:\dev\40_PowerShell\'
+$Provider 		= Get-PSProvider FileSystem
+$Provider.Home 	= $root
+$catalog 		= $root + '\20_GITHUB\TCS_AE_Automation\conf\servers_catalog.xml'
 
 # 3. Set Format enumeration olimit
 $FormatEnumerationLimit = 99
@@ -41,14 +44,12 @@ function HKCU:  { Set-Location HKCU: }
 function Env:   { Set-Location Env: }
 
 # Customize prompt with resource wather on prompt
-function prompt
-{
+function prompt {
     $ps = Get-Process -id $pid
     "$($executionContext.SessionState.Path.CurrentLocation)$('>' *  ($nestedPromptLevel + 1))" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
 }
 
-function stats
-{
+function stats {
     $ps = Get-Process -id $pid
     "PS PID: $pid PM(M) {0:N2} WS(M) {1:N2} VM(M) {2:N2} CPU(s) {3:N2} `r`n" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
 }
@@ -56,7 +57,7 @@ function stats
 # Get detailed help on a command
 Function Get-HelpDetailed { 
     Get-Help $args[0] -Detailed
-} # END Get-HelpDetailed Function
+} 
 
 Function Clear-CCMCache {
 <#
@@ -158,7 +159,7 @@ Function Get-EmptyDirectory {
         }
      
         END {}
-    }
+}
 
 Function List-ProfileFunctions {
               Get-ChildItem function: | ?{ $_.Name -notmatch ".`:"}
@@ -227,6 +228,7 @@ function Get-ServerCrendentials {
     )
     
     if (Test-Path $catalog) {
+        $srv = $srv.ToUpper()
         [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
             $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
@@ -246,7 +248,6 @@ function Get-ServerCrendentials {
     return $null
 }
 
-
 function Get-ServerDefinition {
     [CmdletBinding(SupportsShouldProcess=$true)] param(
         [Parameter(Mandatory=$true, 
@@ -257,6 +258,7 @@ function Get-ServerDefinition {
         [string]$srv
     )
 
+    $srv = $srv.ToUpper()
     if (Test-Path $catalog) {
         [xml]$srvList = Get-Content $catalog
         if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
@@ -274,6 +276,57 @@ function Get-ServerDefinition {
     }
 }
 
+function Enter-RemoteServerPSSession {
+    [CmdletBinding(SupportsShouldProcess=$true)] param(
+        [Parameter(Mandatory=$true, 
+        ValueFromPipeline=$false, 
+        Position=1)]         
+        [Alias("server","ComputerName")]
+        [ValidateNotNullOrEmpty()]
+        [string]$srv
+    )       
+
+    if (Test-Path $catalog) {
+        [xml]$srvList = Get-Content $catalog
+        if (($srvList.servers.server.alias -contains $srv) -or ($srvList.servers.server.ComputerName -contains $srv)) {
+            $node = $srvList.SelectSingleNode("/servers/server[@alias='$srv']")
+            if ($node -eq $null) {
+                $node = $srvList.SelectSingleNode("/servers/server[@ComputerName='$srv']")
+            }
+            if ($node -eq $null) {
+                "Server " + $srv + " not found in catalog...."
+                return $null
+            }
+
+            $cred = Get-ServerCrendentials -ComputerName $node.ComputerName
+            $srvDef = Get-ServerDefinition -ComputerName $node.ComputerName 
+            "Set remote session on " + $srvDef.ComputerName
+            try {
+                Enter-PSSession -ComputerName $srvDef.ComputerName -Credential $cred
+            }
+            catch {
+                return $null
+            }
+        }
+    } else {
+        "Catalog not found... Please check servers_catalog.xml is in /conf."
+        return $null
+    }
+}
+
+function Edit-File {
+    param(
+	[Parameter(
+            Mandatory = $false,
+            ValueFromPipelineByPropertyName = $false,
+            Position = 0
+        )]
+    [alias('p')] 
+    [string]$path
+ )
+  &'C:\Program Files\Notepad++\notepad++.exe' $path
+}
+
 function isAdmin {
     $elevated = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
     return $elevated
@@ -286,6 +339,14 @@ function Set-AsAdministrator {
     } else {
         Write-Host -BackgroundColor Red -ForegroundColor White "Elevated to Administrator role !!!"
     }
+}
+
+function Start-AdminSession {
+    Start-Process -Verb RunAs wt.exe '-w 1 -p "powershell" pwsh' 
+}
+
+function Start-StandardSession {
+    Start-Process wt.exe '-w 1 -p "powershell" pwsh' 
 }
 
 function get-TopProcessMem {
@@ -392,17 +453,32 @@ function Get-TopFileElder {
 
 }
 
+function Get-LastErrors {
+    $bt = systeminfo | select-string "System Boot Time"
+    if ($bt -match "\d{1,2}.\d{1,2}.\d{4}") {$bt = [Datetime]::Parse($Matches[0]);}
 
-#Function to get the largest N files on a specific computer's drive
-Function Get-LargestFilesOnDrive
-{
+    $sources = @("Application","System")
+     
+    Write-Host "Scan WinEvt logs for error and warnings messages since last reboot...."
+    Foreach ($source in $sources) {
+        $errList = Get-WinEvent -FilterHashTable @{'LogName' = $source; 'StartTime' = $bt} `
+        | Select-Object TimeCreated, ID, ProviderName, LevelDisplayName, Message `
+        | Where-Object {$_.LevelDisplayName -match "Error"} 
+        $errList | Format-Table -AutoSize -Wrap
+        
+        $warnList = Get-WinEvent -FilterHashTable @{'LogName' = $source; 'StartTime' = $bt} `
+        | Select-Object TimeCreated, ID, ProviderName, LevelDisplayName, Message `
+        | Where-Object {$_.LevelDisplayName -match "Warning"} 
+        $warnList | Format-Table -AutoSize -Wrap
+    }
+}
+
+Function Get-LargestFilesOnDrive {
 Param([String]$ComputerName = $env:COMPUTERNAME,[Char]$Drive = 'C', [Int]$Top = 10)
 Get-ChildItem -Path \\$ComputerName\$Drive$ -Recurse | Select-Object Name, @{Label='Length_MB'; Expression={"{0:N0}" -f [math]::Round(($_.Length/1MB))}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap    
 }
 
-#Function to get the largest N files on a specific UNC path and its sub-paths
-Function Get-LargestFilesOnPath
-{
+Function Get-LargestFilesOnPath {
     Param([String]$Path = '.\', [Int]$Top = 10)
     Get-ChildItem -Path $Path -Recurse | Select-Object Name, @{Label='SizeMB'; Expression={"{0:N0}" -f ($_.Length/1MB)}} , DirectoryName,  Length | Sort-Object Length -Descending  | Select-Object Name, DirectoryName, SizeMB -First $Top | Format-Table -AutoSize -Wrap
 }
@@ -418,28 +494,31 @@ Set-Alias topc      Get-TopProcessCPU
 Set-Alias topm      Get-TopProcessMem
 Set-Alias topfs     Get-TopFileSize
 Set-Alias topfe     Get-TopFileElder
+Set-Alias n         Edit-File
+Set-Alias glfod     Get-LargestFilesOnDrive
+Set-Alias glfop     Get-LargestFilesOnPath
 
 # 7. Display splash screen
 '----------------------------------------------------------------------------------------------------------------------------------------------'
-'						 ____               _       _____ 
-						|  _ \__      _____| |__   |___  |
-						| |_) \ \ /\ / / __| |_ \     / / 
-						|  __/ \ V  V /\__ \ | | |   / /  
-						|_|     \_/\_/ |___/_| |_|  /_/      
-
-----------------------------------------------------------------------------------------------------------------------------------------------'
- 'Profile v 1.0.2 - 14.11.2023'
- '----------------------------------------------------------------------------------------------------------------------------------------------'
- "Host app  : [$($Host.Name)]"
- "Hostname  : $(hostname)"
- "profile   : Microsoft.Powershell_profile.ps1"
- Write-Host -NoNewline "Logged as : $ME as "
-    if (isAdmin) {
-        Write-Host -BackgroundColor Red -ForegroundColor White ' ! Administrator ! '
-    } else {
-        Write-Host -BackgroundColor DarkGreen -ForegroundColor White ' Standard user '
-    }
-
+Write-Host "
+                            █ ▄▄  ████▄   ▄ ▄   ▄███▄   █▄▄▄▄   ▄▄▄▄▄    ▄  █ ▄███▄   █    █     
+                            █   █ █   █  █   █  █▀   ▀  █  ▄▀  █     ▀▄ █   █ █▀   ▀  █    █     
+                            █▀▀▀  █   █ █ ▄   █ ██▄▄    █▀▀▌ ▄  ▀▀▀▀▄   ██▀▀█ ██▄▄    █    █     
+                            █     ▀████ █  █  █ █▄   ▄▀ █  █  ▀▄▄▄▄▀    █   █ █▄   ▄▀ ███▄ ███▄  
+                             █           █ █ █  ▀███▀     █                █  ▀███▀       ▀    ▀ 
+                              ▀            ▀ ▀            ▀               ▀                      "
+'----------------------------------------------------------------------------------------------------------------------------------------------'
+'Profile v 1.0.3 - 06.12.2023'
+'----------------------------------------------------------------------------------------------------------------------------------------------'
+"Host app  : [$($Host.Name)]"
+"Hostname  : $(hostname)"
+"profile   : Microsoft.Powershell_profile.ps1"
+Write-Host -NoNewline "Logged as : $ME as "
+   if (isAdmin) {
+       Write-Host -BackgroundColor Red -ForegroundColor White ' ! Administrator ! '
+   } else {
+       Write-Host -BackgroundColor DarkGreen -ForegroundColor White ' Standard user '
+   }
 '----------------------------------------------------------------------------------------------------------------------------------------------'
 'Setting home to ' + $Provider.Home
 '----------------------------------------------------------------------------------------------------------------------------------------------'
