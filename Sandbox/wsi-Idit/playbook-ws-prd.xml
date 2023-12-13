@@ -1,0 +1,17 @@
+<requests>
+    <request id='1' name='IDIT - ACP - Get batch dashboard' base_url='https://idit.tcsgroup.ch' uri='/idi-web/api/batch/dashboard?' username='administrator' pwd='1111' type='GET'>
+        <parameters>
+            <parameter key='date_from' value='20231101' type='payload'/>
+        </parameters>
+    </request>
+    <request id='2' name='IDIT - ACP - Get Policy' base_url='' uri='/api/policy/' username='administrator' pwd='1111'  type='GET'>
+        <parameters>
+            <parameter key='policy' value='PO011680237-10500/01' type='uri'/>
+        </parameters>
+    </request>
+    <request id='3' name='' base_url='' uri='' username='' pwd=''  type='GET'>
+        <parameters>
+            <parameter key='' value=''/>
+        </parameters>
+    </request>
+</requests>
