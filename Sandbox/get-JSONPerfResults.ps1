@@ -6,16 +6,17 @@ $startedAt = $listRoot.startedAt;
 Write-Host "id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t moyen"
 
 foreach ($item in $list) {
-    Write-Host $startedAt";"$item.id';'$item.name';' -noNewLine
+    #Write-Host $startedAt';'$item.id';'$item.name';' -noNewLine
     $str = ""
     $totalTime = 0
     $countItem = 0
-    Write-host $item.times
+    $record = $startedAt.toString()+';'+$item.id+';'+$item.name+';'
+
     foreach ($result in $item.times) {
         $str = $str + $result.toString()+';'
         $totalTime = $totalTime+ $result
         $countItem++
     }
-    Write-host $str -NoNewline
-    Write-Host  ($totalTime / $countItem)
+    $record = $record + ';' + $str +  ($totalTime / $countItem)
+    Write-Host  $record 
 }
