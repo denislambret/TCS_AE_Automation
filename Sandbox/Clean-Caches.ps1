@@ -219,10 +219,8 @@ Function Clear-TeamsCacheFiles {
 $StartTime = (Get-Date)
 
 Get-StorageSize
-
 Clear-UserCacheFiles
 Clear-GlobalWindowsCache
-
 Get-StorageSize
 
 $EndTime = (Get-Date)
