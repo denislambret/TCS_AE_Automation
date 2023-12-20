@@ -1,10 +1,14 @@
 $inputFile = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\data\input\DIRMOEX_results.json"
 $listRoot =  (Get-Content $inputFile | convertFrom-Json)
+
+# Get Postman Run generic information
 $list = ($listRoot).results
-#$list | Select -ExpandProperty results  | select id, name, time, responseCode
 $startedAt = $listRoot.startedAt;
+
+# Header CSV
 Write-Host "id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t moyen"
 
+# Data CSV
 foreach ($item in $list) {
     #Write-Host $startedAt';'$item.id';'$item.name';' -noNewLine
     $str = ""

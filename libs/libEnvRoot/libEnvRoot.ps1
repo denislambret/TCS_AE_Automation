@@ -68,10 +68,10 @@ function Set-EnvRoot
     #$global:global_conf = "D:\dev\40_PowerShell\20_GITHUB\TCS_AE_Automationl\tcs\libs\global.json"   
     
     # TCS Laptop env
-    #$global:ScriptRoot  = "Y:\03_DEV\06_GITHUB\tcs-1"
-    #$global:LogRoot     = "Y:\03_DEV\06_GITHUB\tcs-1\logs"
-    #$global:LibRoot     = "Y:\03_DEV\06_GITHUB\tcs-1\libs"
-    #$global:global_conf = "Y:\03_DEV\06_GITHUB\tcs-1\libs\global.json"   
+    $global:ScriptRoot  = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\"
+    $global:LogRoot     = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\logs"
+    $global:LibRoot     = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs"
+    $global:global_conf = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\libs\global.json"   
 
     if ($Env:PSModulePath -notlike  $LibRoot) { 
         $Env:PSModulePath = $Env:PSModulePath + ";" + $global:LibRoot 
