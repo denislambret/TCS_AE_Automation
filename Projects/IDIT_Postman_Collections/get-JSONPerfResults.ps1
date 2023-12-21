@@ -4,14 +4,27 @@ param(
     Position=1)]         
     [Alias("input", "i", "path")]
     [ValidateNotNullOrEmpty()]
-    [string]$inputFile
+    [string]$inputFile,
+
+    [Parameter(Mandatory=$false, 
+    ValueFromPipeline=$false, 
+    Position=2)]         
+    [Alias("output", "o", "destination")]
+    [ValidateNotNullOrEmpty()]
+    [string]$outputFile
 )
 
-if (-not (Test-Path $inputFile)) {
-    "Error - source file path "+ $inputFile +" does not exist" 
-}
+# Splash scr
+$SEP = "-" * 142
+$SEP
+"Get-JsonPerfResults "
+$SEP
 
-#$inputFile = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\Projects\IDIT_Postman_Collections\IDIT - DIRECT VS MOEX Performances.postman_test_run.json"
+# Test parameteres
+if (-not (Test-Path $inputFile)) { "Error - source file path "+ $inputFile +" does not exist"}
+if (-not $outputFile) { $outputFile = $inputFile -replace '\.json$', '.csv'}
+
+# Build content list from JSON
 $listRoot =  (Get-Content $inputFile | convertFrom-Json)
 
 # Get Postman Run generic information
@@ -22,6 +35,7 @@ $startedAt = $listRoot.startedAt;
 Write-Host "id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t moyen"
 
 # Data CSV
+$outList = @()
 foreach ($item in $list) {
     #Write-Host $startedAt';'$item.id';'$item.name';' -noNewLine
     $str = ""
@@ -35,5 +49,13 @@ foreach ($item in $list) {
         $countItem++
     }
     $record = $record + ';' + $str +  ($totalTime / $countItem)
-    Write-Host  $record 
+    $outList = $outlist + $record
 }
+$outList = $outList | ConvertTo-Csv -UseCulture -NoTypeInformation -Delimiter ";"
+$outList | format-table -AutoSize
+
+# Export CSV
+$SEP
+"Export to "+$outputFile
+$outList | Export-Csv -path $outputFile
+$SEP

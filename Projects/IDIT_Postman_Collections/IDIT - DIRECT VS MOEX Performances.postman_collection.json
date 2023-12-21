@@ -1,0 +1,1136 @@
+{
+	"info": {
+		"_postman_id": "127e5189-a3ed-4854-97c7-e68b10bf6d60",
+		"name": "IDIT - DIRECT VS MOEX Performances",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18876454"
+	},
+	"item": [
+		{
+			"name": "DIRECT - GET Policy Camping Membership",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO011680237-10500/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO011680237-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Card Assistance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO012138236-10400/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO012138236-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO001505895-11100/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO001505895-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy ETI Travel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO103041537-10300/00",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO103041537-10300",
+						"00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Legal Protection Building",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "userName",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO012378276-11000/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO012378276-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Legal Protection Driver",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO100186506-10700/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO100186506-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Legal Protection Internet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO003234021-10900/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO003234021-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Membership",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO106409862-10100/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO106409862-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Membership Bike",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					},
+					{
+						"key": "username",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO012941967-11200/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO012941967-11200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DIRECT - GET Policy Legal Protection Private",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "{{WSI_IDIT_USER}}",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "{{WSI_IDIT_PASSWORD}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{WSI_IDIT_URL}}/idit-web/api/policy/tcs/PO002426697-10800/01",
+					"protocol": "https",
+					"host": [
+						"{{WSI_IDIT_URL}}"
+					],
+					"path": [
+						"idit-web",
+						"api",
+						"policy",
+						"tcs",
+						"PO002426697-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Bike insurance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO011680237-10500",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Camping Membership",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100180421-10200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Card Assistance",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012138236-10400",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Home",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO001505895-11100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy ETI Travel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO103041537-10300",
+						"00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Legal Protection Building",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012378276-11000",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Legal Protection Driver",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO100186506-10700",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Legal Protection Internet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO003234021-10900",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Legal Protection Private",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO002426697-10800",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Membership",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO106409862-10100",
+						"01"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MOEX - GET Policy Membership Bike",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Local test variables\r",
+							"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+							"\r",
+							"// Test HTTP Response code - success if on 2xx\r",
+							"pm.test(\"HTTP response code\", () => {\r",
+							"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+							"});\r",
+							"\r",
+							"// Check response time base on environment requirement\r",
+							"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-IBM-Client-Id",
+						"value": "{{X_IBM_CLIENTID}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+					"protocol": "https",
+					"host": [
+						"{{INTERNAL_CATALOG_URL}}"
+					],
+					"path": [
+						"internal-catalog",
+						"insurance",
+						"v2",
+						"policies",
+						"PO012941967-11200",
+						"01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
