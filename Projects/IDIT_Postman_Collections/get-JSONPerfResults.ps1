@@ -19,7 +19,7 @@ $list = ($listRoot).results
 $startedAt = $listRoot.startedAt;
 
 # Header CSV
-Write-Host "id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t moyen"
+Write-Host "id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t moyen"
 
 # Data CSV
 foreach ($item in $list) {
