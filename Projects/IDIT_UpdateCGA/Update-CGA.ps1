@@ -293,7 +293,7 @@ PROCESS {
         exit $EXIT_KO
     }
     
-    exit $EXIT_KO
+    
     # 2 - Play update SQL queries on DB
     # 2.1 Get SQL DB connection
     Log -Level 'INFO' -Message('Get connection to DB Server ('+$conf.conf.db.sqlServerInstance+')')
