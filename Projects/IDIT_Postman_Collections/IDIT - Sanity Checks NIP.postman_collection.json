@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "dbd4dc94-0174-4fa1-bd68-576fee61f628",
-		"name": "IDIT - PRD - Sanity Checks NIP",
+		"name": "IDIT - Sanity Checks NIP",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18876454"
 	},
@@ -429,7 +429,7 @@
 					"name": "10_insurrance",
 					"item": [
 						{
-							"name": "Policy Bike Insurance Copy",
+							"name": "Policy Bike Insurance",
 							"item": [
 								{
 									"name": "PRD - GET Policy Bike insurance",
@@ -465,12 +465,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -519,12 +517,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -573,12 +569,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -627,12 +621,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -681,12 +673,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -704,7 +694,7 @@
 							]
 						},
 						{
-							"name": "Policy Camping Membership Copy",
+							"name": "Policy Camping Membership",
 							"item": [
 								{
 									"name": "PRD - GET Policy Camping Membership",
@@ -740,12 +730,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -794,12 +782,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -848,12 +834,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -902,12 +886,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -956,12 +938,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -979,7 +959,7 @@
 							]
 						},
 						{
-							"name": "Policy Card Assistance Copy",
+							"name": "Policy Card Assistance",
 							"item": [
 								{
 									"name": "PRD - GET Policy Card Assistance",
@@ -1015,12 +995,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1069,12 +1047,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1123,12 +1099,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1177,12 +1151,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1231,12 +1203,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1254,7 +1224,7 @@
 							]
 						},
 						{
-							"name": "Policy Home Copy",
+							"name": "Policy Home",
 							"item": [
 								{
 									"name": "PRD - GET Policy Home",
@@ -1290,12 +1260,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1344,12 +1312,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1398,12 +1364,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1452,12 +1416,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1506,12 +1468,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1529,7 +1489,7 @@
 							]
 						},
 						{
-							"name": "Policy ETI Travel Copy",
+							"name": "Policy ETI Travel",
 							"item": [
 								{
 									"name": "PRD - GET Policy ETI Travell",
@@ -1565,12 +1525,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1619,12 +1577,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1673,12 +1629,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1727,12 +1681,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1781,12 +1733,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1804,7 +1754,7 @@
 							]
 						},
 						{
-							"name": "Policy Legal Protection Building Copy",
+							"name": "Policy Legal Protection Building",
 							"item": [
 								{
 									"name": "PRD - GET Policy Legal Protection Building",
@@ -1840,12 +1790,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1894,12 +1842,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -1948,12 +1894,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2002,12 +1946,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2056,12 +1998,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2079,7 +2019,7 @@
 							]
 						},
 						{
-							"name": "Policy Legal Protection Driver Copy",
+							"name": "Policy Legal Protection Driver",
 							"item": [
 								{
 									"name": "PRD - GET Policy Legal Protection Driver",
@@ -2115,12 +2055,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2169,12 +2107,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2223,12 +2159,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2277,12 +2211,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2331,12 +2263,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2385,12 +2315,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2408,7 +2336,7 @@
 							]
 						},
 						{
-							"name": "Policy Legal Protection Internet Copy",
+							"name": "Policy Legal Protection Internet",
 							"item": [
 								{
 									"name": "PRD - GET Policy Legal Protection Internet",
@@ -2444,12 +2372,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2498,12 +2424,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2552,12 +2476,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2606,12 +2528,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2638,12 +2558,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2692,12 +2610,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2746,12 +2662,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2769,7 +2683,7 @@
 							]
 						},
 						{
-							"name": "Policy Membership Copy",
+							"name": "Policy Membership",
 							"item": [
 								{
 									"name": "PRD - GET Policy Membership",
@@ -2805,12 +2719,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2859,12 +2771,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2913,12 +2823,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -2967,12 +2875,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3021,12 +2927,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3044,7 +2948,7 @@
 							]
 						},
 						{
-							"name": "Policy Membership Bike Copy",
+							"name": "Policy Membership Bike",
 							"item": [
 								{
 									"name": "PRD - GET Policy Membership Bike",
@@ -3080,12 +2984,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3134,12 +3036,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3188,12 +3088,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3211,7 +3109,7 @@
 							]
 						},
 						{
-							"name": "Policy Legal Protection Private Copy",
+							"name": "Policy Legal Protection Private",
 							"item": [
 								{
 									"name": "PRD - GET Policy Legal Protection Private",
@@ -3247,12 +3145,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3301,12 +3197,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3355,12 +3249,10 @@
 											}
 										],
 										"url": {
-											"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
+											"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
 											"protocol": "https",
 											"host": [
-												"iapi",
-												"tcsgroup",
-												"ch"
+												"{{INTERNAL_CATALOG_URL}}"
 											],
 											"path": [
 												"tcs",
@@ -3420,12 +3312,14 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{INTERNAL_CATALOG_URL}}/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
+									"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies?personal-reference={{PERSONAL_REF}}",
 									"protocol": "https",
 									"host": [
 										"{{INTERNAL_CATALOG_URL}}"
 									],
 									"path": [
+										"tcs",
+										"internal-catalog",
 										"insurance",
 										"v2",
 										"policies"
@@ -3835,12 +3729,16 @@
 									}
 								],
 								"url": {
-									"raw": "https://{{INTERNAL_CATALOG_URL}}/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
+									"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/clients-prospects/v1/customerObservationLines?personal-reference={{PERSONAL_REF}}",
 									"protocol": "https",
 									"host": [
-										"{{INTERNAL_CATALOG_URL}}"
+										"iapi",
+										"tcsgroup",
+										"ch"
 									],
 									"path": [
+										"tcs",
+										"internal-catalog",
 										"clients-prospects",
 										"v1",
 										"customerObservationLines"

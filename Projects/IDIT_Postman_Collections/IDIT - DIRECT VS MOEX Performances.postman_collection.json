@@ -605,12 +605,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -656,12 +657,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -707,12 +709,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -758,12 +761,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -809,12 +813,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -860,12 +865,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -911,12 +917,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -962,12 +969,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -1013,12 +1021,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -1064,12 +1073,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",
@@ -1115,12 +1125,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{INTERNAL_CATALOG_URL}}/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+					"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
 					"protocol": "https",
 					"host": [
 						"{{INTERNAL_CATALOG_URL}}"
 					],
 					"path": [
+						"tcs",
 						"internal-catalog",
 						"insurance",
 						"v2",

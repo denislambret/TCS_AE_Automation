@@ -34,12 +34,15 @@ $listRoot =  (Get-Content $inputFile | convertFrom-Json)
 
 # Get Postman Run generic information
 $list = ($listRoot).results
-$startedAt =  [datetime]::ParseExact($listRoot.startedAt,"MM/dd/yyyy hh:mm:ss",[Globalization.CultureInfo]::CreateSpecificCulture('en-GB'))
+$listRoot
+#$startedAt =  [datetime]::ParseExact($listRoot.startedAt,"dd/MM/yyyy hh:mm:ss",[Globalization.CultureInfo]::CreateSpecificCulture('en-GB'))
+$startedAt = $listRoot.startedAt
+$startedAt_time = '{0:hh:mm:ss}' -f $startedAt
 $startedAt = '{0:dd.MM.yyyy}' -f $startedAt
 
 # Header CSV
 $outList = @()
-$outList = $outList + "date;id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t moyen"
+$outList = $outList + "date;time;id;name;t1;t2;t3;t4;t5;t6;t7;t8;t9;t10;t moyen"
 
 # Data CSV
 foreach ($item in $list) {
@@ -47,7 +50,7 @@ foreach ($item in $list) {
     $str = ""
     $totalTime = 0
     $countItem = 0
-    $record = $startedAt+';'+$item.id+';'+$item.name
+    $record = $startedAt + ';' + $startedAt_time + ';' + $item.id+';' + $item.name
 
     foreach ($result in $item.times) {
         $str = $str + $result.toString()+';'

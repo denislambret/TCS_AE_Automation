@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "858c5e58-7a1b-4875-97ab-a0bc0d136719",
-		"name": "IDIT - ACP - GETPOLICY - Performance par produit",
+		"_postman_id": "779fbee5-bf7f-4acf-9a0b-528afe5e70a4",
+		"name": "IDIT - GETPOLICY - Performance par produit",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18876454"
 	},
@@ -10,7 +10,7 @@
 			"name": "Policy Bike Insurance",
 			"item": [
 				{
-					"name": "ACP - GET Policy Bike insurance",
+					"name": "PRD - GET Policy Bike insurance",
 					"event": [
 						{
 							"listen": "test",
@@ -43,15 +43,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -64,7 +62,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Bike insurance",
+					"name": "PRD - GET Policy Bike insurance",
 					"event": [
 						{
 							"listen": "test",
@@ -97,15 +95,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO104131856-10500/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -118,7 +114,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Bike insurance",
+					"name": "PRD - GET Policy Bike insurance",
 					"event": [
 						{
 							"listen": "test",
@@ -151,15 +147,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
-							"protocol": "https",
+							"raw": "https:/{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105632329-10500/01",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"https"
 							],
+							"port": "",
 							"path": [
-								"tcs-acp",
+								"{{INTERNAL_CATALOG_URL}}",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -172,7 +167,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Bike insurance",
+					"name": "PRD - GET Policy Bike insurance",
 					"event": [
 						{
 							"listen": "test",
@@ -205,15 +200,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100677736-10500/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -226,7 +219,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Bike insurance",
+					"name": "PRD - GET Policy Bike insurance",
 					"event": [
 						{
 							"listen": "test",
@@ -259,15 +252,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO101525942-10500/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -285,7 +276,7 @@
 			"name": "Policy Camping Membership",
 			"item": [
 				{
-					"name": "ACP - GET Policy Camping Membership",
+					"name": "PRD - GET Policy Camping Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -318,15 +309,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -339,7 +328,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Camping Membership",
+					"name": "PRD - GET Policy Camping Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -372,15 +361,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105946983-10200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -393,7 +380,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Camping Membership",
+					"name": "PRD - GET Policy Camping Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -426,15 +413,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO105703729-10200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -447,7 +432,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Camping Membership",
+					"name": "PRD - GET Policy Camping Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -480,15 +465,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO101681181-10200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -501,7 +484,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Camping Membership",
+					"name": "PRD - GET Policy Camping Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -534,15 +517,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100637758-10200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -560,7 +541,7 @@
 			"name": "Policy Card Assistance",
 			"item": [
 				{
-					"name": "ACP - GET Policy Card Assistance",
+					"name": "PRD - GET Policy Card Assistance",
 					"event": [
 						{
 							"listen": "test",
@@ -593,15 +574,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -614,7 +593,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Card Assistance",
+					"name": "PRD - GET Policy Card Assistance",
 					"event": [
 						{
 							"listen": "test",
@@ -647,15 +626,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000680526-10400/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -668,7 +645,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Card Assistance",
+					"name": "PRD - GET Policy Card Assistance",
 					"event": [
 						{
 							"listen": "test",
@@ -701,15 +678,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000873808-10400/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -722,7 +697,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Card Assistance",
+					"name": "PRD - GET Policy Card Assistance",
 					"event": [
 						{
 							"listen": "test",
@@ -755,15 +730,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000886413-10400/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -776,7 +749,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Card Assistance",
+					"name": "PRD - GET Policy Card Assistance",
 					"event": [
 						{
 							"listen": "test",
@@ -809,15 +782,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001417298-10400/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -832,10 +803,10 @@
 			]
 		},
 		{
-			"name": "Policy Home",
+			"name": "Policy Home Copy",
 			"item": [
 				{
-					"name": "ACP - GET Policy Home",
+					"name": "PRD - GET Policy Home",
 					"event": [
 						{
 							"listen": "test",
@@ -868,15 +839,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -889,7 +858,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Home",
+					"name": "PRD - GET Policy Home",
 					"event": [
 						{
 							"listen": "test",
@@ -922,15 +891,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001921219-11100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -943,7 +910,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Home",
+					"name": "PRD - GET Policy Home",
 					"event": [
 						{
 							"listen": "test",
@@ -976,15 +943,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO102474268-11100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -997,7 +962,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Home",
+					"name": "PRD - GET Policy Home",
 					"event": [
 						{
 							"listen": "test",
@@ -1030,15 +995,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012172034-11100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1051,7 +1014,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Home",
+					"name": "PRD - GET Policy Home",
 					"event": [
 						{
 							"listen": "test",
@@ -1084,15 +1047,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001712716-11100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1110,7 +1071,7 @@
 			"name": "Policy ETI Travel",
 			"item": [
 				{
-					"name": "ACP - GET Policy ETI Travel",
+					"name": "PRD - GET Policy ETI Travell",
 					"event": [
 						{
 							"listen": "test",
@@ -1143,15 +1104,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1164,7 +1123,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy ETI Travel",
+					"name": "PRD - GET Policy ETI Travel",
 					"event": [
 						{
 							"listen": "test",
@@ -1197,15 +1156,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012507538-10300/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1218,7 +1175,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy ETI Travel",
+					"name": "PRD - GET Policy ETI Travel",
 					"event": [
 						{
 							"listen": "test",
@@ -1251,15 +1208,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003147459-10300/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1272,7 +1227,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy ETI Travel",
+					"name": "PRD - GET Policy ETI Travel",
 					"event": [
 						{
 							"listen": "test",
@@ -1305,15 +1260,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000782282-10300/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1326,7 +1279,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy ETI Travel",
+					"name": "PRD - GET Policy ETI Travel",
 					"event": [
 						{
 							"listen": "test",
@@ -1359,15 +1312,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000766811-10300/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1385,7 +1336,7 @@
 			"name": "Policy Legal Protection Building",
 			"item": [
 				{
-					"name": "ACP - GET Policy Legal Protection Building",
+					"name": "PRD - GET Policy Legal Protection Building",
 					"event": [
 						{
 							"listen": "test",
@@ -1418,15 +1369,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1439,7 +1388,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Building",
+					"name": "PRD - GET Policy Legal Protection Building",
 					"event": [
 						{
 							"listen": "test",
@@ -1472,15 +1421,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO000693490-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1493,7 +1440,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Building",
+					"name": "PRD - GET Policy Legal Protection Building",
 					"event": [
 						{
 							"listen": "test",
@@ -1526,15 +1473,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103940742-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1547,7 +1492,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Building",
+					"name": "PRD - GET Policy Legal Protection Building",
 					"event": [
 						{
 							"listen": "test",
@@ -1580,15 +1525,14 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
-							"protocol": "https",
+							"raw": "https:/{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"https"
 							],
+							"port": "",
 							"path": [
-								"tcs-acp",
+								"{{INTERNAL_CATALOG_URL}}",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1601,7 +1545,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Building",
+					"name": "PRD - GET Policy Legal Protection Building",
 					"event": [
 						{
 							"listen": "test",
@@ -1634,15 +1578,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011839881-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1660,7 +1602,7 @@
 			"name": "Policy Legal Protection Driver",
 			"item": [
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1693,15 +1635,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1714,7 +1654,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1747,15 +1687,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1768,7 +1706,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1801,15 +1739,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO010792048-11000/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1822,7 +1758,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1855,15 +1791,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001316769-10700/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1876,7 +1810,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1909,15 +1843,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011293905-10700/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1930,7 +1862,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Driver",
+					"name": "PRD - GET Policy Legal Protection Driver",
 					"event": [
 						{
 							"listen": "test",
@@ -1963,15 +1895,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012011977-10700/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -1989,7 +1919,7 @@
 			"name": "Policy Legal Protection Internet",
 			"item": [
 				{
-					"name": "ACP - GET Policy Legal Protection Internet",
+					"name": "PRD - GET Policy Legal Protection Internet",
 					"event": [
 						{
 							"listen": "test",
@@ -2022,15 +1952,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2043,7 +1971,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Internet",
+					"name": "PRD - GET Policy Legal Protection Internet",
 					"event": [
 						{
 							"listen": "test",
@@ -2076,15 +2004,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO003327912-10900/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2097,7 +2023,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Internet",
+					"name": "PRD - GET Policy Legal Protection Internet",
 					"event": [
 						{
 							"listen": "test",
@@ -2130,15 +2056,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO013047670-10900/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2151,7 +2075,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Internet",
+					"name": "PRD - GET Policy Legal Protection Internet",
 					"event": [
 						{
 							"listen": "test",
@@ -2184,15 +2108,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO002705210-10900/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2205,7 +2127,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Internet",
+					"name": "PRD - GET Policy Legal Protection Internet",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -2216,15 +2138,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001560578-10900/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2237,7 +2157,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Private",
+					"name": "PRD - GET Policy Legal Protection Private",
 					"event": [
 						{
 							"listen": "test",
@@ -2270,15 +2190,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001270213-10800/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2291,7 +2209,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Legal Protection Private",
+					"name": "PRD - GET Policy Legal Protection Private",
 					"event": [
 						{
 							"listen": "test",
@@ -2324,182 +2242,18 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012087869-10800/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
 								"policies",
 								"PO012087869-10800",
-								"01"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ACP - GET Policy Legal Protection Private",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Local test variables\r",
-									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
-									"\r",
-									"// Test HTTP Response code - success if on 2xx\r",
-									"pm.test(\"HTTP response code\", () => {\r",
-									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
-									"});\r",
-									"\r",
-									"// Check response time base on environment requirement\r",
-									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-IBM-Client-Id",
-								"value": "{{X_IBM_CLIENTID}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
-							"protocol": "https",
-							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
-							],
-							"path": [
-								"tcs-acp",
-								"internal-catalog",
-								"insurance",
-								"v2",
-								"policies",
-								"PO011293905-10800",
-								"01"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ACP - GET Policy Legal Protection Private",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Local test variables\r",
-									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
-									"\r",
-									"// Test HTTP Response code - success if on 2xx\r",
-									"pm.test(\"HTTP response code\", () => {\r",
-									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
-									"});\r",
-									"\r",
-									"// Check response time base on environment requirement\r",
-									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-IBM-Client-Id",
-								"value": "{{X_IBM_CLIENTID}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
-							"protocol": "https",
-							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
-							],
-							"path": [
-								"tcs-acp",
-								"internal-catalog",
-								"insurance",
-								"v2",
-								"policies",
-								"PO002426697-10800",
-								"01"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ACP - GET Policy Legal Protection Private",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Local test variables\r",
-									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
-									"\r",
-									"// Test HTTP Response code - success if on 2xx\r",
-									"pm.test(\"HTTP response code\", () => {\r",
-									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
-									"});\r",
-									"\r",
-									"// Check response time base on environment requirement\r",
-									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-IBM-Client-Id",
-								"value": "{{X_IBM_CLIENTID}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
-							"protocol": "https",
-							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
-							],
-							"path": [
-								"tcs-acp",
-								"internal-catalog",
-								"insurance",
-								"v2",
-								"policies",
-								"PO001516999-10800",
 								"01"
 							]
 						}
@@ -2512,7 +2266,7 @@
 			"name": "Policy Membership",
 			"item": [
 				{
-					"name": "ACP - GET Policy Membership",
+					"name": "PRD - GET Policy Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -2545,123 +2299,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
-								"internal-catalog",
-								"insurance",
-								"v2",
-								"policies",
-								"PO103041537-10100",
-								"01"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ACP - GET Policy Membership",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Local test variables\r",
-									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
-									"\r",
-									"// Test HTTP Response code - success if on 2xx\r",
-									"pm.test(\"HTTP response code\", () => {\r",
-									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
-									"});\r",
-									"\r",
-									"// Check response time base on environment requirement\r",
-									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-IBM-Client-Id",
-								"value": "{{X_IBM_CLIENTID}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
-							"protocol": "https",
-							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
-							],
-							"path": [
-								"tcs-acp",
-								"internal-catalog",
-								"insurance",
-								"v2",
-								"policies",
-								"PO103041537-10100",
-								"01"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "ACP - GET Policy Membership",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"// Local test variables\r",
-									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
-									"\r",
-									"// Test HTTP Response code - success if on 2xx\r",
-									"pm.test(\"HTTP response code\", () => {\r",
-									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
-									"});\r",
-									"\r",
-									"// Check response time base on environment requirement\r",
-									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
-									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "X-IBM-Client-Id",
-								"value": "{{X_IBM_CLIENTID}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
-							"protocol": "https",
-							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
-							],
-							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2674,7 +2318,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Membership",
+					"name": "PRD - GET Policy Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -2707,15 +2351,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO013010975-10100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2728,7 +2370,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Membership",
+					"name": "PRD - GET Policy Membership",
 					"event": [
 						{
 							"listen": "test",
@@ -2761,20 +2403,122 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103372014-10100/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
 								"policies",
 								"PO103372014-10100",
+								"01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRD - GET Policy Membership",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Local test variables\r",
+									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+									"\r",
+									"// Test HTTP Response code - success if on 2xx\r",
+									"pm.test(\"HTTP response code\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"// Check response time base on environment requirement\r",
+									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "{{X_IBM_CLIENTID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+							"protocol": "https",
+							"host": [
+								"{{INTERNAL_CATALOG_URL}}"
+							],
+							"path": [
+								"tcs",
+								"internal-catalog",
+								"insurance",
+								"v2",
+								"policies",
+								"PO103041537-10100",
+								"01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRD - GET Policy Membership",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Local test variables\r",
+									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+									"\r",
+									"// Test HTTP Response code - success if on 2xx\r",
+									"pm.test(\"HTTP response code\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"// Check response time base on environment requirement\r",
+									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "{{X_IBM_CLIENTID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO103041537-10100/01",
+							"protocol": "https",
+							"host": [
+								"{{INTERNAL_CATALOG_URL}}"
+							],
+							"path": [
+								"tcs",
+								"internal-catalog",
+								"insurance",
+								"v2",
+								"policies",
+								"PO103041537-10100",
 								"01"
 							]
 						}
@@ -2787,7 +2531,7 @@
 			"name": "Policy Membership Bike",
 			"item": [
 				{
-					"name": "ACP - GET Policy Membership Bike",
+					"name": "PRD - GET Policy Membership Bike",
 					"event": [
 						{
 							"listen": "test",
@@ -2820,15 +2564,13 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
-								"tcsgroup",
-								"ch"
+								"{{INTERNAL_CATALOG_URL}}"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2841,7 +2583,7 @@
 					"response": []
 				},
 				{
-					"name": "ACP - GET Policy Membership Bike",
+					"name": "PRD - GET Policy Membership Bike",
 					"event": [
 						{
 							"listen": "test",
@@ -2874,15 +2616,69 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
+							"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
+								"iapi",
 								"tcsgroup",
 								"ch"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
+								"internal-catalog",
+								"insurance",
+								"v2",
+								"policies",
+								"PO104933730-11200",
+								"01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRD - GET Policy Membership Bike",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Local test variables\r",
+									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+									"\r",
+									"// Test HTTP Response code - success if on 2xx\r",
+									"pm.test(\"HTTP response code\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"// Check response time base on environment requirement\r",
+									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "{{X_IBM_CLIENTID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO101144755-11200/01",
+							"protocol": "https",
+							"host": [
+								"iapi",
+								"tcsgroup",
+								"ch"
+							],
+							"path": [
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
@@ -2893,9 +2689,14 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Policy Legal Protection Private",
+			"item": [
 				{
-					"name": "ACP - GET Policy Membership Bike",
+					"name": "PRD - GET Policy Legal Protection Private",
 					"event": [
 						{
 							"listen": "test",
@@ -2928,20 +2729,124 @@
 							}
 						],
 						"url": {
-							"raw": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO104933730-11200/01",
+							"raw": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
 							"protocol": "https",
 							"host": [
-								"iapi-acp",
+								"iapi",
 								"tcsgroup",
 								"ch"
 							],
 							"path": [
-								"tcs-acp",
+								"tcs",
 								"internal-catalog",
 								"insurance",
 								"v2",
 								"policies",
-								"PO104933730-11200",
+								"PO002426697-10800",
+								"01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRD - GET Policy Legal Protection Private",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Local test variables\r",
+									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+									"\r",
+									"// Test HTTP Response code - success if on 2xx\r",
+									"pm.test(\"HTTP response code\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"// Check response time base on environment requirement\r",
+									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "{{X_IBM_CLIENTID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO001516999-10800/01",
+							"protocol": "https",
+							"host": [
+								"{{INTERNAL_CATALOG_URL}}"
+							],
+							"path": [
+								"tcs",
+								"internal-catalog",
+								"insurance",
+								"v2",
+								"policies",
+								"PO001516999-10800",
+								"01"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PRD - GET Policy Legal Protection Private",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Local test variables\r",
+									"var maxHTTPResponseTime = parseInt(pm.environment.get(\"HTTP_MAX_RESPONSE_TIME\"))\r",
+									"\r",
+									"// Test HTTP Response code - success if on 2xx\r",
+									"pm.test(\"HTTP response code\", () => {\r",
+									"  pm.expect(pm.response.code).to.be.oneOf([200,201,202]);\r",
+									"});\r",
+									"\r",
+									"// Check response time base on environment requirement\r",
+									"pm.test(\"Response time below \" + maxHTTPResponseTime + \"ms\" , function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(maxHTTPResponseTime);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-IBM-Client-Id",
+								"value": "{{X_IBM_CLIENTID}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{INTERNAL_CATALOG_URL}}/tcs/internal-catalog/insurance/v2/policies/PO011293905-10800/01",
+							"protocol": "https",
+							"host": [
+								"{{INTERNAL_CATALOG_URL}}"
+							],
+							"path": [
+								"tcs",
+								"internal-catalog",
+								"insurance",
+								"v2",
+								"policies",
+								"PO011293905-10800",
 								"01"
 							]
 						}

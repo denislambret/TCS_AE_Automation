@@ -1,22 +1,22 @@
 {
-	"id": "2581d2bd-7d5f-49d8-abf9-21f955c15a53",
+	"id": "0a50233a-4901-4f6c-bb29-66386e2a073f",
 	"name": "IDIT - DIRECT VS MOEX Performances",
-	"timestamp": "2023-12-20T16:23:14.031Z",
+	"timestamp": "2023-12-29T13:38:46.523Z",
 	"collection_id": "18876454-127e5189-a3ed-4854-97c7-e68b10bf6d60",
 	"folder_id": 0,
-	"environment_id": "18876454-5f3fb074-3dd9-4c77-aa60-0162788a54ca",
-	"totalPass": 420,
+	"environment_id": "18876454-2bed8857-aa91-4fea-9da7-75004ec4a949",
+	"totalPass": 419,
 	"delay": 0,
 	"persist": true,
 	"status": "finished",
-	"startedAt": "2023-12-20T16:21:44.742Z",
-	"totalFail": 0,
+	"startedAt": "2023-12-29T13:36:49.814Z",
+	"totalFail": 1,
 	"results": [
 		{
 			"id": "5b02fff8-98f2-4559-9749-7b9e51499c0a",
 			"name": "DIRECT - GET Policy Camping Membership",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO011680237-10500/01",
-			"time": 290,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO011680237-10500/01",
+			"time": 528,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -36,16 +36,16 @@
 				}
 			},
 			"times": [
-				559,
-				308,
-				301,
-				304,
-				300,
-				309,
-				297,
-				292,
-				314,
-				290
+				1236,
+				394,
+				602,
+				556,
+				359,
+				367,
+				624,
+				691,
+				406,
+				528
 			],
 			"allTests": [
 				{
@@ -93,8 +93,8 @@
 		{
 			"id": "428e1c26-7357-4ae3-aaad-fe827d1bae7e",
 			"name": "DIRECT - GET Policy Card Assistance",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO012138236-10400/01",
-			"time": 228,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012138236-10400/01",
+			"time": 368,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -114,16 +114,16 @@
 				}
 			},
 			"times": [
-				332,
-				243,
-				241,
-				251,
-				229,
-				228,
-				225,
-				223,
-				254,
-				228
+				361,
+				282,
+				363,
+				348,
+				343,
+				255,
+				587,
+				349,
+				275,
+				368
 			],
 			"allTests": [
 				{
@@ -171,8 +171,8 @@
 		{
 			"id": "13e96e59-c66f-44a8-8ac7-96050f88078c",
 			"name": "DIRECT - GET Policy Home",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO001505895-11100/01",
-			"time": 294,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO001505895-11100/01",
+			"time": 358,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -192,16 +192,16 @@
 				}
 			},
 			"times": [
-				467,
-				290,
-				293,
-				300,
-				290,
-				308,
-				280,
-				291,
-				283,
-				294
+				820,
+				377,
+				379,
+				464,
+				418,
+				369,
+				575,
+				526,
+				334,
+				358
 			],
 			"allTests": [
 				{
@@ -249,8 +249,8 @@
 		{
 			"id": "2432c6fa-58d2-485c-af4b-97ba1f81d7e7",
 			"name": "DIRECT - GET Policy ETI Travel",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO103041537-10300/00",
-			"time": 632,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO103041537-10300/00",
+			"time": 725,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -265,26 +265,26 @@
 					"fail": 0
 				},
 				"Response time below 2000ms": {
-					"pass": 10,
-					"fail": 0
+					"pass": 9,
+					"fail": 1
 				}
 			},
 			"times": [
-				817,
-				677,
-				695,
-				637,
-				633,
-				676,
-				649,
-				634,
-				656,
-				632
+				2047,
+				809,
+				860,
+				804,
+				586,
+				584,
+				1110,
+				707,
+				589,
+				725
 			],
 			"allTests": [
 				{
 					"HTTP response code": true,
-					"Response time below 2000ms": true
+					"Response time below 2000ms": false
 				},
 				{
 					"HTTP response code": true,
@@ -327,8 +327,8 @@
 		{
 			"id": "912d278f-12d4-43d1-9668-b41bcb4dcb7e",
 			"name": "DIRECT - GET Policy Legal Protection Building",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO012378276-11000/01",
-			"time": 264,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012378276-11000/01",
+			"time": 315,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -348,16 +348,16 @@
 				}
 			},
 			"times": [
-				379,
-				257,
-				262,
-				257,
-				280,
-				273,
-				259,
-				273,
-				276,
-				264
+				756,
+				337,
+				357,
+				529,
+				377,
+				318,
+				415,
+				328,
+				314,
+				315
 			],
 			"allTests": [
 				{
@@ -405,8 +405,8 @@
 		{
 			"id": "65637f3d-04d9-453b-a6ab-e7897a82e0f2",
 			"name": "DIRECT - GET Policy Legal Protection Driver",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO100186506-10700/01",
-			"time": 262,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO100186506-10700/01",
+			"time": 302,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -426,16 +426,16 @@
 				}
 			},
 			"times": [
-				363,
-				275,
-				260,
-				264,
-				270,
-				289,
-				285,
-				263,
-				277,
-				262
+				380,
+				692,
+				325,
+				329,
+				346,
+				314,
+				387,
+				322,
+				533,
+				302
 			],
 			"allTests": [
 				{
@@ -483,8 +483,8 @@
 		{
 			"id": "6712a77a-6259-405b-820f-bb79663e2a4a",
 			"name": "DIRECT - GET Policy Legal Protection Internet",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO003234021-10900/01",
-			"time": 303,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO003234021-10900/01",
+			"time": 379,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -504,16 +504,16 @@
 				}
 			},
 			"times": [
-				376,
-				308,
-				310,
-				294,
-				290,
-				290,
-				465,
-				298,
-				299,
-				303
+				505,
+				410,
+				405,
+				334,
+				351,
+				483,
+				564,
+				366,
+				486,
+				379
 			],
 			"allTests": [
 				{
@@ -561,8 +561,8 @@
 		{
 			"id": "c26f95d6-ca49-4d6b-bfaf-d931e643e844",
 			"name": "DIRECT - GET Policy Membership",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO106409862-10100/01",
-			"time": 362,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO106409862-10100/01",
+			"time": 438,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -582,16 +582,16 @@
 				}
 			},
 			"times": [
-				446,
-				363,
-				359,
-				349,
-				360,
-				367,
-				344,
-				353,
-				345,
-				362
+				535,
+				475,
+				726,
+				403,
+				418,
+				407,
+				448,
+				443,
+				435,
+				438
 			],
 			"allTests": [
 				{
@@ -639,8 +639,8 @@
 		{
 			"id": "f5e9d8b1-d992-4923-9a65-1f16caa05b2e",
 			"name": "DIRECT - GET Policy Membership Bike",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO012941967-11200/01",
-			"time": 252,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012941967-11200/01",
+			"time": 275,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -660,16 +660,16 @@
 				}
 			},
 			"times": [
-				355,
-				257,
-				254,
-				252,
-				254,
-				271,
-				252,
-				255,
-				273,
-				252
+				649,
+				309,
+				423,
+				258,
+				274,
+				559,
+				270,
+				309,
+				326,
+				275
 			],
 			"allTests": [
 				{
@@ -717,8 +717,8 @@
 		{
 			"id": "c0bc7937-5771-4db8-ada2-056c66a76b65",
 			"name": "DIRECT - GET Policy Legal Protection Private",
-			"url": "https://idit-acp.tcsgroup.ch/idit-web/api/policy/tcs/PO002426697-10800/01",
-			"time": 268,
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO002426697-10800/01",
+			"time": 314,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -738,16 +738,16 @@
 				}
 			},
 			"times": [
-				324,
-				263,
-				267,
-				261,
-				264,
-				290,
-				257,
-				265,
-				265,
-				268
+				410,
+				375,
+				323,
+				414,
+				312,
+				404,
+				310,
+				338,
+				320,
+				314
 			],
 			"allTests": [
 				{
@@ -795,8 +795,8 @@
 		{
 			"id": "ee61d472-ed87-4786-8ef9-bc10a024a8a4",
 			"name": "MOEX - GET Policy Bike insurance",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
-			"time": 343,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+			"time": 393,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -816,16 +816,16 @@
 				}
 			},
 			"times": [
-				483,
-				359,
-				342,
-				350,
-				352,
-				357,
-				334,
-				336,
-				342,
-				343
+				529,
+				401,
+				460,
+				378,
+				447,
+				970,
+				424,
+				390,
+				692,
+				393
 			],
 			"allTests": [
 				{
@@ -873,8 +873,8 @@
 		{
 			"id": "7d921510-0c1b-4034-9e70-86ea0def7570",
 			"name": "MOEX - GET Policy Camping Membership",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
-			"time": 351,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+			"time": 383,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -894,16 +894,16 @@
 				}
 			},
 			"times": [
-				406,
-				336,
-				327,
-				342,
-				329,
-				334,
-				319,
-				322,
-				323,
-				351
+				477,
+				390,
+				712,
+				367,
+				382,
+				725,
+				571,
+				397,
+				512,
+				383
 			],
 			"allTests": [
 				{
@@ -951,8 +951,8 @@
 		{
 			"id": "39d0be7a-04be-458c-acaf-d492f9c9a19a",
 			"name": "MOEX - GET Policy Card Assistance",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
-			"time": 269,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+			"time": 401,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -972,16 +972,16 @@
 				}
 			},
 			"times": [
-				270,
-				278,
-				299,
-				304,
-				274,
-				269,
-				258,
-				263,
-				256,
-				269
+				323,
+				524,
+				498,
+				280,
+				280,
+				404,
+				351,
+				321,
+				288,
+				401
 			],
 			"allTests": [
 				{
@@ -1029,8 +1029,8 @@
 		{
 			"id": "a9423b9d-88b8-4878-988f-b0fce112d39c",
 			"name": "MOEX - GET Policy Home",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
-			"time": 316,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+			"time": 395,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1050,16 +1050,16 @@
 				}
 			},
 			"times": [
-				320,
-				337,
-				334,
-				336,
-				335,
-				332,
-				324,
-				311,
-				318,
-				316
+				403,
+				410,
+				757,
+				371,
+				358,
+				540,
+				952,
+				390,
+				356,
+				395
 			],
 			"allTests": [
 				{
@@ -1107,8 +1107,8 @@
 		{
 			"id": "ee5a2c80-0b43-4d66-b72f-ac9d10c6fb7f",
 			"name": "MOEX - GET Policy ETI Travel",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
-			"time": 873,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+			"time": 666,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1128,16 +1128,16 @@
 				}
 			},
 			"times": [
-				732,
-				761,
-				697,
-				683,
-				760,
-				679,
-				649,
-				692,
-				657,
-				873
+				719,
+				1007,
+				857,
+				630,
+				644,
+				826,
+				579,
+				734,
+				558,
+				666
 			],
 			"allTests": [
 				{
@@ -1185,8 +1185,8 @@
 		{
 			"id": "3d408021-9c1d-40f0-b9cc-6f1e33e6ac76",
 			"name": "MOEX - GET Policy Legal Protection Building",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
-			"time": 298,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+			"time": 368,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1206,16 +1206,16 @@
 				}
 			},
 			"times": [
-				297,
-				315,
-				309,
-				303,
-				305,
-				286,
-				299,
-				301,
-				296,
-				298
+				365,
+				381,
+				467,
+				344,
+				341,
+				766,
+				328,
+				341,
+				312,
+				368
 			],
 			"allTests": [
 				{
@@ -1263,8 +1263,8 @@
 		{
 			"id": "7723d149-8666-44cb-aff4-015a45d0f508",
 			"name": "MOEX - GET Policy Legal Protection Driver",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
-			"time": 298,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+			"time": 481,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1284,16 +1284,16 @@
 				}
 			},
 			"times": [
-				307,
-				331,
-				299,
-				306,
-				301,
-				307,
-				304,
-				305,
-				294,
-				298
+				326,
+				386,
+				868,
+				506,
+				320,
+				440,
+				332,
+				344,
+				314,
+				481
 			],
 			"allTests": [
 				{
@@ -1341,8 +1341,8 @@
 		{
 			"id": "143f5846-464b-4bc9-af69-58e22abfec90",
 			"name": "MOEX - GET Policy Legal Protection Internet",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
-			"time": 310,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+			"time": 382,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1362,16 +1362,16 @@
 				}
 			},
 			"times": [
-				330,
-				341,
-				315,
-				328,
-				317,
-				316,
-				347,
-				352,
-				329,
-				310
+				369,
+				392,
+				978,
+				363,
+				397,
+				656,
+				371,
+				377,
+				356,
+				382
 			],
 			"allTests": [
 				{
@@ -1419,8 +1419,8 @@
 		{
 			"id": "c9b1ef54-d73d-49ef-b3b0-7a4924c5be8d",
 			"name": "MOEX - GET Policy Legal Protection Private",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
-			"time": 282,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+			"time": 325,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1440,16 +1440,16 @@
 				}
 			},
 			"times": [
-				301,
-				308,
-				298,
-				296,
-				294,
-				294,
-				304,
-				304,
-				287,
-				282
+				473,
+				370,
+				378,
+				501,
+				503,
+				400,
+				329,
+				338,
+				313,
+				325
 			],
 			"allTests": [
 				{
@@ -1497,8 +1497,8 @@
 		{
 			"id": "04285ef1-d009-4521-8689-323bcfb7d3a1",
 			"name": "MOEX - GET Policy Membership",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
-			"time": 370,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+			"time": 446,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1518,16 +1518,16 @@
 				}
 			},
 			"times": [
-				411,
-				391,
-				383,
-				378,
-				371,
-				375,
-				363,
-				389,
-				374,
-				370
+				497,
+				606,
+				561,
+				566,
+				463,
+				780,
+				420,
+				498,
+				417,
+				446
 			],
 			"allTests": [
 				{
@@ -1575,8 +1575,8 @@
 		{
 			"id": "28330b79-810b-4f1f-a8eb-440c34ebcc45",
 			"name": "MOEX - GET Policy Membership Bike",
-			"url": "https://iapi-acp.tcsgroup.ch/tcs-acp/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
-			"time": 285,
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+			"time": 312,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -1596,16 +1596,16 @@
 				}
 			},
 			"times": [
-				377,
-				279,
-				275,
-				290,
-				283,
-				271,
-				273,
-				286,
-				275,
-				285
+				295,
+				801,
+				289,
+				307,
+				299,
+				1121,
+				314,
+				365,
+				285,
+				312
 			],
 			"allTests": [
 				{
@@ -1652,7 +1652,7 @@
 		}
 	],
 	"count": 10,
-	"totalTime": 72584,
+	"totalTime": 99259,
 	"collection": {
 		"requests": [
 			{
