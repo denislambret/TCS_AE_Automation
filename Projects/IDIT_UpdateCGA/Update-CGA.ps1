@@ -312,7 +312,7 @@ PROCESS {
     foreach ($query in $queries) {
         Log -Level 'INFO' -Message('preparing query #'+ $countQueries)    
         Log -Level 'DEBUG' -Message('SQL cmd : ' + $sql)
-        #$response = GenericSQLQuery -sql $query
+        $response = GenericSQLQuery -sql $query
         Log -Level 'INFO' -Message('query executed #'+ $countQueries + ' - response ' + $response)    
     }
     

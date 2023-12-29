@@ -34,8 +34,7 @@ $listRoot =  (Get-Content $inputFile | convertFrom-Json)
 
 # Get Postman Run generic information
 $list = ($listRoot).results
-$listRoot
-#$startedAt =  [datetime]::ParseExact($listRoot.startedAt,"dd/MM/yyyy hh:mm:ss",[Globalization.CultureInfo]::CreateSpecificCulture('en-GB'))
+
 $startedAt = $listRoot.startedAt
 $startedAt_time = '{0:hh:mm:ss}' -f $startedAt
 $startedAt = '{0:dd.MM.yyyy}' -f $startedAt
