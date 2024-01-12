@@ -14,4 +14,4 @@ $body = @"
 "@
 $response = $null
 $response = Invoke-RestMethod 'https://idit-acp.tcsgroup.ch/idit-web/api/batch' -Method 'POST' -Headers $headers -Body $body
-$response | ConvertTo-Json
+$response = $response | ConvertTo-Json
