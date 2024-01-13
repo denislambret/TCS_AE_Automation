@@ -4,6 +4,7 @@ Clear
 # 2. Global variables declarations
 $ME = whoami
 $root = 'D:\dev\40_PowerShell\'
+$profile_template = $root + '20_GITHUB\TCS_AE_Automation\Sandbox\profile\profile_template_home.ps1'
 $Provider 		= Get-PSProvider FileSystem
 $Provider.Home 	= $root
 $catalog 		= $root + '\20_GITHUB\TCS_AE_Automation\conf\servers_catalog.xml'
@@ -24,7 +25,7 @@ $Provider = Get-PSProvider FileSystem
 $Provider.Home = 'D:\Dev'
 Set-Location -Path ~
 
-# 6. Add a new functions
+# 6. Add a usefull and general administration functions to shell
 
 # Useful shortcuts for traversing directories
 function cd...  { cd ..\.. }
@@ -54,7 +55,20 @@ function stats {
     "PS PID: $pid PM(M) {0:N2} WS(M) {1:N2} VM(M) {2:N2} CPU(s) {3:N2} `r`n" -f ($ps.PM/1MB), ($ps.ws/1MB), ($ps.vm/1MB), $ps.cpu
 }
 
-# Get detailed help on a command
+function Update-Profile {
+    if (Test-Path $profile_template) {
+        try {
+            Copy-Item -path $profile_template -Destination $profile -ErrorAction Continue 
+            'Profile updated.'
+        }
+        catch {
+            $Error
+            'Error updating profile!'
+        }
+    }
+
+}
+
 Function Get-HelpDetailed { 
     Get-Help $args[0] -Detailed
 } 
@@ -497,6 +511,8 @@ Set-Alias topfe     Get-TopFileElder
 Set-Alias n         Edit-File
 Set-Alias glfod     Get-LargestFilesOnDrive
 Set-Alias glfop     Get-LargestFilesOnPath
+Set-Alias gs        Get-Service
+Set-Alias upprof    Update-Profile
 
 # 7. Display splash screen
 '----------------------------------------------------------------------------------------------------------------------------------------------'
@@ -508,7 +524,7 @@ Write-Host "
                              █           █ █ █  ▀███▀     █                █  ▀███▀       ▀    ▀ 
                               ▀            ▀ ▀            ▀               ▀                      "
 '----------------------------------------------------------------------------------------------------------------------------------------------'
-'Profile v 1.0.3 - 06.12.2023'
+'Profile v 1.0.4'
 '----------------------------------------------------------------------------------------------------------------------------------------------'
 "Host app  : [$($Host.Name)]"
 "Hostname  : $(hostname)"

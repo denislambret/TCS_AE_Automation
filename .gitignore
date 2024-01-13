@@ -16,3 +16,4 @@
 /data/**/*.pdf
 /data/**/*.log
 /data/**/*.xml
+/conf/servers_catalog.xml

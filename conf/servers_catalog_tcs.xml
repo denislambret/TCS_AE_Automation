@@ -1,0 +1,24 @@
+<servers>
+    <server ComputerName='WGE3AS161D' 	alias='OBDEV'  		group='ecm' name='Onbase_dev' 				user='SVC-D-OnBase1-01' 	pwd='_tn47fF6UsQ4' 		maxRetries='3'/>
+    <server ComputerName='WGE1AS050T' 	alias='OBQA'   		group='ecm' name='Onbase_qa' 				user='SVC-Q-OnBase1-01' 	pwd='M75KumtuYD!' 		maxRetries='3'/>
+    <server ComputerName='WGE3AS164T' 	alias='OBACPDIP' 	group='ecm' name='Onbase_acp_DIP' 			user='SVC-A-OnBase1-01' 	pwd='e&amp;HHV?+Mxf>R' 	maxRetries='3'/>
+    <server ComputerName='WGE1AS053T' 	alias='OBACP1' 		group='ecm' name='Onbase_acp_node_1' 		user='SVC-A-OnBase1-01' 	pwd='e&amp;HHV?+Mxf>R' 	maxRetries='3'/>
+    <server ComputerName='WGE3AS165T' 	alias='OBACP2' 		group='ecm' name='Onbase_acp_node_2' 		user='SVC-A-OnBase2-01' 	pwd='duAr%w6=XGQU' 		maxRetries='3'/>
+    <server ComputerName='WGE1AS055P' 	alias='OBPRDDIP' 	group='ecm' name='Onbase_prd_node_1' 		user='SVC-P-OnBase1-01' 	pwd='e&amp;HHV?+Mxf>R' 	maxRetries='3'/>
+    <server ComputerName='WGE3AS166P' 	alias='OBPRD2' 		group='ecm' name='Onbase_prd_node_2' 		user='SVC-P-OnBase2-01' 	pwd='6nondX0Pvvth' 		maxRetries='3'/>
+    <server ComputerName='WGE1AS054P' 	alias='OBPRD1' 		group='ecm' name='Onbase_prd_node_1' 		user='SVC-P-OnBase1-01' 	pwd='e&amp;HHV?+Mxf>R' 	maxRetries='3'/>
+    <server ComputerName='WGE1AS056T' 	alias='EXT16QA' 	group='ccm' name='Exstream_16_qa' 			user='SVC_Q_Exstream-01' 	pwd='Y8QTzdqTQRfx' 		maxRetries='3'/>
+    <server ComputerName='WGE1AS057T' 	alias='EXT16ACP1' 	group='ccm' name='Exstream_16_ACP_node_1' 	user='SVC_A_Exstream-01' 	pwd='3fyQc9$XYA@d' 		maxRetries='3'/>
+    <server ComputerName='WGE3AS057T' 	alias='EXT16ACP2' 	group='ccm' name='Exstream_16_ACP_node_2' 	user='SVC_A_Exstream-01' 	pwd='3fyQc9$XYA@d' 		maxRetries='3'/>
+    <server ComputerName='WGE1AS170P' 	alias='EXT16PRD1' 	group='ccm' name='Exstream_16_PRD_node_1' 	user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='WGE3AS170P' 	alias='EXT16PRD2' 	group='ccm' name='Exstream_16_PRD_node_2' 	user='SVC_P_Exstream-01'	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='WDC2AS003T' 	alias='EXT23QA' 	group='ccm' name='Exstream_23_QA' 			user='SVC_Q_Exstream-01' 	pwd='Y8QTzdqTQRfx' 		maxRetries='3'/>
+    <server ComputerName='WDC1AS002T' 	alias='EXT23ACP1' 	group='ccm' name='Exstream_23_ACP_node_1' 	user='SVC_A_Exstream-01' 	pwd='3fyQc9$XYA@d' 		maxRetries='3'/>
+    <server ComputerName='WDC21AS002T' 	alias='EXT23ACP2' 	group='ccm' name='Exstream_23_ACP_node_2' 	user='SVC_A_Exstream-01' 	pwd='3fyQc9$XYA@d' 		maxRetries='3'/>
+    <server ComputerName='WDC1AS009P' 	alias='EXT23PRD1' 	group='ccm' name='Exstream_23_PRD_node_1' 	user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='WDC2AS009P' 	alias='EXT23PRD2' 	group='ccm' name='Exstream_23_PRD_node_2' 	user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='WDC1AS008P' 	alias='OTDS1' 		group='ccm' name='OTDS_node_1' 				user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='WDC2AS008P' 	    alias='OTDS2' 	group='ccm' name='OTDS_node_2' 				user='SVC_P_Exstream-01' 	pwd='xhAGC3uzDjFy' 		maxRetries='3'/>
+    <server ComputerName='mopsos.ddns.net' 	alias='MOPSOS' 	group='nas' name='Mopsos'       			user='denis.lambret' 	    pwd='1234SamsungS23U+' 	maxRetries='3'/>
+    <server ComputerName='pi4.ddns.net' 	alias='PI4' 	group='pi'  name='pi4'        			    user='pi' 	                pwd='1234qwerASD!' 	    maxRetries='3'/>
+</servers>
