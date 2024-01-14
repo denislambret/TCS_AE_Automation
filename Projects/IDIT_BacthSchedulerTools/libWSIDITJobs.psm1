@@ -16,14 +16,14 @@ $HTTP_CODES = @{
     500 = "HTTP_SERVER_ERROR"
 }
 
-$jobsList = $null
+$IDITJobsList = $null
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
 #----------------------------------------------------------------------------------------------------------------------------------
 
 #..................................................................................................................................
-# Function : Get-BatchList
+# Function : Get-IDITJobsList
 #..................................................................................................................................
 # Synopsis : Retrieve last 10k job entries from IDIT and load $jobList.
 #            Also support basic filter options on status and desc (job description).
@@ -31,7 +31,7 @@ $jobsList = $null
 # Input    : *config_path,status,desc
 # Output   : null, joblist
 #..................................................................................................................................
-function Get-BatchList {
+function Get-IDITJobsList {
     param(
         [Parameter(
             Mandatory = $true,
@@ -73,41 +73,41 @@ function Get-BatchList {
 
     # 3 - Invoke Web service
   
-    $jobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+    $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
     Write-Debug  ("response code " + $response_code)
     if ($response_code -ge 300) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
         return $null 
     }
-    $jobsList = $jobsList | ConvertTo-Json | ConvertFrom-Json
+    $IDITJobsList = $IDITJobsList | ConvertTo-Json | ConvertFrom-Json
 
     # 4 - Apply list filter
     if ($status) {
-        $jobsList = $jobsList  | Where-Object { 
+        $IDITJobsList = $IDITJobsList  | Where-Object { 
             $_.batchStatusVO.desc -match $status
         }     
     }
 
     If ($desc) {
-            $jobsList = $jobsList  | Where-Object { 
+            $IDITJobsList = $IDITJobsList  | Where-Object { 
             $_.batchJobVO.desc -match $desc
         }
     } 
 
     # 5 - Return batch jobs filtered list
-    return $jobsList
+    return $IDITJobsList
 }
 
 #..................................................................................................................................
-# Function : Get-jobById
+# Function : Get-IDITJobById
 #..................................................................................................................................
 # Synopsis : Get job by id
 # Input    : jobid
 # Output   : job 
 #..................................................................................................................................
 
-function Get-jobById {
+function Get-IDITJobById {
     param(
         [Parameter(
             Mandatory = $false,
@@ -115,9 +115,12 @@ function Get-jobById {
         )]
         [string] $id
     )
+    if (-not $IDITJobsList) {
+
+    }
      # Apply list filter
      if ($id) {
-        $job = $jobsList  | Where-Object { 
+        $job = $IDITJobsList  | Where-Object { 
             $_.id -eq $id
         }     
     }  
@@ -125,14 +128,14 @@ function Get-jobById {
 }
 
 #..................................................................................................................................
-# Function : Get-JobStatus
+# Function : Get-IDITJobStatus
 #..................................................................................................................................
 # Synopsis : get job status by id
 # Input    : jobid
 # Output   : IDIT's job status code
 #..................................................................................................................................
 
-function Get-JobStatus {
+function Get-IDITJobStatus {
     param(
         [Parameter(
             Mandatory = $false,
@@ -143,7 +146,7 @@ function Get-JobStatus {
 
     # 4 - Apply list filter
     if ($id) {
-        $job = $jobsList  | Where-Object { 
+        $job = $IDITJobsList  | Where-Object { 
             $_.id -eq $id
         }     
     }
@@ -160,7 +163,7 @@ function Get-JobStatus {
 # Output   : true/false
 #..................................................................................................................................
 
-function isPendingJob {
+function isIDITPendingJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -178,14 +181,14 @@ function isPendingJob {
 }
 
 #..................................................................................................................................
-# Function : isSuccessJob
+# Function : isIDITSuccessJob
 #..................................................................................................................................
 # Synopsis : Return true if job is marked as success
 # Input    : jobid
 # Output   : true/false
 #..................................................................................................................................
 
-function isSuccessJob {
+function isIDITSuccessJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -204,13 +207,13 @@ function isSuccessJob {
 }
 
 #..................................................................................................................................
-# Function : isFailedJob
+# Function : isIDITFailedJob
 #..................................................................................................................................
 # Synopsis : Return true if job is marked as failed
 # Input    : jobid
 # Output   : true/false
 #..................................................................................................................................
-function isFailedJob {
+function isIDITFailedJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -231,7 +234,7 @@ function isFailedJob {
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                E X P O R T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
-Export-ModuleMember -Function isFailedJob, isPendingJob, isSuccessJob, Get-jobById, Get-JobStatus
-Export-ModuleMember -Variable jobsList
+Export-ModuleMember -Function isFailedIDITJob, isPendingIDITJob, isSuccessIDITJob, Get-IDITJobById, Get-IDITJobStatus
+Export-ModuleMember -Variable IDITJobsList
 
 
