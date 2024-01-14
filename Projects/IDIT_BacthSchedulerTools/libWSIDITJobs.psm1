@@ -72,7 +72,9 @@ function Get-BatchList {
     $body = $conf.wsi.query[0].body
 
     # 3 - Invoke Web service
+  
     $jobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+    Write-Debug  ("response code " + $response_code)
     if ($response_code -ge 300) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
