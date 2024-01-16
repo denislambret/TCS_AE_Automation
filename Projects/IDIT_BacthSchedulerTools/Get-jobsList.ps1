@@ -1,3 +1,39 @@
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                            C O M M A N D   P A R A M E T E R S
+#----------------------------------------------------------------------------------------------------------------------------------
+param (
+    # path of the resource to process
+    [Parameter(
+        Mandatory = $true,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 0
+        )
+    ]  
+    [Alias('config','conf')] $config_path,
+    
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 1
+        )
+    ]  
+    [Alias('job','jobid')] $id,
+
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 2
+        )
+    ]  
+    [Alias('description','jobname')] $desc,
+    
+    # help switch
+    [switch] $help
+)
+
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                            G L O B A L   V A R I A B L E S
+#----------------------------------------------------------------------------------------------------------------------------------
 $status = @{
     4 = "IN PROGRESS"
     5 = "SUCCESS"
@@ -16,7 +52,10 @@ $HTTP_CODES = @{
     500 = "HTTP_SERVER_ERROR"
 }
 
-$IDITJobsList = $null
+$IDITjobsList = $null
+$VERSION      = "0.1"
+$AUTHOR       = "DLA"
+$SCRIPT_DATE  = ""
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
@@ -59,8 +98,6 @@ function Get-IDITJobsList {
     catch [System.IO.FileNotFoundException] {
         Write-Error ("Configuration file not found " + $config_path)
         Write-Error ("Process aborted! " + $config_path)
-        Clean-TemporaryDirectory
-        Stop-Log | Out-Null
         exit $EXIT_KO
     }
         
@@ -115,9 +152,7 @@ function Get-IDITJobById {
         )]
         [string] $id
     )
-    if (-not $IDITJobsList) {
 
-    }
      # Apply list filter
      if ($id) {
         $job = $IDITJobsList  | Where-Object { 
@@ -156,14 +191,14 @@ function Get-IDITJobStatus {
 }
 
 #..................................................................................................................................
-# Function : isPendingJob
+# Function : isPendingIDITJob
 #..................................................................................................................................
 # Synopsis : Return true if job is running
 # Input    : jobid
 # Output   : true/false
 #..................................................................................................................................
 
-function isIDITPendingJob {
+function isPendingIDITJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -172,7 +207,7 @@ function isIDITPendingJob {
         [string] $id
     )
     
-    $job = Get-JobStatus -id $id
+    $IDITjobsList = Get-IDITJobStatus -id $id
     if ([int]$job.batchStatusVO.id -in @(8,4,20,17)) {
         return $true
     } else {
@@ -181,14 +216,14 @@ function isIDITPendingJob {
 }
 
 #..................................................................................................................................
-# Function : isIDITSuccessJob
+# Function : isSuccessIDITJob
 #..................................................................................................................................
 # Synopsis : Return true if job is marked as success
 # Input    : jobid
 # Output   : true/false
 #..................................................................................................................................
 
-function isIDITSuccessJob {
+function isSuccessIDITJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -197,9 +232,9 @@ function isIDITSuccessJob {
         [string] $id
     )
     
-    $job = Get-JobStatus -id $id
+    $status = Get-IDITJobStatus -id $id
 
-    if ($job -match 'SUCCESS') {
+    if ($status -match 'SUCCESS') {
         return $true
     } else {
         return $false
@@ -207,13 +242,13 @@ function isIDITSuccessJob {
 }
 
 #..................................................................................................................................
-# Function : isIDITFailedJob
+# Function : isFailedIDITJob
 #..................................................................................................................................
 # Synopsis : Return true if job is marked as failed
 # Input    : jobid
 # Output   : true/false
 #..................................................................................................................................
-function isIDITFailedJob {
+function isFailedIDITJob {
     param(
         [Parameter(
             Mandatory = $false,
@@ -222,19 +257,49 @@ function isIDITFailedJob {
         [string] $id
     )
     
-    $job = Get-JobStatus -id $id
-    if ($job -match 'FAIL') {
+    $status = Get-IDITJobStatus -id $id
+    if ($status -match 'FAIL') {
         return $true
     } else {
         return $false
     }
 }
 
-
 #----------------------------------------------------------------------------------------------------------------------------------
-#                                                E X P O R T E R S
+#                                             _______ _______ _____ __   _
+#                                             |  |  | |_____|   |   | \  |
+#                                             |  |  | |     | __|__ |  \_|
 #----------------------------------------------------------------------------------------------------------------------------------
-Export-ModuleMember -Function isFailedIDITJob, isPendingIDITJob, isSuccessIDITJob, Get-IDITJobById, Get-IDITJobStatus
-Export-ModuleMember -Variable IDITJobsList
+if (-not $config_path) {
+    $config_path = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\Projects\IDIT_BacthSchedulerTools\ACP.conf"
+}
 
+"-" * 142
+($MyInvocation.MyCommand.Name + " v" + $VERSION)
+"-" * 142
+"Establishing jobs list..."
+if ($desc) {
+    $IDITJobsList = Get-IDITJobsList -config_path $config_path -Desc $desc
+} else {
+    $IDITJobsList = Get-IDITJobsList -config_path $config_path
+}
 
+if (-not $IDITJobsList) {
+    "Abnormal termination !"
+    exit 1
+}
+
+"Total batch enumerated - " + ($jobs).Count + " job(s)"
+"-" * 142
+if (-not $id) {
+    $IDITJobsList | Format-table -autosize
+} else {
+    "job name   : " + ((Get-IDITJobById -id $id).batchJobVO.desc)
+    "Status     : " + (Get-IDITJobStatus -id $id)
+    "Is running : " + (isPendingIDITJob -id $id)
+    "Is success : " + (isSuccessIDITJob -id $id)
+    "Is failure : " + (isFailedIDITJob -id $id)
+}
+
+"-" * 142
+$IDITJobsList | Format-table -autosize

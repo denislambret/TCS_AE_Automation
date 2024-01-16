@@ -1,61 +1,22 @@
-#----------------------------------------------------------------------------------------------------------------------------------
-#                                            C O M M A N D   P A R A M E T E R S
-#----------------------------------------------------------------------------------------------------------------------------------
-param (
-    # path of the resource to process
-    [Parameter(
-        Mandatory = $true,
-        ValueFromPipelineByPropertyName = $false,
-        Position = 0
-        )
-    ]  
-    [Alias('config','conf')] $config_path,
-    
-    [Parameter(
-        Mandatory = $false,
-        ValueFromPipelineByPropertyName = $false,
-        Position = 1
-        )
-    ]  
-    [Alias('job','jobid')] $id,
+class IDITJobs {
+    $status = @{
+        4 = "IN PROGRESS"
+        5 = "SUCCESS"
+        6 = "FAIL"
+        7 = "FAIL"
+        8 = "IN PROGRESS"
+        10 = "FAIL"
+        17 = "IN PROGRESS"
+        20 = "IN PROGRESS"
+    }
 
-    [Parameter(
-        Mandatory = $false,
-        ValueFromPipelineByPropertyName = $false,
-        Position = 2
-        )
-    ]  
-    [Alias('description','jobname')] $desc,
-    
-    # help switch
-    [switch] $help
-)
-
-#----------------------------------------------------------------------------------------------------------------------------------
-#                                            G L O B A L   V A R I A B L E S
-#----------------------------------------------------------------------------------------------------------------------------------
-$status = @{
-    4 = "IN PROGRESS"
-    5 = "SUCCESS"
-    6 = "FAIL"
-    7 = "FAIL"
-    8 = "IN PROGRESS"
-    10 = "FAIL"
-    17 = "IN PROGRESS"
-    20 = "IN PROGRESS"
+    $HTTP_CODES = @{ 
+        200 = "HTTP_SUCCESS"
+        401 = "HTTP_SECURITY_ERROR"
+        422 = "HTTP_FUNCTIONAL_ERROR"
+        500 = "HTTP_SERVER_ERROR"
+    }
 }
-
-$HTTP_CODES = @{ 
-    200 = "HTTP_SUCCESS"
-    401 = "HTTP_SECURITY_ERROR"
-    422 = "HTTP_FUNCTIONAL_ERROR"
-    500 = "HTTP_SERVER_ERROR"
-}
-
-$IDITjobsList = $null
-$VERSION      = "0.1"
-$AUTHOR       = "DLA"
-$SCRIPT_DATE  = ""
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
@@ -98,6 +59,8 @@ function Get-IDITJobsList {
     catch [System.IO.FileNotFoundException] {
         Write-Error ("Configuration file not found " + $config_path)
         Write-Error ("Process aborted! " + $config_path)
+        Clean-TemporaryDirectory
+        Stop-Log | Out-Null
         exit $EXIT_KO
     }
         
@@ -109,22 +72,15 @@ function Get-IDITJobsList {
     $body = $conf.wsi.query[0].body
 
     # 3 - Invoke Web service
-  
-    if ($id) {
-        #$url = $conf.wsi.query[0].url + "/" + $id
-        $url = $conf.wsi.query[0].url 
-        $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
-    } 
-    else {
-        $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
-    }
+
+    $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
     Write-Debug  ("response code " + $response_code)
     if ($response_code -ge 300) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
         return $null 
     }
-    $IDITJobsList = $IDITJobsList | ConvertTo-Json -Depth 4| ConvertFrom-Json
+    $IDITJobsList = $IDITJobsList | ConvertTo-Json | ConvertFrom-Json
 
     # 4 - Apply list filter
     if ($status) {
@@ -140,6 +96,7 @@ function Get-IDITJobsList {
     } 
 
     # 5 - Return batch jobs filtered list
+    $IDITJobsList = $IDITJobsList
     return $IDITJobsList
 }
 
@@ -159,9 +116,9 @@ function Get-IDITJobById {
         )]
         [string] $id
     )
-
-     # Apply list filter
-     if ($id) {
+dq
+    # Apply list filter
+    if ($id) {
         $job = $IDITJobsList  | Where-Object { 
             $_.id -eq $id
         }     
@@ -272,40 +229,36 @@ function isFailedIDITJob {
     }
 }
 
+
+$oJobsList = [PSCustomObject] @{
+    $data = ""
+    };
+
+    $jobsList | Add-Member -MemberType ScriptMethod -Name Get-IDITJobsList -Value {
+        Get-IDITJobsList -config_path $config_path
+    }
+
+    $jobsList | Add-Member -MemberType ScriptMethod -Name Get-jobByID -Value {
+        Get-IDITJobById -config_path $config_path
+    }
+ 
+    $jobsList | Add-Member -MemberType ScriptMethod -Name isPendingJob -Value {
+        isPendingIDITJob -config_path $config_path
+    }
+ 
+    $jobsList | Add-Member -MemberType ScriptMethod -Name isSuccess -Value {
+        isSuccessIDITJobsList -config_path $config_path
+    }
+ 
+    $jobsList | Add-Member -MemberType ScriptMethod -Name isFailed -Value {
+        isFailedIDITJobsList -config_path $config_path
+    }
+ 
+
 #----------------------------------------------------------------------------------------------------------------------------------
-#                                             _______ _______ _____ __   _
-#                                             |  |  | |_____|   |   | \  |
-#                                             |  |  | |     | __|__ |  \_|
+#                                                E X P O R T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
-if (-not $config_path) {
-    $config_path = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\Projects\IDIT_BacthSchedulerTools\ACP.conf"
-}
+Export-ModuleMember -Function isFailedIDITJob, isPendingIDITJob, isSuccessIDITJob, Get-IDITJobsList, Get-IDITJobById, Get-IDITJobStatus
+Export-ModuleMember -Variable IDITJobsList
 
-"-" * 142
-($MyInvocation.MyCommand.Name + " v" + $VERSION)
-"-" * 142
-"Download job list from IDIT..."
-if ($desc) {
-    $IDITJobsList = Get-IDITJobsList -config_path $config_path -Desc $desc
-} else {
-    $IDITJobsList = Get-IDITJobsList -config_path $config_path
-}
 
-if (-not $IDITJobsList) {
-    "Abnormal termination !"
-    exit 1
-}
-
-"Total enumerated from response -> " + ($IDITJobsList).Count + " job(s)"
-"-" * 142
-if (-not $id) {
-    $IDITJobsList | Select-Object id, batchJobVO, createDate, updateStatusDate, batchStatusVO | Format-Table -Autosize 
-} else {
-    "job name   : " + ((Get-IDITJobById -id $id).batchJobVO.desc)
-    "Status     : " + (Get-IDITJobStatus -id $id)
-    "Is running : " + (isPendingIDITJob -id $id)
-    "Is success : " + (isSuccessIDITJob -id $id)
-    (Get-IDITJobById -id $id) | Format-List 
-}
-
-"-" * 142
