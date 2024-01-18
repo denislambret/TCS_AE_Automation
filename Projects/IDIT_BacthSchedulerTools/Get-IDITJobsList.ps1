@@ -27,6 +27,15 @@ param (
     ]  
     [Alias('description','jobname')] $desc,
     
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 3
+        )
+    ]  
+    [Alias('log','l')]
+    [switch]$fLog = $false,
+
     # help switch
     [switch] $help
 )
@@ -105,19 +114,26 @@ function Get-IDITJobsList {
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
     $headers.Add("userName", $conf.wsi.query[0].userName)
     $headers.Add("password", $conf.wsi.query[0].password)
-    $headers.Add("Cookie", $conf.wsi.query[0].Cookie)
+    #$headers.Add("Cookie", $conf.wsi.query[0].Cookie)
     $body = $conf.wsi.query[0].body
 
     # 3 - Invoke Web service
   
-    $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+    if ($id) {
+        #$url = $conf.wsi.query[0].url + "/" + $id
+        $url = $conf.wsi.query[0].url 
+        $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+    } 
+    else {
+        $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+    }
     Write-Debug  ("response code " + $response_code)
     if ($response_code -ge 300) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
         return $null 
     }
-    $IDITJobsList = $IDITJobsList | ConvertTo-Json | ConvertFrom-Json
+    $IDITJobsList = $IDITJobsList | ConvertTo-Json -Depth 4| ConvertFrom-Json
 
     # 4 - Apply list filter
     if ($status) {
@@ -147,18 +163,38 @@ function Get-IDITJobsList {
 function Get-IDITJobById {
     param(
         [Parameter(
-            Mandatory = $false,
+            Mandatory = $true,
+            Position = 0
+        )]
+        [String]
+        [Alias('config','conf')] $config_path,
+        [Parameter(
+            Mandatory = $true,
             Position = 1
         )]
         [string] $id
     )
+    
+    # 2 - Prepare WebSrv call
+    $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+    $headers.Add("userName", $conf.wsi.query[0].userName)
+    $headers.Add("password", $conf.wsi.query[0].password)
+    $headers.Add("Cookie", $conf.wsi.query[0].Cookie)
+    $body = $conf.wsi.query[0].body
 
-     # Apply list filter
-     if ($id) {
-        $job = $IDITJobsList  | Where-Object { 
-            $_.id -eq $id
-        }     
-    }  
+    # 3 - Invoke Web service
+    $url = $conf.wsi.query[0].url + "/" + $id
+    Write-host "Web service URL -> $url"
+    $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code -ErrorAction Ignore
+     
+    if ($response_code -ge 300) {
+        "Error invoking web service"
+        "Return HTTP : " + $response_code
+        return $null 
+    }
+    $job = $IDITJobsList | ConvertTo-Json -Depth 20| ConvertFrom-Json #| Where-object {$_.}
+
+    # 5 - Return batch jobs filtered list
     return $job
 }
 
@@ -190,80 +226,6 @@ function Get-IDITJobStatus {
     return $status[[int]$job.batchStatusVO.id]
 }
 
-#..................................................................................................................................
-# Function : isPendingIDITJob
-#..................................................................................................................................
-# Synopsis : Return true if job is running
-# Input    : jobid
-# Output   : true/false
-#..................................................................................................................................
-
-function isPendingIDITJob {
-    param(
-        [Parameter(
-            Mandatory = $false,
-            Position = 1
-        )]
-        [string] $id
-    )
-    
-    $IDITjobsList = Get-IDITJobStatus -id $id
-    if ([int]$job.batchStatusVO.id -in @(8,4,20,17)) {
-        return $true
-    } else {
-        return $false
-    }
-}
-
-#..................................................................................................................................
-# Function : isSuccessIDITJob
-#..................................................................................................................................
-# Synopsis : Return true if job is marked as success
-# Input    : jobid
-# Output   : true/false
-#..................................................................................................................................
-
-function isSuccessIDITJob {
-    param(
-        [Parameter(
-            Mandatory = $false,
-            Position = 1
-        )]
-        [string] $id
-    )
-    
-    $status = Get-IDITJobStatus -id $id
-
-    if ($status -match 'SUCCESS') {
-        return $true
-    } else {
-        return $false
-    }
-}
-
-#..................................................................................................................................
-# Function : isFailedIDITJob
-#..................................................................................................................................
-# Synopsis : Return true if job is marked as failed
-# Input    : jobid
-# Output   : true/false
-#..................................................................................................................................
-function isFailedIDITJob {
-    param(
-        [Parameter(
-            Mandatory = $false,
-            Position = 1
-        )]
-        [string] $id
-    )
-    
-    $status = Get-IDITJobStatus -id $id
-    if ($status -match 'FAIL') {
-        return $true
-    } else {
-        return $false
-    }
-}
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                             _______ _______ _____ __   _
@@ -277,29 +239,69 @@ if (-not $config_path) {
 "-" * 142
 ($MyInvocation.MyCommand.Name + " v" + $VERSION)
 "-" * 142
-"Establishing jobs list..."
-if ($desc) {
-    $IDITJobsList = Get-IDITJobsList -config_path $config_path -Desc $desc
-} else {
-    $IDITJobsList = Get-IDITJobsList -config_path $config_path
+
+# 1 - Load script config file
+try {
+        [XML]$conf_raw = Get-Content $config_path
+        $conf = $conf_raw.conf
+}
+catch [System.IO.FileNotFoundException] {
+        Write-Error ("Configuration file not found " + $config_path)
+        Write-Error ("Process aborted! " + $config_path)
+        exit $EXIT_KO
 }
 
-if (-not $IDITJobsList) {
+"Download job list from IDIT..."
+if ($desc) {
+     $IDITJobsList = Get-IDITJobsList -config_path $config_path -Desc $desc
+    "Total enumerated from response -> " + ($IDITJobsList).Count + " job(s)"
+} elseif ($id) {
+    
+    $job = Get-IDITJobById -config_path $config_path -id $id
+    "-" * 142
+    if (($job).Count -gt 0) {
+        Write-Host $("job #" + $id +" found"+$(" " * 123)) -ForegroundColor White -BackgroundColor DarkGreen
+    } else {
+        Write-Host $("job not found..."+$(" " * 126)) -ForegroundColor White -BackgroundColor Red
+        "-" * 142
+        exit $EXIT_KO
+    }
+} else {
+    $IDITJobsList = Get-IDITJobsList -config_path $config_path
+    "Total enumerated from response -> " + ($IDITJobsList).Count + " job(s)"
+}
+
+if ((-not $IDITJobsList) -and (-not $job)) {
     "Abnormal termination !"
     exit 1
 }
 
-"Total batch enumerated - " + ($jobs).Count + " job(s)"
+
 "-" * 142
 if (-not $id) {
-    $IDITJobsList | Format-table -autosize
+    $IDITJobsList | Select-Object id, batchJobVO, createDate, updateStatusDate, batchStatusVO | Format-Table -Autosize 
 } else {
-    "job name   : " + ((Get-IDITJobById -id $id).batchJobVO.desc)
-    "Status     : " + (Get-IDITJobStatus -id $id)
-    "Is running : " + (isPendingIDITJob -id $id)
-    "Is success : " + (isSuccessIDITJob -id $id)
-    "Is failure : " + (isFailedIDITJob -id $id)
+    # Display job details (see json response structure to understand variables used)
+    $item = $job.batchLogIVOs | ?{$_.id -eq $id}
+    "Job name    : " + $item.batchJobVO.id + " - " + $item.batchJobVO.desc
+    "Status      : " + $item.batchStatusVO.id + " - " + $item.batchStatusVO.desc
+    "Created at  : " + $item.createDate
+    "Last update : " + $item.updateDate
+    $startTime = [DateTime]::ParseExact($item.createDate, 'MM/dd/yyyy HH:mm:ss',$null)
+    $endTime   = [DateTime]::ParseExact($item.updateDate, 'MM/dd/yyyy HH:mm:ss',$null)
+    'Duration    : {0:mm} min {0:ss} s' -f ($endTime-$startTime)
+    
+    # If display log switch is true, display job logs
+    if ($fLog) {
+        "-" * 142
+        "JOB LOG"
+        "-" * 142
+        $item.systemTaskLogIVOs | ForEach-Object {
+            $str = $_.updateDate.toString() + ' ' + $_.logType.desc + ' ' + $_.message 
+            $str | Out-String -Width 142 -Stream | ForEach-Object { Write-Host $_ }
+        }
+
+    } 
 }
 
 "-" * 142
-$IDITJobsList | Format-table -autosize
