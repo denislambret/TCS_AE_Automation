@@ -127,58 +127,58 @@ PROCESS {
         if (test-path ($script_path + "\incoming-payments.csv")) { Remove-Item ($script_path + "\incoming-payments.csv")}
     }
 
-    #..................................................................................................................................
-    # Function : GenericSqlQuery
-    #..................................................................................................................................
-    # Execute query to retrieve list of payments from IDIT
-    #..................................................................................................................................function doSQL
-    function GenericSQLQuery
-    {
-        param(
-            [string] $sql
-        )
-        # https://cmatskas.com/execute-sql-query-with-powershell/
-    
-        $SqlConnection = GetSqlConnection
-    
-        $SqlCmd = New-Object System.Data.SqlClient.SqlCommand
-        
-        # Connect IDIT db
-        $SqlCmd.CommandText = $sql
-        $SqlCmd.Connection = $SqlConnection
-        
-        # Then execute query
-        $Reader= $SqlCmd.ExecuteReader()
-        $DataTable = New-Object System.Data.DataTable
-        $DataTable.Load($Reader)
-         
-        # close db
-        $SqlConnection.Close()
-        
-        return $DataTable
-    }
+#..................................................................................................................................
+# Function : GenericSqlQuery
+#..................................................................................................................................
+# Execute query to retrieve list of payments from IDIT
+#..................................................................................................................................function doSQL
+function GenericSQLQuery
+{
+    param(
+        [string] $sql
+    )
+    # https://cmatskas.com/execute-sql-query-with-powershell/
 
-    #..................................................................................................................................
-    # Function : GetSqlConnection
-    #..................................................................................................................................
-    # Get a SQL connection
-    #..................................................................................................................................
-    function GetSqlConnection
-    {
-        $ConnectionString = "Server=" + $conf.conf.db.sqlServerInstance + "; database=" + $conf.conf.db.database + "; Integrated Security=False;" + "User ID=" + $conf.conf.db.userName + "; Password="+$conf.conf.db.password + ";"
+    $SqlConnection = GetSqlConnection
+
+    $SqlCmd = New-Object System.Data.SqlClient.SqlCommand
     
-        try
-        {
-            $sqlConnection = New-Object System.Data.SqlClient.SqlConnection $ConnectionString
-            $sqlConnection.Open()
-            return $sqlConnection
-        }
-        catch
-        {
-            Write-Error $error
-            return $null
-        }
+    # Connect IDIT db
+    $SqlCmd.CommandText = $sql
+    $SqlCmd.Connection = $SqlConnection
+    
+    # Then execute query
+    $Reader= $SqlCmd.ExecuteReader()
+    $DataTable = New-Object System.Data.DataTable
+    $DataTable.Load($Reader)
+        
+    # close db
+    $SqlConnection.Close()
+    
+    return $DataTable
+}
+
+#..................................................................................................................................
+# Function : GetSqlConnection
+#..................................................................................................................................
+# Get a SQL connection
+#..................................................................................................................................
+function GetSqlConnection
+{
+    $ConnectionString = "Server=" + $conf.conf.db.sqlServerInstance + "; database=" + $conf.conf.db.database + "; Integrated Security=False;" + "User ID=" + $conf.conf.db.userName + "; Password="+$conf.conf.db.password + ";"
+
+    try
+    {
+        $sqlConnection = New-Object System.Data.SqlClient.SqlConnection $ConnectionString
+        $sqlConnection.Open()
+        return $sqlConnection
     }
+    catch
+    {
+        Write-Error $error
+        return $null
+    }
+}
  
     #..................................................................................................................................
     # Function : Send-Message

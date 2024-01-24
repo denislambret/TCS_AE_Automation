@@ -1,4 +1,35 @@
 #----------------------------------------------------------------------------------------------------------------------------------
+# Script  : Get-IDITJobsList.ps1
+#----------------------------------------------------------------------------------------------------------------------------------
+# Author  : DLA
+# Date    : 20240123
+# Version : 1.0
+#----------------------------------------------------------------------------------------------------------------------------------
+<#
+    .SYNOPSIS
+     Return status information related to IDIT Job list.
+    
+
+    .DESCRIPTION
+    
+    .PARAMETER FirstParameter
+     conf       configuration file
+     id         filter on job id
+     desc       List jobs filtered by description
+     status     List filtered by status
+     first      Limit number item in list
+     log        Dump batch log (work only with id selection)
+     childOnly  Display only job with a parentid (children)
+
+    .LINK
+        Links to further documentation.
+
+    .NOTES
+        Detail on what the script does, if this is needed.
+
+#>
+
+#----------------------------------------------------------------------------------------------------------------------------------
 #                                            C O M M A N D   P A R A M E T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
 param (

@@ -1,4 +1,28 @@
 #----------------------------------------------------------------------------------------------------------------------------------
+# Script  : Set-IDITRefreshCache.ps1
+#----------------------------------------------------------------------------------------------------------------------------------
+# Author  : DLA
+# Date    : 20240124
+# Version : 1.0
+#----------------------------------------------------------------------------------------------------------------------------------
+<#
+    .SYNOPSIS
+      Refresh IDIT Web server cache through WS call
+    
+
+    .DESCRIPTION
+    
+    .PARAMETER FirstParameter
+     conf       configuration file
+     
+    .LINK
+        Links to further documentation.
+
+    .NOTES
+        Detail on what the script does, if this is needed.
+
+#>
+#----------------------------------------------------------------------------------------------------------------------------------
 #                                            C O M M A N D   P A R A M E T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
 param (
@@ -49,13 +73,13 @@ function Set-RefreshCache {
     $headers.Add("password", $conf.wsi.query[2].password)
     $headers.Add("Cookie", $conf.wsi.query[2].Cookie)
     $body = $conf.wsi.query[2].body
-
+ 
     # 3 - Invoke Web service
     $current_hour = (get-date  -Format "HH")
     $url = $conf.wsi.query[2].url + $current_hour
     Write-host "Web service URL -> $url"
-    $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[2].method -Headers $headers -Body $body -StatusCodeVariable $response_code -ErrorAction Ignore
-     
+    $response = Invoke-RestMethod $url -Method  $conf.wsi.query[2].method -Headers $headers -Body $body -StatusCodeVariable $response_code -ErrorAction Ignore
+    
     if ($response_code -ge 300) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
@@ -63,10 +87,12 @@ function Set-RefreshCache {
     }
  
     # 5 - Return batch jobs filtered list
-    return $response_code
+    return $true
 }
 
-
+"-" * 142
+($MyInvocation.MyCommand.Name + " v" + $VERSION)
+"-" * 142
 
 # 1 - Load script config file
 try {
@@ -80,4 +106,15 @@ catch [System.IO.FileNotFoundException] {
 }
 
 # 2 - Instantiate WS Refresh Cache
-Set-RefreshCache -conf $config_path
+"Initiate IDIT Web server refresh cache..."
+if (Set-RefreshCache -conf $config_path) {
+    "-" * 142
+    "Cache refreshed successfully"
+    "-" * 142
+    exit $EXIT_OK
+} else {
+    "-" * 142
+    "Cache refresh failed !"
+    "-" * 142
+    exit $EXIT_KO
+}
