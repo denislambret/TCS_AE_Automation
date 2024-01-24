@@ -45,19 +45,22 @@
 #----------------------------------------------------------------------------------------------------------------------------------
 param (
     # path of the resource to process
+    # path of the resource to process
     [Parameter(
         Mandatory = $true,
         ValueFromPipelineByPropertyName = $true,
         Position = 0
         )
-    ] $path,
+    ] 
+    [Alias("path")] $path,
     
     # path for the result generated during process
     [Parameter(
         Mandatory = $true,
         ValueFromPipelineByPropertyName = $true,
-        Position = 0)
-    ] $dest,
+        Position = 1)
+    ] 
+    [Alias("Destination")] $dest,
     
     # help switch
     [switch] $help
