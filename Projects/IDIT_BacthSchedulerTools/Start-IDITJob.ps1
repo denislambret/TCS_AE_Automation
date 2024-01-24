@@ -43,6 +43,10 @@ Import-Module libConstants
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                            G L O B A L   V A R I A B L E S
 #----------------------------------------------------------------------------------------------------------------------------------
+$VERSION      = "0.2"
+$AUTHOR       = "DLA"
+$SCRIPT_DATE  = "20230123"
+
 $status = @{
     4 = "IN PROGRESS"
     5 = "SUCCESS"
@@ -62,12 +66,7 @@ $HTTP_CODES = @{
 }
 
 $IDITjobsList = $null
-
-$VERSION      = "0.1"
-$AUTHOR       = "DLA"
-$SCRIPT_DATE  = ""
-
-$retryTimer = 5
+$retryTimer = 60
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
@@ -199,7 +198,19 @@ function Get-IDITJobsList {
     if ($id) {
         #$url = $conf.wsi.query[0].url + "/" + $id
         $url = $conf.wsi.query[0].url 
-        $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+        try {
+                $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
+            } 
+        catch {
+            # Dig into the exception to get the Response details.
+            # Note that value__ is not a typo.
+            Write-Host $("-" * 142)
+            Write-Host "StatusCode        :"$_.Exception.Response.StatusCode.value__
+            Write-Host "StatusDescription :"$_.Exception.Response.ReasonPhrase
+            if ($_.ErrorDetails.Message ) {Write-Host "Error Details     :" ($_.ErrorDetails.Message | Convertfrom-json).title}
+            Write-Host $("-" * 142)
+            exit $EXIT_KO
+        }    
     } 
     else {
         $IDITJobsList = Invoke-RestMethod $conf.wsi.query[0].url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code
@@ -304,17 +315,23 @@ if (-not $responseId) {
 "-" * 142
 Write-Host "SUCCESS - Job created with id # $responseId"
 "-" * 142
+
 if ($wait) {
-    Write-Host "Wait end of job " -NoNewline
-    Write-host "." -NoNewline
-    $job = Get-IDITJobById -config .\acp.conf -id $responseId
+    Write-Host "Wait end of job... "
+    Write-Host "Start time - " $startTime
+    $job = Get-IDITJobById -config $config_path -id $responseId
+    $item = $job.batchLogIVOs | Where-object {$_.id -eq $responseId}
     
-    while ([int]$job.batchStatusVO.id -in @(8,4,20,17)) {
+    Write-Host $currentTime " - Current job status -> " $item.batchStatusVO.id
+    while ([int]$item.batchStatusVO.id -in @(8,4,20,17)) {
         Start-Sleep -seconds $retryTimer
-        $job = Get-IDITJobById -config .\acp.conf -id $responseId
+        $job = Get-IDITJobById -config $config_path -id $responseId
+        $item = $job.batchLogIVOs | Where-object {$_.id -eq $responseId}
+        $currentTime = (Get-Date -f "yyyy.MM.dd HH:mm:ss")
+        Write-Host $currentTime " - Current status id -> " $item.batchStatusVO.id
     }  
     $endTime = (Get-Date)
-
+    Write-Host "End time - " $endTime
     $item = $job.batchLogIVOs 
     "-" * 142
     Write-Host ("Job # " + $responseId + " ended - " + $item.batchStatusVO.desc + ' - Duration {0:mm} min {0:ss} sec' -f ($endTime-$startTime))
