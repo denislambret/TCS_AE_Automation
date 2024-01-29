@@ -30,7 +30,7 @@ param (
     [Parameter(
         Mandatory = $false,
         ValueFromPipelineByPropertyName = $false,
-        Position = 2
+        Position = 3
         )
     ]  
     [Alias('status','s')] $fStatus,
@@ -38,7 +38,7 @@ param (
     [Parameter(
         Mandatory = $false,
         ValueFromPipelineByPropertyName = $false,
-        Position = 3
+        Position = 4
         )
     ]  
     [Alias('first', 'top')] $limit = 10000,
@@ -46,11 +46,11 @@ param (
     [Parameter(
         Mandatory = $false,
         ValueFromPipelineByPropertyName = $false,
-        Position = 3
+        Position = 5
         )
     ]  
-    [Alias('log','l')]
-    [switch]$fLog = $false,
+    [Alias('ExportCSV')] 
+    [switch]$fExport = $true,
     
     [Alias('childOnly','p')]
     [switch]$fParent = $false,
@@ -84,8 +84,6 @@ $HTTP_CODES = @{
     422 = "HTTP_FUNCTIONAL_ERROR"
     500 = "HTTP_SERVER_ERROR"
 }
-
-
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                  F U N C T I O N S 
@@ -175,52 +173,6 @@ function Get-IDITJobsList {
 }
 
 #..................................................................................................................................
-# Function : Get-IDITJobById
-#..................................................................................................................................
-# Synopsis : Get job by id
-# Input    : jobid
-# Output   : job 
-#..................................................................................................................................
-
-function Get-IDITJobById {
-    param(
-        [Parameter(
-            Mandatory = $true,
-            Position = 0
-        )]
-        [String]
-        [Alias('config','conf')] $config_path,
-        [Parameter(
-            Mandatory = $true,
-            Position = 1
-        )]
-        [string] $id
-    )
-    
-    # 2 - Prepare WebSrv call
-    $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-    $headers.Add("userName", $conf.wsi.query[0].userName)
-    $headers.Add("password", $conf.wsi.query[0].password)
-    $headers.Add("Cookie", $conf.wsi.query[0].Cookie)
-    $body = $conf.wsi.query[0].body
-
-    # 3 - Invoke Web service
-    $url = $conf.wsi.query[0].url + "/" + $id
-    Write-host "Web service URL -> $url"
-    $IDITJobsList = Invoke-RestMethod $url -Method  $conf.wsi.query[0].method -Headers $headers -Body $body -StatusCodeVariable $response_code -ErrorAction Ignore
-     
-    if ($response_code -ge 300) {
-        "Error invoking web service"
-        "Return HTTP : " + $response_code
-        return $null 
-    }
-    $job = $IDITJobsList | ConvertTo-Json -Depth 20| ConvertFrom-Json #| Where-object {$_.}
-
-    # 5 - Return batch jobs filtered list
-    return $job
-}
-
-#..................................................................................................................................
 # Function : Get-IDITJobStatus
 #..................................................................................................................................
 # Synopsis : get job status by id
@@ -300,21 +252,11 @@ catch [System.IO.FileNotFoundException] {
         exit $EXIT_KO
 }
 
+# Query Web Service to build job list
 "Download job list from IDIT..."
 if ($desc) {
      $IDITJobsList = Get-IDITJobsList -config_path $config_path -Desc $desc
      "Total matches                 -> " + ($IDITJobsList).Count + " job(s)"
-} elseif ($id) {
-    
-    $job = Get-IDITJobById -config_path $config_path -id $id
-    "-" * 142
-    if (($job).Count -gt 0) {
-        Write-Host $("job #" + $id +" found"+$(" " * 123)) -ForegroundColor DarkGreen 
-    } else {
-        Write-Host $("job not found..."+$(" " * 126)) -ForegroundColor White -BackgroundColor Red
-        "-" * 142
-        exit $EXIT_KO
-    }
 } else {
     $IDITJobsList = Get-IDITJobsList -config_path $config_path
     "Total matches after query     -> " + ($IDITJobsList).Count + " job(s)"
@@ -322,67 +264,51 @@ if ($desc) {
         "Limit matches display        -> " + $limit + " job(s)"
     }
 }
+$itemJobList = $IDITJobsList | Select-Object id, parentLogId, batchJobVO, createDate, updateStatusDate, batchStatusVO
 
+# Filter WS response list
 if ((-not $IDITJobsList) -and (-not $job)) {
-    "Abnormal termination or no matched job !"
+    "No matched job..."
     "-" * 142
     exit $EXIT_KO
 }
+  
+if ($fStatus) {
+    $itemJobList = $itemJobList | Where-Object {$_.batchStatusVO.desc -match $fStatus}   
+}
 
-if (-not $id) {
-        $itemJobList = $IDITJobsList | Select-Object id, parentLogId, batchJobVO, createDate, updateStatusDate, batchStatusVO  
-        if ($fStatus) {
-            $itemJobList = $itemJobList | Where-Object {$_.batchStatusVO.desc -match $fStatus}   
-        }
-        
-        if ($fParent) {$itemJobList = $itemJobList | Where-Object {$_.parentLogId}   }
+if ($fParent) {
+    $itemJobList = $itemJobList | Where-Object {$_.parentLogId}   
+}
 
-        "Total matches after filtering -> " + ($itemJobList).Count + " job(s)"
-        if (($IDITJobsList).Count -ge $limit) {
-            "Limit matches display         -> " + $limit + " job(s)"
-        }
-        "." * 142
-        $itemJobs = @()
-        $itemJobList | ForEach-Object {
-            $hItemJobList = @{}
-            $hItemJobList.id = $_.id
-            $hItemJobList.parentLogId = $_.parentLogId
-            $hItemJobList.createDate = $_.createDate
-            $hItemJobList.updateStatusDate = $_.updateStatusDate
-            $hItemJobList.status = $_.batchStatusVO.desc
-            $hItemJobList.desc = $_.batchJobVO.desc
-            $itemJobs += $hItemJobList 
-        }
-        $itemJobs = $itemJobs |  ConvertTo-Json | Convertfrom-json 
-        $itemJobs | Select-Object id, parentLogId, status, desc, createDate, updateStatusDate `
-        | Sort-Object -property createDate `
-        | Select-Object -First $limit `
-        | Format-Table @{n='id';e={$_.id};align='center'},@{n='parentId';e={$_.parentLogId};align='center'},@{n='status';e={$_.status};align='center'}, desc, createDate, updateStatusDate -AutoSize
-        
-    } else {
-        # Display job details (see json response structure to understand variables used)
-        "." * 142
-        $item = $job.batchLogIVOs | ?{$_.id -eq $id}
-        "Parent      : " + $item.parentLogId
-        "Job name    : " + $item.batchJobVO.id + " - " + $item.batchJobVO.desc
-        "Status      : " + $item.batchStatusVO.id + " - " + $item.batchStatusVO.desc
-        "Created at  : " + $item.createDate
-        "Last update : " + $item.updateDate
-        $startTime = [DateTime]::ParseExact($item.createDate, 'MM/dd/yyyy HH:mm:ss',$null)
-        $endTime   = [DateTime]::ParseExact($item.updateDate, 'MM/dd/yyyy HH:mm:ss',$null)
-        'Duration    : {0:mm} min {0:ss} s' -f ($endTime-$startTime)
-        
-        
-        # If display log switch is true, display job logs
-        if ($fLog) {
-            "-" * 142
-            "JOB LOG"
-            "-" * 142
-            $item.systemTaskLogIVOs | ForEach-Object {
-                $str = $_.updateDate.toString() + ' ' + $_.logType.desc + ' ' + $_.message 
-                $str | Out-String -Width 142 -Stream | ForEach-Object { Write-Host $_ }
-            }
-        } 
-    }
+"Total matches after filtering -> " + ($itemJobList).Count + " job(s)"
+if (($IDITJobsList).Count -ge $limit) {
+    "Limit matches display         -> " + $limit + " job(s)"
+}
+
+# Build job objects list 
+"." * 142
+$itemJobs = @()
+$itemJobList | ForEach-Object {
+    $hItemJobList = @{}
+    $hItemJobList.id = $_.id
+    $hItemJobList.parentLogId = $_.parentLogId
+    $hItemJobList.createDate = $_.createDate
+    $hItemJobList.updateStatusDate = $_.updateStatusDate
+    $hItemJobList.status = $_.batchStatusVO.desc
+    $hItemJobList.desc = $_.batchJobVO.desc
+    $itemJobs += $hItemJobList 
+}
+
+$itemJobs = $itemJobs | ConvertTo-Json `
+| Convertfrom-json `
+| Select-Object id, parentLogId, desc, createDate, updateStatusDate, status `
+| Sort-Object -property createDate `
+| Select-Object -First $limit 
+
+$itemJobs | Format-Table @{n='id';e={$_.id};align='center'},@{n='parentId';e={$_.parentLogId};align='center'},@{n='status';e={$_.status};align='center'}, desc, createDate, updateStatusDate -AutoSize
+$fname = ('.\' + (get-date -f 'yyyyMMdd_HHmmss') + '_getjobslist_dump.csv')
+Write-host $fname
+$itemJobs | ConvertTo-CSV -Delimiter ';' | Out-File -path $fname
 
 "-" * 142

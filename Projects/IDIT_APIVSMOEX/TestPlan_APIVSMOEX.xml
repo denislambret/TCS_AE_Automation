@@ -1,0 +1,80 @@
+<Requests>
+	<Request id="1" class="API" name="GET_POLICY_CAMPING" method="GET" url="'https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO011680237-10500/01'">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="2" class="API" name="GET_POLICY_CARDASSISTANCE" method="" url="https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012138236-10400/01">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="3" class="API" name="GET_POLICY_HOME" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="4" class="API" name="GET_POLICY_ETITRAVEL" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="5" class="API" name="GET_POLICY_LEGALBUILDING" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="6" class="API" name="GET_POLICY_DRIVER" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="7" class="API" name="GET_POLICY_INTERNET" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="8" class="API" name="GET_POLICY_MEMBERSHIP" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+
+	<Request id="9" class="API" name="GET_POLICY_MEMBERSHIP_BIKE" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+	<Request id="10" class="API" name="" method="" url="">
+		<Headers>
+			<Header name="userName" value="Administrator"/>
+			<Header name="password" value="k3@}(uW+"/>
+			<Header name="Cookie" value="BIGipServeridit.tcsgroup.ch.app~idit.tcsgroup.ch_pool=1262755500.10531.0000; jawrSkin=defaultSkin"/>
+		</Headers>
+	</Request>
+</Requests>
