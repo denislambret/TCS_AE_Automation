@@ -261,7 +261,7 @@ if ($desc) {
     $IDITJobsList = Get-IDITJobsList -config_path $config_path
     "Total matches after query     -> " + ($IDITJobsList).Count + " job(s)"
     if (($IDITJobsList).Count -ge $limit) {
-        "Limit matches display        -> " + $limit + " job(s)"
+        "Limit matches display         -> " + $limit + " job(s)"
     }
 }
 $itemJobList = $IDITJobsList | Select-Object id, parentLogId, batchJobVO, createDate, updateStatusDate, batchStatusVO

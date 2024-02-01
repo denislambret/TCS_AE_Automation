@@ -196,7 +196,7 @@ $item = $job.batchLogIVOs | ?{$_.id -eq $id}
 # Retrieve parent job ib if available
 $jobSysTaskLog = $job | Where-object {($_.batchLogIVOs.systemTaskLogIVOs)}
 $tmp = $jobSysTaskLog.batchLogIVOs.SystemTaskLogIVOs.message | ?{$_ -match 'parentLogId=(\d{8}),'}
-if ($Matches[1]) { $parentJobId = $Matches[1] } else { $parentJobId = $null}
+if ($null -ne $Matches) { $parentJobId = $Matches[1] } else { $parentJobId = $null}
 
 "Parent      : " + $parentJobId
 "Job name    : " + $item.batchJobVO.id + " - " + $item.batchJobVO.desc
@@ -205,7 +205,7 @@ if ($Matches[1]) { $parentJobId = $Matches[1] } else { $parentJobId = $null}
 "Last update : " + $item.updateDate
 $startTime = [DateTime]::ParseExact($item.createDate, 'MM/dd/yyyy HH:mm:ss',$null)
 $endTime   = [DateTime]::ParseExact($item.updateDate, 'MM/dd/yyyy HH:mm:ss',$null)
-'Duration    : {0:mm} min {0:ss} s' -f ($endTime-$startTime)
+'Duration    : ' + ([Math]::Round((New-TimeSpan -Start $startTime -End $endTime).TotalHours,2)) +  ' hour(s) '
 
 # 4 - If display log switch is true, display job logs
 if ($fLog) {
