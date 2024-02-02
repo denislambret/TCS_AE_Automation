@@ -106,11 +106,13 @@ function Get-IDITJobsList {
         )]
         [String]
         [Alias('config','conf')] $config_path,
+        
         [Parameter(
             Mandatory = $false,
             Position = 1
         )]
         [string] $status,
+        
         [Parameter(
             Mandatory = $false,
             Position = 2
