@@ -47,10 +47,10 @@ $VERSION      = "0.1"
 $AUTHOR       = "DLA"
 $SCRIPT_DATE  = ""
 
-$source_catalog  = "./catalog.csv";
-$source_dtg      = "./DTG_catalog.csv"
-$source_sample   = "D:\dev\01_GITHUB\TCS_AE_Automation\data\input\DIP\TCS_Sample_PDF.pdf"
-#$output          = "D:\dev\01_GITHUB\TCS_AE_Automation\data\input\DIP"
+$root_script = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE"
+$source_catalog  = $root_script + "\Projects\ONBASE_BacthDIPGenerator\catalog.csv";
+$source_dtg      = $root_script + "\Projects\ONBASE_BacthDIPGenerator\DTG_catalog.csv"
+$source_sample   = $root_script + "\data\input\DIP\TCS_Sample_PDF.pdf"
 
 function genPDF {
 
@@ -127,7 +127,7 @@ $mylist = @()
 
 $output_file = $output + '\' + $mydate + 'DIP_Samples.csv'
 'Index file   : ' + $output_file
-$myList | ConvertTo-Csv -Delimiter ';' | Out-file $output_file
+$myList | ConvertTo-Csv -Delimiter ';' -NoTypeInformation | Select-Object -Skip 1| Out-file $output_file
 '-' * 140
 $sw.Stop()
 'Elapsed time : ' + $sw.Elapsed.TotalSeconds + ' second(s)'
