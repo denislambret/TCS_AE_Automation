@@ -2,8 +2,6 @@
 #                                            C O M M A N D   P A R A M E T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
 param (
-    # path of the resource to process
-    # path of the resource to process
     [Parameter(
         Mandatory = $true,
         ValueFromPipelineByPropertyName = $true,
@@ -18,7 +16,7 @@ param (
         Position = 1
         )
     ] 
-    [Alias("gen")] [switch]$genPDF,
+    [Alias("Gen")] [switch]$genPDF,
     
     # path for the result generated during process
     [Parameter(
@@ -27,6 +25,14 @@ param (
         Position = 2)
     ] 
     [Alias("Count")] [int] $maxIter,
+
+    # path for the result generated during process
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $true,
+        Position = 3)
+    ] 
+    [Alias("DocumentType")] [int] $docType,
     
     # help switch
     [switch] $help
@@ -47,11 +53,21 @@ $VERSION      = "0.1"
 $AUTHOR       = "DLA"
 $SCRIPT_DATE  = ""
 
-$root_script = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE"
+#$root_script = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE"
+$root_script = "D:\Dev\01_GITHUB\TCS_AE_Automation\"
 $source_catalog  = $root_script + "\Projects\ONBASE_BacthDIPGenerator\catalog.csv";
 $source_dtg      = $root_script + "\Projects\ONBASE_BacthDIPGenerator\DTG_catalog.csv"
 $source_sample   = $root_script + "\data\input\DIP\TCS_Sample_PDF.pdf"
 
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                                 F U N C T I O N S 
+#----------------------------------------------------------------------------------------------------------------------------------
+
+#..................................................................................................................................
+# Function : genPDF
+#..................................................................................................................................
+# Generate PDF file
+#..................................................................................................................................
 function genPDF {
 
     [CmdletBinding()]
@@ -96,8 +112,11 @@ function genPDF {
     $word.Quit()
 }
 
-# MAIN
-#------------------------------------------------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------------------------------------------------
+#                                             _______ _______ _____ __   _
+#                                             |  |  | |_____|   |   | \  |
+#                                             |  |  | |     | __|__ |  \_|
+#----------------------------------------------------------------------------------------------------------------------------------
 '-' * 140
 $MyInvocation.MyCommand.Name + " v" + $VERSION
 '-' * 140
@@ -112,9 +131,11 @@ $mylist = @()
 1..$maxIter | ForEach-Object { 
     $dtg = Get-Random -InputObject $dtgList
     $filename =  $output + '\' + $myDate + $dtg.DEscription + '_' + (($_.ToString()).PadLeft(10,"0")) + '.pdf'    
-
+    if ($null -eq  $docType) { 
+        $docType = $dtg.Type
+    }
     $item = Get-Random -InputObject $catalog
-    $item | Add-Member -NotePropertyName DTGs -NotePropertyValue $dtg.Type -Force
+    $item | Add-Member -NotePropertyName DTGs -NotePropertyValue $docType -Force
     $item | Add-Member -NotePropertyName FilePath -NotePropertyValue $filename -Force
     $mylist += $item
     if ($genPDF) { 
