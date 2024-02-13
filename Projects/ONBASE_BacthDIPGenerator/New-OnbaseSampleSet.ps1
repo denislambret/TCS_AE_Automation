@@ -53,11 +53,12 @@ $VERSION      = "0.1"
 $AUTHOR       = "DLA"
 $SCRIPT_DATE  = ""
 
-#$root_script = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE"
-$root_script = "D:\Dev\01_GITHUB\TCS_AE_Automation\"
-$source_catalog  = $root_script + "\Projects\ONBASE_BacthDIPGenerator\catalog.csv";
-$source_dtg      = $root_script + "\Projects\ONBASE_BacthDIPGenerator\DTG_catalog.csv"
-$source_sample   = $root_script + "\data\input\DIP\TCS_Sample_PDF.pdf"
+$root_script = "C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\Projects"
+#$root_script = "D:\Dev\01_GITHUB\TCS_AE_Automation\"
+#$root_script = "D:\scripts"
+$source_catalog  = $root_script + "\ONBASE_BacthDIPGenerator\catalog.csv";
+$source_dtg      = $root_script + "\ONBASE_BacthDIPGenerator\DTG_catalog.csv"
+$source_sample   = $root_script + "\ONBASE_BacthDIPGenerator\TCS_Sample_PDF.pdf"
 
 #----------------------------------------------------------------------------------------------------------------------------------
 #                                                 F U N C T I O N S 
@@ -127,13 +128,23 @@ $myDate = get-date -f 'yyyyMMdd_HHmmss_'
 $catalog = Import-CSV -Path $source_catalog  -Delimiter ';'
 $dtgList = Import-CSV -path $source_dtg -Delimiter ';' -Header @('Type','Description')
 $mylist = @()
+if ($docType) {
+		$fDocType = $true
+	} else {
+		$fDocType = $false
+	}
 
 1..$maxIter | ForEach-Object { 
-    $dtg = Get-Random -InputObject $dtgList
-    $filename =  $output + '\' + $myDate + $dtg.DEscription + '_' + (($_.ToString()).PadLeft(10,"0")) + '.pdf'    
-    if ($null -eq  $docType) { 
+    
+       
+    if (-not $fDocType) { 
+		$dtg = Get-Random -InputObject $dtgList
         $docType = $dtg.Type
+		$docTypeDesc = $dtg.Description
+    } else {
+		$docTypeDesc = ($dtgList | Where-Object {$_.Type -eq $docType} | Select-Object Description).Description
     }
+	$filename =  $output + '\' + $myDate + $docTypeDesc + '_' + (($_.ToString()).PadLeft(10,"0")) + '.pdf' 
     $item = Get-Random -InputObject $catalog
     $item | Add-Member -NotePropertyName DTGs -NotePropertyValue $docType -Force
     $item | Add-Member -NotePropertyName FilePath -NotePropertyValue $filename -Force
@@ -144,6 +155,7 @@ $mylist = @()
         Copy-Item -path $source_sample -Destination $filename
     }
     $item = $null
+	
 }
 
 $output_file = $output + '\' + $mydate + 'DIP_Samples.csv'

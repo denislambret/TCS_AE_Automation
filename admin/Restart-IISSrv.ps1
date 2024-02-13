@@ -140,7 +140,7 @@ PROCESS {
     Log -Level 'INFO' -Message "Restarting IIS Server...."
     # Do something here
     # 1 - Restart IIS
-    $output =  $output = C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_10.0.17763.1_none_0c0406fc415c8543\iisreset.exe
+    $output = C:\Windows\WinSxS\wow64_microsoft-windows-iis-sharedlibraries_31bf3856ad364e35_10.0.17763.1_none_0c0406fc415c8543\iisreset.exe
     if ($output -match 'Internet services successfully restarted') {
         Log -Level 'Info' -Message 'Restart IIS OK'
         Log -Level 'INFO' -message $SEP_L1
