@@ -134,9 +134,10 @@ if ($docType) {
 		$fDocType = $false
 	}
 
+$count = 0
 1..$maxIter | ForEach-Object { 
     
-       
+    $count++  
     if (-not $fDocType) { 
 		$dtg = Get-Random -InputObject $dtgList
         $docType = $dtg.Type
@@ -144,7 +145,7 @@ if ($docType) {
     } else {
 		$docTypeDesc = ($dtgList | Where-Object {$_.Type -eq $docType} | Select-Object Description).Description
     }
-	$filename =  $output + '\' + $myDate + $docTypeDesc + '_' + (($_.ToString()).PadLeft(10,"0")) + '.pdf' 
+	$filename =  $output + '\' + $myDate + $docTypeDesc + '_' + (($count.ToString()).PadLeft(10,"0")) + '.pdf' 
     $item = Get-Random -InputObject $catalog
     $item | Add-Member -NotePropertyName DTGs -NotePropertyValue $docType -Force
     $item | Add-Member -NotePropertyName FilePath -NotePropertyValue $filename -Force
@@ -153,6 +154,9 @@ if ($docType) {
         genPDF -path $filename -id $_
     } else {
         Copy-Item -path $source_sample -Destination $filename
+        Set-Date -path $filename -Date (get-date)
+        (Get-Item $filename).lastwritetime = (Get-Date)
+        (Get-Item $filename).lastaccesstime = (Get-Date)
     }
     $item = $null
 	
