@@ -166,6 +166,7 @@ function Get-IDITJobsList {
     $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
     $headers.Add("userName", $conf.wsi.query[0].userName)
     $headers.Add("password", $conf.wsi.query[0].password)
+    $headers.Add("Content-type", "text/plain")
     #$headers.Add("Cookie", $conf.wsi.query[0].Cookie)
     $body = $conf.wsi.query[0].body
 

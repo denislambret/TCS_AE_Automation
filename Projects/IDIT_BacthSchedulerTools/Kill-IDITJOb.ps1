@@ -112,6 +112,7 @@ function Get-IDITJobById {
     $headers.Add("userName", $conf.wsi.query[0].userName)
     $headers.Add("password", $conf.wsi.query[0].password)
     $headers.Add("Cookie", $conf.wsi.query[0].Cookie)
+    $headers.Add("Content-type", "text/plain")
     $body = $conf.wsi.query[0].body
 
     # 3 - Invoke Web service

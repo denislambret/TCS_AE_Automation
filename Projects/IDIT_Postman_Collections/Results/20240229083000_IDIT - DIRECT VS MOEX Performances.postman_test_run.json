@@ -1,0 +1,1744 @@
+{
+	"id": "7c6fec44-ed62-4c58-912a-6ec20799fceb",
+	"name": "IDIT - DIRECT VS MOEX Performances",
+	"timestamp": "2024-02-29T07:22:34.507Z",
+	"collection_id": "18876454-127e5189-a3ed-4854-97c7-e68b10bf6d60",
+	"folder_id": 0,
+	"environment_id": "18876454-2bed8857-aa91-4fea-9da7-75004ec4a949",
+	"totalPass": 414,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-02-29T07:19:44.370Z",
+	"totalFail": 6,
+	"results": [
+		{
+			"id": "5b02fff8-98f2-4559-9749-7b9e51499c0a",
+			"name": "DIRECT - GET Policy Camping Membership",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO011680237-10500/01",
+			"time": 457,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				1014,
+				683,
+				471,
+				452,
+				369,
+				384,
+				902,
+				636,
+				642,
+				457
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "428e1c26-7357-4ae3-aaad-fe827d1bae7e",
+			"name": "DIRECT - GET Policy Card Assistance",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012138236-10400/01",
+			"time": 382,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				571,
+				528,
+				388,
+				323,
+				268,
+				321,
+				296,
+				669,
+				351,
+				382
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "13e96e59-c66f-44a8-8ac7-96050f88078c",
+			"name": "DIRECT - GET Policy Home",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO001505895-11100/01",
+			"time": 677,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				763,
+				575,
+				450,
+				483,
+				344,
+				397,
+				625,
+				393,
+				494,
+				677
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "2432c6fa-58d2-485c-af4b-97ba1f81d7e7",
+			"name": "DIRECT - GET Policy ETI Travel",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO103041537-10300/00",
+			"time": 1725,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				1540,
+				929,
+				1086,
+				1142,
+				779,
+				753,
+				2432,
+				1215,
+				1201,
+				1725
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "912d278f-12d4-43d1-9668-b41bcb4dcb7e",
+			"name": "DIRECT - GET Policy Legal Protection Building",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012378276-11000/01",
+			"time": 533,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				300,
+				327,
+				398,
+				417,
+				352,
+				528,
+				594,
+				531,
+				375,
+				533
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "65637f3d-04d9-453b-a6ab-e7897a82e0f2",
+			"name": "DIRECT - GET Policy Legal Protection Driver",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO100186506-10700/01",
+			"time": 556,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				478,
+				370,
+				361,
+				544,
+				339,
+				524,
+				525,
+				581,
+				441,
+				556
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "6712a77a-6259-405b-820f-bb79663e2a4a",
+			"name": "DIRECT - GET Policy Legal Protection Internet",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO003234021-10900/01",
+			"time": 509,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				370,
+				466,
+				501,
+				424,
+				408,
+				557,
+				482,
+				1316,
+				445,
+				509
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "c26f95d6-ca49-4d6b-bfaf-d931e643e844",
+			"name": "DIRECT - GET Policy Membership",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO106409862-10100/01",
+			"time": 801,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				522,
+				553,
+				710,
+				531,
+				508,
+				693,
+				728,
+				993,
+				501,
+				801
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "f5e9d8b1-d992-4923-9a65-1f16caa05b2e",
+			"name": "DIRECT - GET Policy Membership Bike",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO012941967-11200/01",
+			"time": 535,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				319,
+				347,
+				436,
+				406,
+				292,
+				445,
+				452,
+				1274,
+				301,
+				535
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "c0bc7937-5771-4db8-ada2-056c66a76b65",
+			"name": "DIRECT - GET Policy Legal Protection Private",
+			"url": "https://idit.tcsgroup.ch/idit-web/api/policy/tcs/PO002426697-10800/01",
+			"time": 412,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				359,
+				369,
+				404,
+				414,
+				367,
+				434,
+				328,
+				2236,
+				409,
+				412
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "ee61d472-ed87-4786-8ef9-bc10a024a8a4",
+			"name": "MOEX - GET Policy Bike insurance",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO011680237-10500/01",
+			"time": 1210,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				552,
+				685,
+				835,
+				773,
+				524,
+				709,
+				961,
+				688,
+				665,
+				1210
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "7d921510-0c1b-4034-9e70-86ea0def7570",
+			"name": "MOEX - GET Policy Camping Membership",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100180421-10200/01",
+			"time": 801,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				610,
+				895,
+				628,
+				922,
+				532,
+				1012,
+				1066,
+				1635,
+				2018,
+				801
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "39d0be7a-04be-458c-acaf-d492f9c9a19a",
+			"name": "MOEX - GET Policy Card Assistance",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012138236-10400/01",
+			"time": 554,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				1339,
+				484,
+				876,
+				821,
+				547,
+				531,
+				542,
+				661,
+				507,
+				554
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "a9423b9d-88b8-4878-988f-b0fce112d39c",
+			"name": "MOEX - GET Policy Home",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO001505895-11100/01",
+			"time": 1192,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				677,
+				760,
+				689,
+				661,
+				659,
+				565,
+				949,
+				884,
+				580,
+				1192
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "ee5a2c80-0b43-4d66-b72f-ac9d10c6fb7f",
+			"name": "MOEX - GET Policy ETI Travel",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO103041537-10300/00",
+			"time": 2165,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": false
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				1093,
+				1653,
+				1369,
+				1850,
+				1732,
+				1968,
+				1863,
+				1809,
+				1812,
+				2165
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				}
+			]
+		},
+		{
+			"id": "3d408021-9c1d-40f0-b9cc-6f1e33e6ac76",
+			"name": "MOEX - GET Policy Legal Protection Building",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012378276-11000/01",
+			"time": 483,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				427,
+				1875,
+				555,
+				850,
+				574,
+				699,
+				587,
+				593,
+				513,
+				483
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "7723d149-8666-44cb-aff4-015a45d0f508",
+			"name": "MOEX - GET Policy Legal Protection Driver",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO100186506-10700/01",
+			"time": 398,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				525,
+				511,
+				586,
+				672,
+				480,
+				601,
+				587,
+				559,
+				1882,
+				398
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "143f5846-464b-4bc9-af69-58e22abfec90",
+			"name": "MOEX - GET Policy Legal Protection Internet",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO003234021-10900/01",
+			"time": 453,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				463,
+				652,
+				674,
+				968,
+				749,
+				933,
+				735,
+				823,
+				2518,
+				453
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "c9b1ef54-d73d-49ef-b3b0-7a4924c5be8d",
+			"name": "MOEX - GET Policy Legal Protection Private",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO002426697-10800/01",
+			"time": 450,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 9,
+					"fail": 1
+				}
+			},
+			"times": [
+				432,
+				691,
+				853,
+				516,
+				654,
+				714,
+				2266,
+				809,
+				780,
+				450
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": false
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "04285ef1-d009-4521-8689-323bcfb7d3a1",
+			"name": "MOEX - GET Policy Membership",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO106409862-10100/01",
+			"time": 520,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				643,
+				1227,
+				862,
+				663,
+				753,
+				1014,
+				764,
+				854,
+				919,
+				520
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "28330b79-810b-4f1f-a8eb-440c34ebcc45",
+			"name": "MOEX - GET Policy Membership Bike",
+			"url": "https://iapi.tcsgroup.ch/tcs/internal-catalog/insurance/v2/policies/PO012941967-11200/01",
+			"time": 462,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"HTTP response code": true,
+				"Response time below 2000ms": true
+			},
+			"testPassFailCounts": {
+				"HTTP response code": {
+					"pass": 10,
+					"fail": 0
+				},
+				"Response time below 2000ms": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
+			"times": [
+				505,
+				668,
+				543,
+				403,
+				596,
+				633,
+				629,
+				652,
+				514,
+				462
+			],
+			"allTests": [
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				},
+				{
+					"HTTP response code": true,
+					"Response time below 2000ms": true
+				}
+			]
+		}
+	],
+	"count": 10,
+	"totalTime": 154168,
+	"collection": {
+		"requests": [
+			{
+				"id": "5b02fff8-98f2-4559-9749-7b9e51499c0a",
+				"method": "GET"
+			},
+			{
+				"id": "428e1c26-7357-4ae3-aaad-fe827d1bae7e",
+				"method": "GET"
+			},
+			{
+				"id": "13e96e59-c66f-44a8-8ac7-96050f88078c",
+				"method": "GET"
+			},
+			{
+				"id": "2432c6fa-58d2-485c-af4b-97ba1f81d7e7",
+				"method": "GET"
+			},
+			{
+				"id": "912d278f-12d4-43d1-9668-b41bcb4dcb7e",
+				"method": "GET"
+			},
+			{
+				"id": "65637f3d-04d9-453b-a6ab-e7897a82e0f2",
+				"method": "GET"
+			},
+			{
+				"id": "6712a77a-6259-405b-820f-bb79663e2a4a",
+				"method": "GET"
+			},
+			{
+				"id": "c26f95d6-ca49-4d6b-bfaf-d931e643e844",
+				"method": "GET"
+			},
+			{
+				"id": "f5e9d8b1-d992-4923-9a65-1f16caa05b2e",
+				"method": "GET"
+			},
+			{
+				"id": "c0bc7937-5771-4db8-ada2-056c66a76b65",
+				"method": "GET"
+			},
+			{
+				"id": "ee61d472-ed87-4786-8ef9-bc10a024a8a4",
+				"method": "GET"
+			},
+			{
+				"id": "7d921510-0c1b-4034-9e70-86ea0def7570",
+				"method": "GET"
+			},
+			{
+				"id": "39d0be7a-04be-458c-acaf-d492f9c9a19a",
+				"method": "GET"
+			},
+			{
+				"id": "a9423b9d-88b8-4878-988f-b0fce112d39c",
+				"method": "GET"
+			},
+			{
+				"id": "ee5a2c80-0b43-4d66-b72f-ac9d10c6fb7f",
+				"method": "GET"
+			},
+			{
+				"id": "3d408021-9c1d-40f0-b9cc-6f1e33e6ac76",
+				"method": "GET"
+			},
+			{
+				"id": "7723d149-8666-44cb-aff4-015a45d0f508",
+				"method": "GET"
+			},
+			{
+				"id": "143f5846-464b-4bc9-af69-58e22abfec90",
+				"method": "GET"
+			},
+			{
+				"id": "c9b1ef54-d73d-49ef-b3b0-7a4924c5be8d",
+				"method": "GET"
+			},
+			{
+				"id": "04285ef1-d009-4521-8689-323bcfb7d3a1",
+				"method": "GET"
+			},
+			{
+				"id": "28330b79-810b-4f1f-a8eb-440c34ebcc45",
+				"method": "GET"
+			}
+		]
+	}
+}

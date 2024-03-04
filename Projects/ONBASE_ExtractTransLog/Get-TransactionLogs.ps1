@@ -31,6 +31,38 @@
 #                                            C O M M A N D   P A R A M E T E R S
 #----------------------------------------------------------------------------------------------------------------------------------
 param (
+    [Parameter(
+        Mandatory = $true,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 0
+        )
+    ] 
+    [Alias('config','conf')] [string]$config_path,
+    
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 1
+        )
+    ] 
+    [Alias('sd')] [datetime]$startDate,
+
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 2
+        )
+    ]
+    [Alias('ed')] [datetime]$endDate, 
+    
+    [Parameter(
+        Mandatory = $false,
+        ValueFromPipelineByPropertyName = $false,
+        Position = 3
+        )
+    ] 
+    [Alias('d')] [switch]$dip,
+ 
     # help switch
     [switch] $help
 )
@@ -64,12 +96,10 @@ BEGIN {
     Import-Module libConstants
     Import-Module libLog
 
-    $script_path      = $global:ScriptRoot + "\Projects\ONBASE_ExtractTransLog"
-    $config_path      = $script_path + "\PRD.conf"
-
+    $log_path ="C:\Users\LD06974\OneDrive - Touring Club Suisse\03_DEV\06_GITHUB\TCS_AE\logs"
     # Log initialization
-    if (-not (Start-Log -path $global:LogRoot -Script $MyInvocation.MyCommand.Name)) { 
-        "FATAL : Log initializzation failed!"
+    if (-not (Start-Log -path $log_path -Script $MyInvocation.MyCommand.Name)) { 
+        "FATAL : Log initialization failed!"
         exit $EXIT_KO
     }
     
@@ -113,14 +143,17 @@ PROCESS {
     #..................................................................................................................................
     # Execute query to retrieve list of payments from IDIT
     #..................................................................................................................................
-    function GenericSQLQuery
-    {
+    function GenericSQLQuery {
         param(
             [string] $sql
         )
         # https://cmatskas.com/execute-sql-query-with-powershell/
     
         $SqlConnection = GetSqlConnection
+        if (-not $SqlConnection) {
+            Log -level 'ERROR' -message ("Error connecting to db!")
+            return $false
+        }
     
         $SqlCmd = New-Object System.Data.SqlClient.SqlCommand
         
@@ -144,8 +177,7 @@ PROCESS {
     #..................................................................................................................................
     # Get a SQL connection
     #..................................................................................................................................
-    function GetSqlConnection
-    {
+    function GetSqlConnection {
         $ConnectionString = "Server=" + $conf.conf.db.sqlServerInstance + "; database=" + $conf.conf.db.database + "; Integrated Security=False;" + "User ID=" + $conf.conf.db.userName + "; Password="+'?lM`xS$&e*y$mAf5&G';
     
         try
@@ -161,6 +193,38 @@ PROCESS {
     
     }
  
+    function Get-FingerPrint {
+        param (
+            [Parameter(
+                Mandatory = $false,
+                Position = 0
+                )
+            ] [string] $path,
+            [Parameter(
+                Mandatory = $false,
+                Position = 1
+                )
+            ] [PSObject] $str
+        )
+        
+        
+        if (-not $str) {
+            if (($path) -and (Test-Path $path)) {
+                $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+                $stream = [System.IO.File]::Open($path, [System.IO.Filemode]::Open, [System.IO.FileAccess]::Read)
+                $fingerPrint= [System.BitConverter]::ToString($md5.ComputeHash($stream))
+                $stream.Close()
+                return $fingerPrint
+            }
+        } elseif ($str) {
+            $md5 = New-Object -TypeName System.Security.Cryptography.MD5CryptoServiceProvider
+            $utf8 = New-Object -TypeName System.Text.UTF8Encoding
+            $fingerprint = [System.BitConverter]::ToString($md5.ComputeHash($utf8.GetBytes($str)))
+            return $fingerPrint
+        } else {
+            return $null
+        }
+    }
 
     #..................................................................................................................................
     # Function : helper
@@ -168,10 +232,16 @@ PROCESS {
     # Display help message and exit gently script with EXIT_OK
     #..................................................................................................................................
     function helper {
-        "Do something usefull for you..."
+        "Extract and prepare ONBASE transaction logs for archiving."
         " "
         "Options : "
+        "-Config    Configuration file name"
+        "-startDate "
+        "-endDate   "
+        "-DIP       Generate DIP index file"
         "-Help      Display command help"
+        Write-Host $SEP_L1
+        exit 0;
     }
    
     #----------------------------------------------------------------------------------------------------------------------------------
@@ -188,12 +258,15 @@ PROCESS {
     # Quick comment
     
     # Script infp
-    Log -Level 'INFO' -Message $SEP_L1
-    log -Level 'INFO' -Message ($MyInvocation.MyCommand.Name + " v" + $VERSION)
-    Log -Level 'INFO' -Message $SEP_L1
-    
+    Write-Host $SEP_L1
+    Write-Host ($MyInvocation.MyCommand.Name + " v" + $VERSION)
+    Write-Host $SEP_L1
+
     # Display inline help if required
-    if ($help) { helper }
+    if ($help) { 
+        helper 
+        exit 0;
+    }
     
 
 
@@ -210,24 +283,37 @@ PROCESS {
     }
 
     # 2 -  Send SQL query to extract transaction logs
-    Log -Level 'INFO' -Message ("Executing exctract SQL query....")
-    $date      = (get-date -format "yyyyMMdd")
-    $startDate = (get-date -format "yyyy-dd-MM")
-    $endDate   = (get-date).AddDays(1)
-    $endDate   = '{0:yyyyMMdd}' -f $endDate
+    Write-Host ("Executing extract SQL query....")
+    $date      = (get-date -format "yyyyMMdd_HHmmss")
+    if (-not $startDate) { 
+        $startDate = (get-date)
+        $endDate   = (get-date)
+    }
     
-    $outputFileName = $conf.conf.output_path + "\" + $date + "_transactionLog.csv" 
-    $query = "SELECT *  FROM [ONBASE_DEV].[hsi].[transactionxlog] WHERE [ONBASE_DEV].[hsi].[transactionxlog].logdate >= '" + $startDate + "' AND [ONBASE_DEV].[hsi].[transactionxlog].logdate < '" + $endDate + "';"
-    Log -Level 'DEBUG' -Message ("Query : " + $query)
+    $strStartDate = '{0:yyyy-dd-MM 00:00:00}' -f $startDate
+    $strEndDate   = '{0:yyyy-dd-MM 23:59:59}' -f $endDate
+
+    $outputFileName = $conf.conf.output_path + "\" + $date + "_transactionLog.txt" 
+    $query = "SELECT *  FROM [hsi].[transactionxlog] WHERE [hsi].[transactionxlog].logdate >= '" + $strStartDate + "' AND [hsi].[transactionxlog].logdate < '" + $strEndDate + "';"
+    Write-Host ("Query : " + $query)
     $response = GenericSQLQuery -sql $query
-    $response | ConvertTo-Csv | Set-Content -path $outputFileName | 
+    #$response | ForEach-Object { $fingerprint = Get-FingerPrint -str $_; $_ | Add-Member -NotePropertyName fingerPrint -NotePropertyValue $fingerprint} 
+    $response | ConvertTo-Csv -Delimiter ";" | ForEach-Object {$_.Trim() -replace '\s{2,}|\"{2,}', ''} | Set-Content -path $outputFileName 
     
+    # If DIP is set, then we generate an CSV index for further import
+    if ($dip) {
+        $idxFileName =  $conf.conf.output_path + "\" + $date + "_DIP_Indexes.csv"
+        "Generate index file for DIP : " + $idxFileName
+        $idx = "ONBASE;ONBASE;INTERNE;AUD - Import Onbase transactions logs file;" + (get-date -format "yyyy-MM-dd") + ";" + (get-date -format "yyyy-MM-dd") + ";IT;;;CONFIDENTIAL;" + $conf.conf.targetDocType + ";" + $outputFileName
+        $idx | Set-Content -path $idxFileName
+    }
+
     # Compress-Archive -Path $outputFileName -DestinationPath ($outputFileName + '.zip')
-    log -Level 'INFO' -Message("Total record(s) extracted : " + $response.Count + " item(s)")
-    log -Level 'INFO' -Message("Output file               : " + $outputFileName)
+    Write-Host("Total record(s) extracted : " + $response.Count + " item(s)")
+    Write-Host("Output file               : " + $outputFileName)
 
     # Standard exit
-    Log -Level 'INFO' -message $SEP_L1
+    Write-Host $SEP_L1
     Stop-Log | Out-Null
     exit $EXIT_OK
     #----------------------------------------------------------------------------------------------------------------------------------

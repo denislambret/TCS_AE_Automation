@@ -1,4 +1,4 @@
-DECLARE @userid BIGINT = 100018247083;
+DECLARE @userid BIGINT =100017536089;
 select * from CN_CONTACT_ROLE where contact_id = @userid
 
 UPDATE cn_contact_role SET discontinue_date = null WHERE contact_id =  @userid
@@ -13,3 +13,6 @@ UPDATE cn_contact_role SET DISCONTINUE_DATE = null WHERE DISCONTINUE_DATE > '202
 SELECT *
 FROM CN_CONTACT_ROLE
 WHERE DISCONTINUE_DATE IS NOT NULL;
+
+
+select * from CN_CONTACT_ROLE;
