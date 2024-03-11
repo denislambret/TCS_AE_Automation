@@ -126,7 +126,6 @@ function Start-IDITJob {
     Write-Host ("Call WS -> " + $conf.wsi.query[1].url + " - " +$conf.wsi.query[1].method)
     try {
             $response = Invoke-RestMethod $conf.wsi.query[1].url -Method  $conf.wsi.query[1].method -Headers $headers -Body $body 
-            
       } catch {
         # Dig into the exception to get the Response details.
         # Note that value__ is not a typo.
@@ -135,17 +134,20 @@ function Start-IDITJob {
         Write-Host "StatusDescription :"$_.Exception.Response.ReasonPhrase
         if ($_.ErrorDetails.Message ) {Write-Host "Error Details     :" ($_.ErrorDetails.Message | Convertfrom-json).title}
         Write-Host $("-" * 142)
+        
+        if ($_.Exception.Response.StatusCode.value__ -eq '422') {
+            Write-Host "Note : HTTP 422 return OK exit code!"
+            Write-Host $("-" * 142)
+            exit $EXIT_OK
+        }
         exit $EXIT_KO
       }
-    
-
-
     Write-Debug  ("response code " + $response_code)
-    if ($response_code -ge 300) {
+    if ($response_code -ge 500) {
         "Error invoking web service"
         "Return HTTP : " + $response_code
         return $null 
-    }
+    } 
     
     # 4 - Return batch jobs filtered list
     return $response.logId
