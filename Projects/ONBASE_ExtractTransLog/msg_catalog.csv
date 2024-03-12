@@ -1,0 +1,220 @@
+﻿Created Document;TRANSACTIONXLOG;1;1
+Created Document from Existing;TRANSACTIONXLOG;1;2
+Deleted Document;TRANSACTIONXLOG;1;3
+Deleted Un-indexed Document;TRANSACTIONXLOG;1;4
+Undeleted Document;TRANSACTIONXLOG;1;5
+List Content Report Created;TRANSACTIONXLOG;1;6
+Search Result Report Created;TRANSACTIONXLOG;1;7
+Document Destroyed by Records Management;TRANSACTIONXLOG;1;8
+Uploaded to CIC;TRANSACTIONXLOG;1;9
+Returned from CIC;TRANSACTIONXLOG;1;10
+Uploaded to DocuSign;TRANSACTIONXLOG;1;11
+Returned from DocuSign;TRANSACTIONXLOG;1;12
+Document Separation;TRANSACTIONXLOG;1;13
+Document Packet Created;TRANSACTIONXLOG;1;14
+Created Folder;TRANSACTIONXLOG;2;1
+Viewed Folder;TRANSACTIONXLOG;2;2
+Viewed Folder Keywords;TRANSACTIONXLOG;2;3
+Deleted Folder;TRANSACTIONXLOG;2;4
+Added an item to a Folder;TRANSACTIONXLOG;2;5
+Removed an Item from a Folder;TRANSACTIONXLOG;2;6
+Added an Item to a Managed Folder;TRANSACTIONXLOG;2;7
+Modify Folder Keywords;TRANSACTIONXLOG;2;8
+Viewed Folder and Children;TRANSACTIONXLOG;2;9
+Failed to Update Child Folder Keywords;TRANSACTIONXLOG;2;10
+Folder Purged;TRANSACTIONXLOG;2;11
+Folder Moved;TRANSACTIONXLOG;2;12
+Folder Copied;TRANSACTIONXLOG;2;13
+Folder Keyword Deleted;TRANSACTIONXLOG;2;14
+Folder Keyword Added;TRANSACTIONXLOG;2;15
+Folder Modified Date;TRANSACTIONXLOG;2;16
+Folder Undeleted;TRANSACTIONXLOG;2;17
+Sealed Folder;TRANSACTIONXLOG;2;18
+Unsealed Folder;TRANSACTIONXLOG;2;19
+Added an Item to a Folder;TRANSACTIONXLOG;2;20
+Removed an Item from a Folder;TRANSACTIONXLOG;2;21
+Added an Item to a Managed Folder;TRANSACTIONXLOG;2;22
+Folder Keyword AutoUpdate Failure;TRANSACTIONXLOG;2;23
+Removed Orphan Folder;TRANSACTIONXLOG;2;24
+Modified Folder Contents Keyword;TRANSACTIONXLOG;2;25
+Created Note;TRANSACTIONXLOG;3;1
+Viewed Note;TRANSACTIONXLOG;3;2
+Deleted Note;TRANSACTIONXLOG;3;3
+Modified Note;TRANSACTIONXLOG;3;4
+Unity Note Retrieved;TRANSACTIONXLOG;3;5
+Viewed All Notes;TRANSACTIONXLOG;3;6
+Viewed Document;TRANSACTIONXLOG;4;1
+Printed a Document;TRANSACTIONXLOG;4;2
+Mailed a Document;TRANSACTIONXLOG;4;3
+Document Re-indexed;TRANSACTIONXLOG;4;4
+Checked Out Document;TRANSACTIONXLOG;4;5
+Checked In Document;TRANSACTIONXLOG;4;6
+Cancelled Check Out;TRANSACTIONXLOG;4;7
+Created Document Revision;TRANSACTIONXLOG;4;8
+Created Document Rendition;TRANSACTIONXLOG;4;9
+Deleted Revision;TRANSACTIONXLOG;4;10
+Burn Redaction Bitmaps;TRANSACTIONXLOG;4;11
+Unique Barcode Match – Page appended;TRANSACTIONXLOG;4;12
+Dropped Page into Document;TRANSACTIONXLOG;4;13
+Dragged Page from Document;TRANSACTIONXLOG;4;14
+Document Rotation Saved;TRANSACTIONXLOG;4;15
+Added Page to Document;TRANSACTIONXLOG;4;16
+Modify Document Date;TRANSACTIONXLOG;4;17
+Modified Document FileType;TRANSACTIONXLOG;4;18
+Document Password;TRANSACTIONXLOG;4;19
+Document Version Overwritten;TRANSACTIONXLOG;4;22
+Append Imported Image;TRANSACTIONXLOG;4;23
+Document Field Modified;TRANSACTIONXLOG;4;24
+Unity API Retrieved Document;TRANSACTIONXLOG;4;25
+Viewed Document Thumbnail;TRANSACTIONXLOG;4;26
+Keyword/Bar code match - entire document appended to existing document;TRANSACTIONXLOG;4;27
+Mailed a Document as a Link;TRANSACTIONXLOG;4;28
+Scanned More Pages;TRANSACTIONXLOG;4;29
+Reordered Pages;TRANSACTIONXLOG;4;30
+Printed Document Thumbnail;TRANSACTIONXLOG;4;31
+Volume Changed;TRANSACTIONXLOG;4;32
+Burn Redaction Notes;TRANSACTIONXLOG;4;33
+Page Added to Document;TRANSACTIONXLOG;4;34
+Signature added to document;TRANSACTIONXLOG;4;35
+Reordered Pages;TRANSACTIONXLOG;4;36
+Rescanned Page;TRANSACTIONXLOG;4;37
+Marked Page for Rescan;TRANSACTIONXLOG;4;38
+Marked Document for Rescan;TRANSACTIONXLOG;4;39
+Marked Document for Manager Resolution;TRANSACTIONXLOG;4;40
+Marked Document for QA Re-Index;TRANSACTIONXLOG;4;41
+Document Received Manager OK;TRANSACTIONXLOG;4;42
+Document Received QA Review OK;TRANSACTIONXLOG;4;43
+Marked for Additional Pages After Page;TRANSACTIONXLOG;4;44
+Page Rotated;TRANSACTIONXLOG;4;45
+Page Flipped;TRANSACTIONXLOG;4;46
+Modified Markup Layer;TRANSACTIONXLOG;4;47
+Append Imported Image from File;TRANSACTIONXLOG;4;48
+Append Imported Image from Scan;TRANSACTIONXLOG;4;49
+Undo (undo indexing action);TRANSACTIONXLOG;4;50
+Marked Document for QA Review;TRANSACTIONXLOG;4;51
+Deleted Markup Layer (not used);TRANSACTIONXLOG;4;52
+VNA Page Added (deprecated);TRANSACTIONXLOG;4;53
+Rendition Overwritten;TRANSACTIONXLOG;4;54
+Un-Marked Page Rescan;TRANSACTIONXLOG;4;55
+Un-Marked Scan Additional Pages (Before);TRANSACTIONXLOG;4;56
+Un-Marked Scan Additional Pages (After);TRANSACTIONXLOG;4;57
+Document Included In Document Packet;TRANSACTIONXLOG;4;58
+Geolocation Added To Document;TRANSACTIONXLOG;4;59
+Text Encoding Saved;TRANSACTIONXLOG;4;60
+Rendition Deleted for File Type on Document;TRANSACTIONXLOG;4;61
+Co-authored Document Changes;TRANSACTIONXLOG;4;62
+Indexed Document (document indexed in Index);TRANSACTIONXLOG;4;63
+Re-Indexed Document (document re-indexed in Re-Index);TRANSACTIONXLOG;4;64
+Re-Indexed Document (document re-indexed in QA Re-Index);TRANSACTIONXLOG;4;65
+Indexed Document (document indexed in Secondary Index);TRANSACTIONXLOG;4;66
+Accessed Content;TRANSACTIONXLOG;4;67
+Viewed Document Keywords;TRANSACTIONXLOG;5;1
+Keyword Update – Doc Type;TRANSACTIONXLOG;5;3
+Keyword Update – Global;TRANSACTIONXLOG;5;4
+Deleted Keyword;TRANSACTIONXLOG;5;5
+Deleted Document Keyword;TRANSACTIONXLOG;5;5
+Add Keyword;TRANSACTIONXLOG;5;6
+Add Document Keyword;TRANSACTIONXLOG;5;6
+Unity API Retrieved Keyword;TRANSACTIONXLOG;5;7
+User has viewed unmasked secure Keywords;TRANSACTIONXLOG;5;8
+Created Document Redaction;TRANSACTIONXLOG;6;1
+Exported a Document;TRANSACTIONXLOG;6;2
+Copied to Clipboard;TRANSACTIONXLOG;6;3
+Added Electronic Signature;TRANSACTIONXLOG;6;4
+Removed Electronic Signature;TRANSACTIONXLOG;6;5
+Document Full Text Indexed;TRANSACTIONXLOG;6;6
+Document added to Verity Full Text;TRANSACTIONXLOG;6;7
+Document Removed for Verity Full Text;TRANSACTIONXLOG;6;8
+Document OCR’ed;TRANSACTIONXLOG;6;9
+Added Reference Document;TRANSACTIONXLOG;6;10
+Added to workspace;TRANSACTIONXLOG;6;11
+Removed from workspace;TRANSACTIONXLOG;6;12
+Added Post;TRANSACTIONXLOG;6;13
+Pages Copied to new Document;TRANSACTIONXLOG;6;14
+Removed an item for Document Retention;TRANSACTIONXLOG;6;15
+Put item back into Document Retention;TRANSACTIONXLOG;6;16
+Digital Signatures Activity;TRANSACTIONXLOG;6;17
+DKT Administrator Acknowledgement;TRANSACTIONXLOG;6;18
+Verify Digital Signature;TRANSACTIONXLOG;6;19
+Add Time Stamp Digital Signature;TRANSACTIONXLOG;6;20
+Verify Time Stamp Digital Signature;TRANSACTIONXLOG;6;21
+Export Document for External Verification;TRANSACTIONXLOG;6;22
+Time Stamp Error;TRANSACTIONXLOG;6;23
+Remove DKT User Reading Requirement;TRANSACTIONXLOG;6;24
+Document Retention Re-index;TRANSACTIONXLOG;6;25
+Document Retention Delete;TRANSACTIONXLOG;6;26
+Cannot acquire Time Stamp Digital Signature License;TRANSACTIONXLOG;6;27
+Cannot acquire Time Stamp Digital Signature License;TRANSACTIONXLOG;6;28
+Viewed Document via Data Mining;TRANSACTIONXLOG;6;29
+Extracted Document via Data Mining;TRANSACTIONXLOG;6;30
+Printed Document via Data Mining;TRANSACTIONXLOG;6;31
+Encryption;TRANSACTIONXLOG;6;33
+Document added to case;TRANSACTIONXLOG;6;34
+Document Added to Envelope;TRANSACTIONXLOG;6;35
+Document Removed from Envelope;TRANSACTIONXLOG;6;36
+All Documents removed from envelope;TRANSACTIONXLOG;6;37
+Sent Cavion Statement Notification;TRANSACTIONXLOG;6;38
+Sent Cavion Notice Notification;TRANSACTIONXLOG;6;39
+Document Published to Message Broker;TRANSACTIONXLOG;6;40
+Message Broker Processed the Response;TRANSACTIONXLOG;6;41
+Message Broker response Data Error;TRANSACTIONXLOG;6;42
+Message Broker response System Error;TRANSACTIONXLOG;6;43
+Saved file locally;TRANSACTIONXLOG;6;44
+Destroyed by Doc Retention;TRANSACTIONXLOG;6;45
+Purged by Doc Retention;TRANSACTIONXLOG;6;46
+Declared Certified Record;TRANSACTIONXLOG;6;47
+Document removed from case;TRANSACTIONXLOG;6;48
+Document sent to CSV file;TRANSACTIONXLOG;6;49
+Doc Retention Status Updated;TRANSACTIONXLOG;6;50
+Marked for Purging;TRANSACTIONXLOG;6;51
+Evaluated by Doc Retention;TRANSACTIONXLOG;6;52
+Database records created;TRANSACTIONXLOG;6;53
+File moved to Diskgroup;TRANSACTIONXLOG;6;54
+S3 File Repaired;TRANSACTIONXLOG;6;55
+Printed Substitute Check;TRANSACTIONXLOG;7;1
+View IRD;TRANSACTIONXLOG;7;2
+Marked for Return;TRANSACTIONXLOG;7;3
+View MICR;TRANSACTIONXLOG;7;4
+Physical Record Changed Repository;TRANSACTIONXLOG;8;1
+Physical Record Changed Location;TRANSACTIONXLOG;8;2
+Physical Record Checked In;TRANSACTIONXLOG;8;3
+Physical Record Checked Out;TRANSACTIONXLOG;8;4
+Physical Record Copied from Repository;TRANSACTIONXLOG;8;5
+Changed Check Out Location of Physical Record;TRANSACTIONXLOG;8;6
+Requested Physical Record;TRANSACTIONXLOG;8;7
+Volume Tracking Locator Modified;TRANSACTIONXLOG;9;1
+Volume Tracking Locator Home Modified;TRANSACTIONXLOG;9;2
+Volume Tracking Locator Patient Modified;TRANSACTIONXLOG;9;3
+Volume Tracking Locator Chart Linked;TRANSACTIONXLOG;9;4
+Volume Tracking Locator Chart Unlinked;TRANSACTIONXLOG;9;5
+Document was taken offline;TRANSACTIONXLOG;10;1
+Document was removed from offline;TRANSACTIONXLOG;10;2
+Document was updated.;TRANSACTIONXLOG;10;3
+A new document was created;TRANSACTIONXLOG;10;4
+Sync started;TRANSACTIONXLOG;10;5
+Sync completed;TRANSACTIONXLOG;10;6
+Sync failed;TRANSACTIONXLOG;10;7
+A note was added to the document;TRANSACTIONXLOG;10;8
+A note was removed to the document;TRANSACTIONXLOG;10;9
+A note was modified on the document;TRANSACTIONXLOG;10;10
+Notes collection was changed;TRANSACTIONXLOG;10;11
+Keywords were modified on the document;TRANSACTIONXLOG;10;12
+Field application was locked;TRANSACTIONXLOG;10;13
+Keyword data set for field application was synced;TRANSACTIONXLOG;10;14
+Custom Document Log Via Unity;TRANSACTIONXLOG;11;1
+Custom Note Log Via Unity;TRANSACTIONXLOG;11;2
+Custom Folder Log Via Unity;TRANSACTIONXLOG;11;3
+Document synced up from Mobile device;TRANSACTIONXLOG;12;1
+New note synced up from Mobile device;TRANSACTIONXLOG;12;2
+Modified note synced up from Mobile device;TRANSACTIONXLOG;12;3
+Update note properties synced up from Mobile device;TRANSACTIONXLOG;12;4
+Deleted note syncd up from Mobile device;TRANSACTIONXLOG;12;5
+(ScanStep EIS Export);TRANSACTIONXLOG;13;1
+Document registered with XDS registry;TRANSACTIONXLOG;14;1
+Document retrieved by XDS consumer;TRANSACTIONXLOG;14;2
+Document sent using XDR to an endpoint;TRANSACTIONXLOG;14;3
+Document received from XDR Document Source;TRANSACTIONXLOG;14;4
+(Document Created via FHIR);TRANSACTIONXLOG;15;1
+(Document Updated via FHIR);TRANSACTIONXLOG;15;2
+(Document Retrieved via FHIR);TRANSACTIONXLOG;15;3
+(Document Deleted via FHIR);TRANSACTIONXLOG;15;4
