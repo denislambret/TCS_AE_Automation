@@ -3,7 +3,7 @@
 -- Date : 20240123
 -- Initialize the variable
 DECLARE @policy_external_number VARCHAR(30);
-SET @policy_external_number = 'PO012993710-10100/07';
+SET @policy_external_number = 'PO700018985-10600/03';
 
 BEGIN TRANSACTION
                 -- Update p_pol_header

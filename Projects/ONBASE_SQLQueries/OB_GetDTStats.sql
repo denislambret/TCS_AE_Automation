@@ -1,7 +1,5 @@
 -- Variables
 DECLARE @DTList TABLE (Value INT)
-INSERT INTO @DTList VALUES (131),(133),(134), (135), (154), (155)
-
 INSERT INTO @DTList 
 	SELECT id.itemtypenum	
 	FROM hsi.itemdata AS id 

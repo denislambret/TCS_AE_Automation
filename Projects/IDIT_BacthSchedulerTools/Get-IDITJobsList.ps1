@@ -350,9 +350,6 @@ if ($desc) {
 } else {
     $IDITJobsList = Get-IDITJobsList -config_path $config_path
     "Total matches after query     -> " + ($IDITJobsList).Count + " job(s)"
-    if (($IDITJobsList).Count -ge $limit) {
-        "Limit matches display        -> " + $limit + " job(s)"
-    }
 }
 
 if ((-not $IDITJobsList) -and (-not $job)) {
@@ -370,9 +367,6 @@ if (-not $id) {
         if ($fParent) {$itemJobList = $itemJobList | Where-Object {$_.parentLogId}   }
 
         "Total matches after filtering -> " + ($itemJobList).Count + " job(s)"
-        if (($IDITJobsList).Count -ge $limit) {
-            "Limit matches display         -> " + $limit + " job(s)"
-        }
         "." * 142
         $itemJobs = @()
         $itemJobList | ForEach-Object {
